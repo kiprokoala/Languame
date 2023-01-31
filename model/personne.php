@@ -1,30 +1,24 @@
 <?php
-class Personne extends Objet {
+class Utilisateur extends Objet {
     
     // attributs de classe
-	protected static $objet = "Adherent";
-
+	protected static $objet = "Utilisateur";
+    protected static $cle = "id_utilisateur";
 
     //attribut objet
 
-    protected $idPersonne;
+    protected $id_utilisateur;
     protected $login;
     protected $mdp;
     protected $prenom;
-    protected $idEquipe;
     protected $isChef;
-    protected $idAdmin;
+    protected $isAdmin;
 
     public function ajouterLangue() {}
 
     public function proposerAlignement() {}
 
-    public function validerAlignement(isCHef) {}
+    public function validerAlignement($isChef) {return;}
 
-    public function supprimerExpression(isAdmin) {}
-
-    
-
-
-    }
+    public function supprimerExpression($isAdmin) {return;}
 }

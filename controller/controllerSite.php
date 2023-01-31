@@ -4,8 +4,8 @@ class controllerSite{
 
 public static function homePage(){
     $title = "Accueil";
-    require_once("view/header.php");
-    require_once("view/footer.php");
+    require_once("view/generic/header.php");
+    require_once("view/generic/footer.php");
 }
 
 public static function error404(){
