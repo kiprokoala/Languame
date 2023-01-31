@@ -2,7 +2,7 @@
 class Expression extends Objet {
     
     // attributs de classe
-	protected static $objet = "Adherent";
+	protected static $objet = "Expression";
 
     protected $expression;
 
