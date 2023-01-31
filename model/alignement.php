@@ -2,8 +2,8 @@
 class Alignement extends Objet {
     
     // attributs de classe
-	protected static $objet = "Adherent";
-    
+	protected static $objet = "Alignement";
+
     protected $alignement;
 
   

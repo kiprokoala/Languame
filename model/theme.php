@@ -8,7 +8,7 @@ class Theme extends Objet
 {
 
     // attributs de classe
-    protected static $objet = "Adherent";
+	protected static $objet = "Theme";
     protected static $cle = "id_theme";
     protected $id_Theme;
     protected $nomTheme;

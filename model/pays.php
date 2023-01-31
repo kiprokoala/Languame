@@ -2,7 +2,7 @@
 class Pays extends Objet {
     
     // attributs de classe
-	protected static $objet = "Adherent";
+	protected static $objet = "Pays";
 
     protected $pays;
 

@@ -3,7 +3,8 @@ class Reponse extends Objet {
     
     // attributs de classe
 	protected static $objet = "Adherent";
-    protected static $cle = "id_reponse";
+	protected static $objet = "Reponse";
+
     protected $reponse;
     protected $id_alignement;
     protected $id_utilisateur;
