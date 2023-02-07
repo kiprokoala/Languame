@@ -11,8 +11,13 @@ class Utilisateur extends Objet {
     protected $login;
     protected $mdp;
     protected $prenom;
+    protected $nom;
     protected $isChef;
     protected $isAdmin;
+
+    public function afficher(){
+        Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin;
+    }
 
     public function ajouterLangue() {}
 
