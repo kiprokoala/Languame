@@ -19,7 +19,9 @@ class Utilisateur extends Objet {
         Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin;
     }
 
-    public function ajouterLangue() {}
+    public function ajouterLangue($l, $c, $gl) {
+        Langue::ajouterLangue($l, $c, $gl);
+    }
 
     public function proposerAlignement() {}
 
