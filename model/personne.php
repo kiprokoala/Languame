@@ -19,7 +19,17 @@ class Utilisateur extends Objet {
         Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin;
     }
 
-    public function ajouterLangue() {}
+    public function ajouterLangue($id_l, $nl, $cl, $id_gl) {
+        $requetePreparee = "INSERT INTO langue (`id_langue`,`nomLangue`,`codeLangue`, `id_groupeLangue`) VALUES(:id_l,:nl,:cl,:id_gl);"
+        $req_prep = Connexion::pdo()->prepare($requetePreparee);
+        $valeurs = array("id_l" => $id_l,"nl" => $nl,"cl" => $cl, "id_gl" => $id_gl);
+        try {
+			$req_prep->execute($valeurs);
+			return true;
+		} catch(PDOException $e) {
+			return false;
+		}
+    }
 
     public function proposerAlignement() {}
 
