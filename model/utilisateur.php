@@ -146,11 +146,15 @@ class Utilisateur extends Objet
     //Fin compte
 
     //Utilisateur
+    //On utilise un id_utilisateur en argument parce que la modification peut aussi venir d'un admin
     public function supprimerUtilisateur($utilisateur)
     {
-        if ($this->isAdmin) {
-            Langue::supprimerUtilisateur($utilisateur);
-        }
+        Utilisateur::deleteObjetById($utilisateur);
+    }
+
+    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isChef, $isAdmin)
+    {
+
     }
     //Fin utilisateur
 }
