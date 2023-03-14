@@ -40,7 +40,7 @@ class Utilisateur extends Objet
         if ($this->isChef) {
             Alignement::validerAlignement($alignement, $partie);
         } else {
-            echo "Vous n'êtes pas chef d'équipe! ";
+            return false;
         }
     }
 
@@ -69,7 +69,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::ajouterExpression($textelangue, $litteraltrad, $theme, $pays, $langue);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
 
@@ -79,7 +79,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::modifierExpression($expression, $textelangue, $litteraltrad, $theme, $pays, $langue);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
 
@@ -89,7 +89,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::supprimerExpression($expression);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
     //Fin expression
@@ -120,41 +120,24 @@ class Utilisateur extends Objet
     }
     //Fin Langue
 
-    //Compte - Différence notoire entre compte et utilisateur
-    //Compte créé, supprimé et modifié par admin
-    //Utilisateur créé, supprimé et modifié par lui-même
-    public function creerCompte($login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        if($this->isAdmin) {
-            self::creerUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
-        }
-    }
-
-    public function modifierCompte($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        if($this->isAdmin) {
-            self::modifierUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
-        }
-    }
-
-    public function supprimerCompte()
-    {
-        if ($this->isAdmin) {
-            self::supprimerUtilisateur($this->id_utilisateur);
-        }
-    }
-    //Fin compte
-
     //Utilisateur
-    public function supprimerUtilisateur($utilisateur)
+    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isAdmin)
     {
-        self::deleteObjetById($utilisateur);
+        self::addObjet(get_defined_vars());
     }
 
-    public function modifierUtilisateur($fields)
+    public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
     {
-        self::updateObjet($fields);
+        if($id_utilisateur == $_SESSION["id"] || $this->isAdmin){
+            self::updateObjet(get_defined_vars());
+        }
     }
 
+    public function supprimerUtilisateur($id_utilisateur)
+    {
+        if($id_utilisateur == $_SESSION["id"] || $this->isAdmin){
+            self::deleteObjetById($id_utilisateur);
+        }
+    }
     //Fin utilisateur
 }
