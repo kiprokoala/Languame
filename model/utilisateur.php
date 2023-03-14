@@ -28,6 +28,51 @@ class Utilisateur extends Objet
      *
     */
 
+    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isAdmin)
+    {
+        self::addObjet(get_defined_vars());
+    }
+
+    public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
+    {
+        if($id_utilisateur == estConnecte() || $this->isAdmin){
+            self::updateObjet(get_defined_vars());
+        }
+    }
+
+    public function supprimerUtilisateur($id_utilisateur)
+    {
+        if($id_utilisateur == estConnecte() || $this->isAdmin){
+            self::deleteObjetById($id_utilisateur);
+        }
+    }
+
+    public function connexionUtilisateur($login, $mdp)
+    {
+        $table = static::$objet;
+        $req_prep = Connexion::pdo()->prepare("SELECT * FROM $table WHERE $login = :tag_login;");
+        try {
+            $req_prep->execute(array("tag_login" => $login));
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $table);
+            $obj = $req_prep->fetch();
+            if($obj){
+                if(password_verify($mdp, $obj["mdp"])){
+                    return $obj;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function estConnecte(){
+        return $_SESSION["id"];
+    }
+
     public function proposerAlignement($alignement, $reponses)
     {
         //Avoir un rendu visuel à la fin de la création de l'alignement
@@ -119,25 +164,4 @@ class Utilisateur extends Objet
         }
     }
     //Fin Langue
-
-    //Utilisateur
-    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        self::addObjet(get_defined_vars());
-    }
-
-    public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        if($id_utilisateur == $_SESSION["id"] || $this->isAdmin){
-            self::updateObjet(get_defined_vars());
-        }
-    }
-
-    public function supprimerUtilisateur($id_utilisateur)
-    {
-        if($id_utilisateur == $_SESSION["id"] || $this->isAdmin){
-            self::deleteObjetById($id_utilisateur);
-        }
-    }
-    //Fin utilisateur
 }
