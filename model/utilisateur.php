@@ -126,21 +126,21 @@ class Utilisateur extends Objet
     public function creerCompte($login, $mdp, $prenom, $nom, $isAdmin)
     {
         if($this->isAdmin) {
-            Utilisateur::creerUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
+            self::creerUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
         }
     }
 
     public function modifierCompte($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
     {
         if($this->isAdmin) {
-            Utilisateur::modifierUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
+            self::modifierUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
         }
     }
 
     public function supprimerCompte()
     {
         if ($this->isAdmin) {
-            Utilisateur::supprimerUtilisateur($this->id_utilisateur);
+            self::supprimerUtilisateur($this->id_utilisateur);
         }
     }
     //Fin compte
@@ -148,9 +148,13 @@ class Utilisateur extends Objet
     //Utilisateur
     public function supprimerUtilisateur($utilisateur)
     {
-        if ($this->isAdmin) {
-            Langue::supprimerUtilisateur($utilisateur);
-        }
+        self::deleteObjetById($utilisateur);
     }
+
+    public function modifierUtilisateur($fields)
+    {
+        self::updateObjet($fields);
+    }
+
     //Fin utilisateur
 }
