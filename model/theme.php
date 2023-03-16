@@ -30,7 +30,7 @@ class Theme extends Objet
         Theme::updateObjet($nomTheme);
     }
     
-    public function ajouterExpressionAuTheme($id_expression){
+    public function giveExpressionToTheme($id_expression){
         $expression = Expression::getObjetById($id_expression);
         Expression::updateObjet($id_expression,
             $expression->get("texteLangueExpression"),
