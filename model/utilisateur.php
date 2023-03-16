@@ -33,6 +33,8 @@ class Utilisateur extends Objet
         self::addObjet(get_defined_vars());
     }
 
+    // Yoplait
+
     public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
     {
         if($id_utilisateur == estConnecte() || $this->isAdmin){
