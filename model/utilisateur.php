@@ -28,6 +28,51 @@ class Utilisateur extends Objet
      *
     */
 
+    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isAdmin)
+    {
+        self::addObjet(get_defined_vars());
+    }
+
+    public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
+    {
+        if($id_utilisateur == estConnecte() || $this->isAdmin){
+            self::updateObjet(get_defined_vars());
+        }
+    }
+
+    public function supprimerUtilisateur($id_utilisateur)
+    {
+        if($id_utilisateur == estConnecte() || $this->isAdmin){
+            self::deleteObjetById($id_utilisateur);
+        }
+    }
+
+    public function connexionUtilisateur($login, $mdp)
+    {
+        $table = static::$objet;
+        $req_prep = Connexion::pdo()->prepare("SELECT * FROM $table WHERE $login = :tag_login;");
+        try {
+            $req_prep->execute(array("tag_login" => $login));
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $table);
+            $obj = $req_prep->fetch();
+            if($obj){
+                if(password_verify($mdp, $obj["mdp"])){
+                    return $obj;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function estConnecte(){
+        return $_SESSION["id"];
+    }
+
     public function proposerAlignement($alignement, $reponses)
     {
         //Avoir un rendu visuel à la fin de la création de l'alignement
@@ -40,7 +85,7 @@ class Utilisateur extends Objet
         if ($this->isChef) {
             Alignement::validerAlignement($alignement, $partie);
         } else {
-            echo "Vous n'êtes pas chef d'équipe! ";
+            return false;
         }
     }
 
@@ -69,7 +114,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::ajouterExpression($textelangue, $litteraltrad, $theme, $pays, $langue);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
 
@@ -79,7 +124,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::modifierExpression($expression, $textelangue, $litteraltrad, $theme, $pays, $langue);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
 
@@ -89,7 +134,7 @@ class Utilisateur extends Objet
         if ($this->isAdmin) {
             Expression::supprimerExpression($expression);
         } else {
-            echo "Vous n'êtes pas administrateur! ";
+            return false;
         }
     }
     //Fin expression
@@ -119,42 +164,4 @@ class Utilisateur extends Objet
         }
     }
     //Fin Langue
-
-    //Compte - Différence notoire entre compte et utilisateur
-    //Compte créé, supprimé et modifié par admin
-    //Utilisateur créé, supprimé et modifié par lui-même
-    public function creerCompte($login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        if($this->isAdmin) {
-            Utilisateur::creerUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
-        }
-    }
-
-    public function modifierCompte($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
-    {
-        if($this->isAdmin) {
-            Utilisateur::modifierUtilisateur($login, $mdp, $prenom, $nom, false, $isAdmin);
-        }
-    }
-
-    public function supprimerCompte()
-    {
-        if ($this->isAdmin) {
-            Utilisateur::supprimerUtilisateur($this->id_utilisateur);
-        }
-    }
-    //Fin compte
-
-    //Utilisateur
-    //On utilise un id_utilisateur en argument parce que la modification peut aussi venir d'un admin
-    public function supprimerUtilisateur($utilisateur)
-    {
-        Utilisateur::deleteObjetById($utilisateur);
-    }
-
-    public function creerUtilisateur($login, $mdp, $prenom, $nom, $isChef, $isAdmin)
-    {
-
-    }
-    //Fin utilisateur
 }
