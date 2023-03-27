@@ -5,11 +5,6 @@ require_once("../model/utilisateur.php");
 
 class controllerSite{
 
-protected $utilisateur = $_SESSION["id"] ? Utilisateur::getObjetById($_SESSION["id"]) : 0;
-protected $type = $_GET["type"] ? $_GET["type"] : 0;
-protected $lancer = $_GET["lancer"] ? $_GET["lancer"] : 0;
-protected $id =  $_GET["id"] ? $_GET["id"] : 0;
-
 public static function homePage(){
     $title = "Accueil";
     require_once("view/generic/header.php");
@@ -22,47 +17,35 @@ public static function error404(){
     require_once("view/footer.php");
 }
 
-public static function proposerAlignement(){
-    $page = "Proposer un alignement";
-    if($utilisateur->estConnecte()){
-        Alignement::creerAlignement($utilisateur->id_utilisateur, $alignement, $reponses);
-    }    
-}
-
-public static function validerAlignement(){
-    $page = "Valider un alignement";
-    if ($utilisateur->isChef){
-        Alignement::validerAlignement($alignement, $partie);
-    }
-}
-
-public static function voirLesAlignementsProposes(){
-    $page = "Voir les alignements proposés";
-    if($utilisateur->estConnecte()){
-        Alignement::getAllObjets();
-    }
-}
-
-public static function objet(){
-    if($utilisateur->isAdmin){
+public static function gererObjet(){
+    $utilisateur = $_SESSION["id"] ? Utilisateur::getObjetById($_SESSION["id"]) : 0;
+    $type = $_GET["type"] ? $_GET["type"] : 0;
+    $lancer = $_GET["lancer"] ? $_GET["lancer"] : 0;
+    $id =  $_GET["id"] ? $_GET["id"] : 0;
+    if($utilisateur->isAdmin || $type == "Alignement"){
         $typeMin = strtolower($type);
-        if(($type="Expression") && ($lancer == "ajouter" || $lancer == "modifier")){
+        if(($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier")){
             $tab = array(
                 "textelangue" => $textelangue, 
                 "litteraltrad" => $litteraltrad, 
                 "theme" => $theme, 
                 "pays" => $pays, 
                 "langue" => $langue); 
-        }elseif(($type="Langue") && ($lancer == "ajouter" || $lancer == "modifier")){
+        }elseif(($type == "Langue") && ($lancer == "ajouter" || $lancer == "modifier")){
             $tab = array(
                 "langue" => $langue, 
                 "code" => $code, 
                 "groupelangue" => $groupelangue);
-        }elseif(($type="Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
+        }elseif(($type == "Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
             $tab = array(
                 "id_utilisateur" => $utilisateur->id_utilisateur, 
                 "alignement" => $alignement, 
                 "reponses" => $groupelangue);
+        }elseif(($type="Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
+            $tab = array(
+                "id_utilisateur" => $utilisateur->id_utilisateur, 
+                "alignement" => $alignement, 
+                "reponses" => $reponses);
         }
         switch($lancer){
             case "ajouter":
@@ -70,7 +53,7 @@ public static function objet(){
                 $type::addObjet($tab);
                 break;
             case "modifier":
-                $tab = array_merge(array("id$type" => ${"id".$type}[0]), $tab) : 0;
+                $tab = array_merge(array("id$type" => ${"id".$type}), $tab);
                 $page = "Modifier une $typeMin";
                 $type::updateObjet($tab);
                 break;
@@ -78,9 +61,13 @@ public static function objet(){
                 $page = "Supprimer une $typeMin";
                 $type::deleteObjetById($id);
                 break;
+            case "valider":
+                $type::{"valider".$type}($alignement, $partie);
+                break;
             default:
+                $page = $type;
+                $type::getAllObjets();
         }
-
     }
 }
 
