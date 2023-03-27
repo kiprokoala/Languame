@@ -30,16 +30,12 @@ class Utilisateur extends Objet
 
     public function modifierUtilisateur($id_utilisateur, $login, $mdp, $prenom, $nom, $isAdmin)
     {
-        if($id_utilisateur == self::estConnecte() || $this->isAdmin){
-            self::updateObjet(get_defined_vars());
-        }
+        ($id_utilisateur == self::estConnecte() || $this->isAdmin) ? self::updateObjet(get_defined_vars()) : 0;
     }
 
     public function supprimerUtilisateur($id_utilisateur)
     {
-        if($id_utilisateur == self::estConnecte() || $this->isAdmin){
-            self::deleteObjetById($id_utilisateur);
-        }
+        ($id_utilisateur == self::estConnecte() || $this->isAdmin) ? self::deleteObjetById($id_utilisateur) : 0;
     }
 
     public function connexionUtilisateur($login, $mdp)
@@ -50,15 +46,7 @@ class Utilisateur extends Objet
             $req_prep->execute(array("tag_login" => $login));
             $req_prep->setFetchMode(PDO::FETCH_CLASS, $table);
             $obj = $req_prep->fetch();
-            if($obj){
-                if(password_verify($mdp, $obj["mdp"])){
-                    return $obj;
-                }else{
-                    return false;
-                }
-            }else{
-                return false;
-            }
+            $obj ? (password_verify($mdp, $obj["mdp"]) ? return $obj : return false) : return false;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
