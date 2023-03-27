@@ -24,29 +24,10 @@ public static function gererObjet(){
     $id =  $_GET["id"] ? $_GET["id"] : 0;
     if($utilisateur->isAdmin || $type == "Alignement"){
         $typeMin = strtolower($type);
-        if(($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "textelangue" => $textelangue, 
-                "litteraltrad" => $litteraltrad, 
-                "theme" => $theme, 
-                "pays" => $pays, 
-                "langue" => $langue); 
-        }elseif(($type == "Langue") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "langue" => $langue, 
-                "code" => $code, 
-                "groupelangue" => $groupelangue);
-        }elseif(($type == "Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "id_utilisateur" => $utilisateur->id_utilisateur, 
-                "alignement" => $alignement, 
-                "reponses" => $groupelangue);
-        }elseif(($type="Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "id_utilisateur" => $utilisateur->id_utilisateur, 
-                "alignement" => $alignement, 
-                "reponses" => $reponses);
-        }
+        ($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier") ? $tab = array("textelangue" => $textelangue, "litteraltrad" => $litteraltrad, "theme" => $theme, "pays" => $pays, "langue" => $langue);
+        ($type == "Langue") && ($lancer == "ajouter" || $lancer == "modifier") ?  $tab = array("langue" => $langue, "code" => $code, "groupelangue" => $groupelangue);
+        ($type == "Alignement") && ($lancer == "ajouter" || $lancer == "modifier") ? $tab = array("id_utilisateur" => $utilisateur->id_utilisateur, "alignement" => $alignement, "reponses" => $reponses);
+        
         switch($lancer){
             case "ajouter":
                 $page = "Ajouter une $typeMin";
