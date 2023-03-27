@@ -5,11 +5,6 @@ require_once("../model/utilisateur.php");
 
 class controllerSite{
 
-protected $utilisateur = $_SESSION["id"] ? Utilisateur::getObjetById($_SESSION["id"]) : 0;
-protected $type = $_GET["type"] ? $_GET["type"] : 0;
-protected $lancer = $_GET["lancer"] ? $_GET["lancer"] : 0;
-protected $id =  $_GET["id"] ? $_GET["id"] : 0;
-
 public static function homePage(){
     $title = "Accueil";
     require_once("view/generic/header.php");
@@ -23,6 +18,10 @@ public static function error404(){
 }
 
 public static function gererObjet(){
+    $utilisateur = $_SESSION["id"] ? Utilisateur::getObjetById($_SESSION["id"]) : 0;
+    $type = $_GET["type"] ? $_GET["type"] : 0;
+    $lancer = $_GET["lancer"] ? $_GET["lancer"] : 0;
+    $id =  $_GET["id"] ? $_GET["id"] : 0;
     if($utilisateur->isAdmin || $type == "Alignement"){
         $typeMin = strtolower($type);
         if(($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier")){
@@ -54,7 +53,7 @@ public static function gererObjet(){
                 $type::addObjet($tab);
                 break;
             case "modifier":
-                $tab = array_merge(array("id$type" => ${"id".$type}[0]), $tab) : 0;
+                $tab = array_merge(array("id$type" => ${"id".$type}), $tab);
                 $page = "Modifier une $typeMin";
                 $type::updateObjet($tab);
                 break;
@@ -63,7 +62,7 @@ public static function gererObjet(){
                 $type::deleteObjetById($id);
                 break;
             case "valider":
-                $type::valider{$type}[0]($alignement, $partie);
+                $type::{"valider".$type}($alignement, $partie);
                 break;
             default:
                 $page = $type;
