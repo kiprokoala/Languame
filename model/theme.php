@@ -18,18 +18,6 @@ class Theme extends Objet
         return "<p>Thème n° $this->id_theme a pour nom : $this->nomTheme";
     }
 
-    public function creerTheme($nomTheme){
-        Theme::addObjet($nomTheme);
-    }
-
-    public function supprimerTheme(){
-        Theme::deleteObjetById($this->id_Theme);
-    }
-
-    public function modifierTheme($nomTheme){
-        Theme::updateObjet($nomTheme);
-    }
-    
     public function giveExpressionToTheme($id_expression){
         $expression = Expression::getObjetById($id_expression);
         Expression::updateObjet($id_expression,

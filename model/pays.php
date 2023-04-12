@@ -15,10 +15,10 @@ class Pays extends Objet {
     }
 
     public function getExpressionsByPays(){
-        $requete = "SELECT id_expression FROM Expression WHERE id_pays = ".$this->get("id_pays").";";
+        $requete = "SELECT * FROM Expression WHERE id_pays = ".$this->get("id_pays").";";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_NUM);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, "Expression");
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
