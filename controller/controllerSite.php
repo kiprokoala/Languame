@@ -22,31 +22,13 @@ public static function gererObjet(){
     $type = $_GET["type"] ? $_GET["type"] : 0;
     $lancer = $_GET["lancer"] ? $_GET["lancer"] : 0;
     $id =  $_GET["id"] ? $_GET["id"] : 0;
+     
     if($utilisateur->isAdmin || $type == "Alignement"){
         $typeMin = strtolower($type);
-        if(($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "textelangue" => $textelangue, 
-                "litteraltrad" => $litteraltrad, 
-                "theme" => $theme, 
-                "pays" => $pays, 
-                "langue" => $langue); 
-        }elseif(($type == "Langue") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "langue" => $langue, 
-                "code" => $code, 
-                "groupelangue" => $groupelangue);
-        }elseif(($type == "Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "id_utilisateur" => $utilisateur->id_utilisateur, 
-                "alignement" => $alignement, 
-                "reponses" => $groupelangue);
-        }elseif(($type="Alignement") && ($lancer == "ajouter" || $lancer == "modifier")){
-            $tab = array(
-                "id_utilisateur" => $utilisateur->id_utilisateur, 
-                "alignement" => $alignement, 
-                "reponses" => $reponses);
-        }
+        ($type == "Expression") && ($lancer == "ajouter" || $lancer == "modifier") ? $tab = array("textelangue" => $textelangue, "litteraltrad" => $litteraltrad, "theme" => $theme, "pays" => $pays, "langue" => $langue) : 0;
+        ($type == "Langue") && ($lancer == "ajouter" || $lancer == "modifier") ?  $tab = array("langue" => $langue, "code" => $code, "groupelangue" => $groupelangue) : 0;
+        ($type == "Alignement") && ($lancer == "ajouter" || $lancer == "modifier") ? $tab = array("id_utilisateur" => $utilisateur->id_utilisateur, "alignement" => $alignement, "reponses" => $reponses) : 0;
+        
         switch($lancer){
             case "ajouter":
                 $page = "Ajouter une $typeMin";
