@@ -71,7 +71,8 @@ var simplemaps_worldmap_mapdata={
   },
   state_specific: {
     AF: {
-      name: "Afghanistan"
+      name: "Afghanistan",
+      state_color: "#ffffff"
     },
     AO: {
       name: "Angola"
@@ -720,6 +721,9 @@ var simplemaps_worldmap_mapdata={
   regions: {},
 };
 
+function test() {
+  console.log("test");
+}
 function chargerDonneesAJAX() {
 	let xhr = new XMLHttpRequest();
 	xhr.open("GET","php/routeur.php?objet=carte&action=chargerDonneesMySQL", true);
@@ -749,5 +753,4 @@ function chargerDonneesAJAX() {
 	xhr.send();
 }
 chargerDonneesAJAX();
-
 
