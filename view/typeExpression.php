@@ -39,17 +39,5 @@ $langue = $_GET["langue"];
 </body>
 
 <?php
-if(isset($_GET)){
-    if($_GET['difficilTraduisible']){
-        header("formDiffTrad.php?langue=".$langue."&pays=".$pays);   
-    } elseif($_GET['visePays']){
-        header("formVisePays.php?langue=".$langue."&pays=".$pays);   
-    }else{
-        header("formSensDonne.php?langue=".$langue."&pays=".$pays);   
-    }
-}
-?>
-
-<?php
 require_once('footer.html');
 ?>
