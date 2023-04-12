@@ -1,5 +1,5 @@
 <?php
-require_once("config/connexion.php");
+require_once("conf/connexion.php");
 Connexion::connect();
 
 class Objet
@@ -38,6 +38,7 @@ class Objet
         // traitement de la réponse
         $resultat->setFetchmode(PDO::FETCH_CLASS, $table);
         $tableau = $resultat->fetchAll();
+        var_dump($tableau);
         return $tableau;
     }
 

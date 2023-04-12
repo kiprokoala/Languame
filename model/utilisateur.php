@@ -1,5 +1,7 @@
 <?php
 
+require_once("model/objet.php");
+
 class Utilisateur extends Objet
 {
 
