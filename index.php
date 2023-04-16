@@ -1,6 +1,12 @@
 <?php
 foreach(glob("controller/*.{php}", GLOB_BRACE) AS $file) {
     require_once($file);
+    echo $file;
+}
+include 'routes/web.php';
+
+/*foreach(glob("controller/*.{php}", GLOB_BRACE) AS $file) {
+    require_once($file);
 }
 
 if(!empty($_GET["cible"]) AND !empty($_GET["action"])){
@@ -13,7 +19,7 @@ if(!empty($_GET["cible"]) AND !empty($_GET["action"])){
     }
 }else{
     controllerSite::homePage();
-}
+}*/
 
 
 ?>
