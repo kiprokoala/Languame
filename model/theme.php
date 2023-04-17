@@ -10,7 +10,7 @@ class Theme extends Objet
     // attributs de classe
 	protected static $objet = "Theme";
     protected static $cle = "id_theme";
-    protected $id_Theme;
+    protected $id_theme;
     protected $nomTheme;
 
     //Méthode d'affichage simple
@@ -23,7 +23,7 @@ class Theme extends Objet
         Expression::updateObjet($id_expression,
             $expression->get("texteLangueExpression"),
             $expression->get("litteralTradExpression"),
-            $this->id_Theme,
+            $this->id_theme,
             $expression->get("id_pays"),
             $expression->get("id_langue"));
     }
