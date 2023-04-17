@@ -33,12 +33,12 @@ class Objet
         $table = static::$objet;
         //écriture de la requête
         $requete = "SELECT * from $table";
+        echo $requete;
         // envoi de la requête et stockage de la réponse
         $resultat = Connexion::pdo()->query($requete);
         // traitement de la réponse
         $resultat->setFetchmode(PDO::FETCH_CLASS, $table);
         $tableau = $resultat->fetchAll();
-        var_dump($tableau);
         return $tableau;
     }
 
