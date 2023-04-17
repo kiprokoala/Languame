@@ -32,30 +32,36 @@
                     <span class="material-symbols-outlined defaultAvatar">
                         account_circle
                     </span>
-                    <span>Nom Prénom</span>
+                    <span id="firstnameLastname">Nom Prénom</span>
                 </div>
                 <!-- Langues de l'utilisateur -->
-                <div>
-
+                <div id="languesUserContainer">
+                    <span id="languesTitle"> Langues :</span>
+                    <div id="languesListe">
+                        <span>Français</span>
+                        <span>Anglais</span>
+                        <span>Portugais</span>
+                        <span>Espagnol</span>
+                    </div>
                 </div>
                 <!-- Statistiques de parties -->
-                <div class="containerBtnD">
+                <div id="containerStatsDeco">
                     <!-- Statistiques du joueur -->
                     <div class="statsContainer">
 
                         <div class="statsSubContainer">
                             <img src="/assets/game-controller.png" alt="Game controller Icon" width="50px"
                                 height="50px" />
-                            <div class="nbStat">12</div>
+                            <div class="nbStat" id="games">12</div>
                         </div>
                         <div class="statsSubContainer">
                             <div class="statsSubSubContainer">
                                 <img src="/assets/medal.png" alt="Medal Icon" width="50px" height="50px" />
-                                <div class="nbStat">8</div>
+                                <div class="nbStat" id="wins">8</div>
                             </div>
                             <div class="statsSubSubContainer">
                                 <img src="/assets/skull.png" alt="Skull Icon" width="50px" height="50px" />
-                                <div class="nbStat">4</div>
+                                <div class="nbStat" id="losses">4</div>
                             </div>
                         </div>
                     </div>
