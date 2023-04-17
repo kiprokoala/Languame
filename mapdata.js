@@ -2,14 +2,15 @@ var simplemaps_worldmap_mapdata={
   main_settings: {
    //General settings
     width: "responsive", //'700' or 'responsive'
-    background_color: "#2FADFA",
+    height: "responsive",
+    background_color: "#75CFF0",
     background_transparent: "no",
     border_color: "#000",
     popups: "detect",
     
     //State defaults
-    state_description: "State description",
-    state_color: "#88A4BC",
+    state_description: "Cliquez pour voir les expressions",
+    state_color: "#E2ECBD",
     state_hover_color: "#3B729F",
     state_url: "",
     border_size: "0.3",
@@ -720,16 +721,13 @@ var simplemaps_worldmap_mapdata={
   },
   regions: {},
 };
-
-function test() {
-  console.log("test");
-}
 function chargerDonneesAJAX() {
 	let xhr = new XMLHttpRequest();
-	xhr.open("GET","php/routeur.php?objet=carte&action=chargerDonneesMySQL", true);
+	xhr.open("GET","../../actions/carte/chargerDonneesMySQL.php", true);
 	xhr.onload = function() {
 		if(xhr.status === 200) {
 			let data = JSON.parse(xhr.responseText);
+      console.log(data);
       // Variable qui contiendra les données JSON des pays
       var dataText = '{';
       for(var index = 0; index < data[0].length; index++) {

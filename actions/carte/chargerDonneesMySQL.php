@@ -1,4 +1,9 @@
 <?php
+
+require_once("../../config/connexion.php");
+Connexion::connect();
+require_once("../../model/paysTest.php");
+
 // 1. on récupère les tableaux de livres et d'adhérents
 $pays = Pays::getAllPays();
 
