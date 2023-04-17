@@ -15,7 +15,6 @@ class controllerObjet{
         /// titre de l'url à voir
 
         $tableau = $table::getAllobjets();
-        return $tableau;
     }
 
      ///charger un objet dans un tableau qui sera retourné
@@ -28,8 +27,6 @@ class controllerObjet{
         /// titre de l'url à voir
 
         $objet = $table::getObjetById($identifiant);
-        return $objet;
-
     }
 
     public static function creerObjet(){
