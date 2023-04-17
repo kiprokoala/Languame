@@ -19,8 +19,8 @@ class Expression extends Objet
         echo Expression::$objet . " n°" . $this->id_expression . " a pour texte " . $this->texteLangueExpression . ". Sa traduction littérale est " . $this->litteralTradExpression . ". Son thème est le n°" . $this->id_theme . ", vient du pays n°" . $this->id_pays . " et est écrit dans la langue n°" . $this->id_langue;
     }
     
-    public function getExpressionsByPays(){
-        $requete = "SELECT * FROM Expression WHERE id_pays = ".$this->get("id_pays").";";
+    public function getExpressionsByPays($id_pays){
+        $requete = "SELECT * FROM Expression WHERE id_pays = ".$id_pays.";";
         try {
             $resultat = Connexion::pdo()->query($requete);
             $resultat->setFetchmode(PDO::FETCH_CLASS, "Expression");
