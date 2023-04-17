@@ -35,7 +35,7 @@ class controllerObjet{
         if(Objet::addObjet($tableauDonnees)){
             self::lireObjets();
         }else{
-            self::afficherFormulaireCreationAuteur();
+            self::formCreation();
         }
       }
   
