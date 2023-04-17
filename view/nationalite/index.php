@@ -28,7 +28,7 @@ include('../generic/header.php'); ?>
                 <div class="minimap">
 
                 </div>
-                <div class="pays">
+                <div id="divPays" class="pays">
                     <p>FRANCE</p>
                 </div>
 

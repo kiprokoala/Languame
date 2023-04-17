@@ -752,3 +752,21 @@ function chargerDonneesAJAX() {
 }
 chargerDonneesAJAX();
 
+
+
+window.addEventListener('load', function() {
+  var divPays = document.getElementById("divPays");
+  var elements = document.getElementsByClassName("sm_state");
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener("click", function() {
+      // code à exécuter lors du clic sur un élément avec la classe "sm_state"
+      console.log("Pays cliqué !");
+      let country_code = this.classList.value.replace('sm_state sm_state_', '');
+      console.log(country_code);
+      this.setAttribute("fill", "red");
+      
+      divPays.innerHTML = "<p>"+country_code+"</p>";
+    });
+  }
+});
+
