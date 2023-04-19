@@ -769,14 +769,49 @@ function getPaysByCode(country_code) {
 
 window.addEventListener('load', function() {
   var elements = document.getElementsByClassName("sm_state");
+  var clickedCountries = []; // tableau pour stocker les pays cliqués
+
   for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", function() {
-      // code à exécuter lors du clic sur un élément avec la classe "sm_state"
       let country_code = this.classList.value.replace('sm_state sm_state_', '');
-      this.setAttribute("fill", "red");
-      
+
+      // vérifier si le pays a déjà été cliqué
+      if (clickedCountries.includes(country_code)) {
+        // retirer le pays du tableau des pays cliqués
+        clickedCountries = clickedCountries.filter(function(code) {
+          return code !== country_code;
+        });
+
+        // réinitialiser la couleur de tous les pays cliqués
+        elements.forEach(function(element) {
+          let code = element.classList.value.replace('sm_state sm_state_', '');
+          if (clickedCountries.includes(code)) {
+            element.setAttribute("fill", "black");
+          } else {
+            element.setAttribute("fill", "");
+          }
+        });
+      } else {
+        // ajouter le pays au tableau des pays cliqués
+        clickedCountries.push(country_code);
+
+        // vérifier si le nombre de pays cliqués est inférieur ou égal à 2
+        if (clickedCountries.length <= 2) {
+          this.setAttribute("fill", "black");
+        } else {
+          // réinitialiser la couleur de tous les pays cliqués
+          elements.forEach(function(element) {
+            element.setAttribute("fill", "");
+          });
+
+          // ajouter le pays actuel au tableau des pays cliqués
+          clickedCountries = [country_code];
+          this.setAttribute("fill", "black");
+        }
+      }
       getPaysByCode(country_code);
     });
   }
 });
+
 
