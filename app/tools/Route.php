@@ -1,7 +1,17 @@
 <?php
+namespace app\tools;
+
+use Exception;
 
 class Route
 {
+    /**
+     * Définit une route de type GET
+     * @param string $path Chemin de la route
+     * @param array $controller Tableau contenant le nom de la classe et la méthode à appeler
+     * @return mixed|void
+     * @throws Exception
+     */
     public static function get($path, $controller)
     {
         // Firstly we will check the parameters
@@ -30,7 +40,13 @@ class Route
             throw new Exception($controller[1] . ' must be a method of Controller[0]');
         }
 
-        // We will check if we have placeholders in the path
+        // Check if the path matches the current path
+        if ($path == $_SERVER['REQUEST_URI']) {
+            // We will call the controller
+            return call_user_func_array([$controller[0], $controller[1]], []);
+        }
+
+        /*// We will check if we have placeholders in the path
         $path = preg_replace('/\{[a-zA-Z0-9]+\}/', '([a-zA-Z0-9]+)', $path);
 
         // We will check if the path matches the current path
@@ -42,6 +58,6 @@ class Route
 
             // We will call the controller
             //call_user_func_array([$controller[0], $controller[1]], $matches);
-        }
+        }*/
     }
 }
