@@ -1,5 +1,5 @@
 <?php
-require_once("config/connexion.php");
+require_once("conf/connexion.php");
 Connexion::connect();
 
 class Objet
@@ -33,6 +33,7 @@ class Objet
         $table = static::$objet;
         //écriture de la requête
         $requete = "SELECT * from $table";
+        echo $requete;
         // envoi de la requête et stockage de la réponse
         $resultat = Connexion::pdo()->query($requete);
         // traitement de la réponse

@@ -33,7 +33,7 @@ class Question extends Objet {
         $requete = "SELECT id_theme FROM Question WHERE id_question = ".$this->get("id_question").";";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, "Question");
+            $resultat->setFetchmode(PDO::FETCH_NUM);
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
