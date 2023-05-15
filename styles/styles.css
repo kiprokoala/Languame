@@ -153,6 +153,7 @@ body {
     height: 86vh;
     background-color: white;
     border-radius: 5px;
+    padding: 30px;
 }
 
 .iconBack{
@@ -256,4 +257,30 @@ body {
 #languesListe span{
     padding-bottom: 5px;
     padding-right: 30px;
+}
+
+#titleAccountInfo {
+    font-weight: bold;
+    font-size: 1.6em;
+    padding-bottom: 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+}
+
+#containerAccountInfoUser {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473); 
+}
+
+#accountInfoUserTop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.defaultAvatarModify {
+    font-size: 100px;
+    color: #2A9D8F;
+}
+
+.titleChamps {
+    font-size: 1.3em;
 }
