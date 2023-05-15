@@ -79,34 +79,34 @@ var simplemaps_worldmap_mapdata={
       name: "Angola"
     },
     AL: {
-      name: "Albania"
+      name: "Albanie"
     },
     AE: {
-      name: "United Arab Emirates"
+      name: "Émirats arabes unis"
     },
     AR: {
-      name: "Argentina"
+      name: "Argentine"
     },
     AM: {
-      name: "Armenia"
+      name: "Arménie"
     },
     AU: {
-      name: "Australia"
+      name: "Australie"
     },
     AT: {
-      name: "Austria"
+      name: "Autriche"
     },
     AZ: {
-      name: "Azerbaijan"
+      name: "Azerbaïdjan"
     },
     BI: {
       name: "Burundi"
     },
     BE: {
-      name: "Belgium"
+      name: "Belgique"
     },
     BJ: {
-      name: "Benin"
+      name: "Bénin"
     },
     BF: {
       name: "Burkina Faso"
@@ -115,64 +115,64 @@ var simplemaps_worldmap_mapdata={
       name: "Bangladesh"
     },
     BG: {
-      name: "Bulgaria"
+      name: "Bulgarie"
     },
     BH: {
-      name: "Bahrain"
+      name: "Bahreïn"
     },
     BA: {
-      name: "Bosnia and Herzegovina"
+      name: "Bosnie-Herzégovine"
     },
     BY: {
-      name: "Belarus"
+      name: "Biélorussie"
     },
     BZ: {
       name: "Belize"
     },
     BO: {
-      name: "Bolivia"
+      name: "Bolivie"
     },
     BR: {
-      name: "Brazil"
+      name: "Brésil"
     },
     BN: {
-      name: "Brunei Darussalam"
+      name: "Brunéi Darussalam"
     },
     BT: {
-      name: "Bhutan"
+      name: "Bhoutan"
     },
     BW: {
       name: "Botswana"
     },
     CF: {
-      name: "Central African Republic"
+      name: "République centrafricaine"
     },
     CA: {
       name: "Canada"
     },
     CH: {
-      name: "Switzerland"
+      name: "Suisse"
     },
     CL: {
-      name: "Chile"
+      name: "Chili"
     },
     CN: {
-      name: "China"
+      name: "Chine"
     },
     CI: {
       name: "Côte d'Ivoire"
     },
     CM: {
-      name: "Cameroon"
+      name: "Cameroun"
     },
     CD: {
-      name: "Democratic Republic of the Congo"
+      name: "République démocratique du Congo"
     },
     CG: {
-      name: "Republic of Congo"
+      name: "Congo"
     },
     CO: {
-      name: "Colombia"
+      name: "Colombie"
     },
     CR: {
       name: "Costa Rica"
@@ -181,76 +181,76 @@ var simplemaps_worldmap_mapdata={
       name: "Cuba"
     },
     CZ: {
-      name: "Czech Republic"
+      name: "République tchèque"
     },
     DE: {
-      name: "Germany"
+      name: "Allemagne"
     },
     DJ: {
       name: "Djibouti"
     },
     DK: {
-      name: "Denmark"
+      name: "Danemark"
     },
     DO: {
-      name: "Dominican Republic"
+      name: "République dominicaine"
     },
     DZ: {
-      name: "Algeria"
+      name: "Algérie"
     },
     EC: {
-      name: "Ecuador"
+      name: "Équateur"
     },
     EG: {
-      name: "Egypt"
+      name: "Égypte"
     },
     ER: {
-      name: "Eritrea"
+      name: "Érythrée"
     },
     EE: {
-      name: "Estonia"
+      name: "Estonie"
     },
     ET: {
-      name: "Ethiopia"
+      name: "Éthiopie"
     },
     FI: {
-      name: "Finland"
+      name: "Finlande"
     },
     FJ: {
-      name: "Fiji"
+      name: "Fidji"
     },
     GA: {
       name: "Gabon"
     },
     GB: {
-      name: "United Kingdom"
+      name: "Royaume-Uni"
     },
     GE: {
-      name: "Georgia"
+      name: "Géorgie"
     },
     GH: {
       name: "Ghana"
     },
     GN: {
-      name: "Guinea"
+      name: "Guinée"
     },
     GM: {
-      name: "The Gambia"
+      name: "Gambie"
     },
     GW: {
-      name: "Guinea-Bissau"
+      name: "Guinée-Bissau"
     },
     GQ: {
-      name: "Equatorial Guinea"
+      name: "Guinée équatoriale"
     },
     GR: {
-      name: "Greece"
+      name: "Grèce"
     },
     GL: {
-      name: "Greenland"
+      name: "Groenland"
     },
     GT: {
-      name: "Guatemala"
+      name: "Guatémala"
     },
     GY: {
       name: "Guyana"
@@ -259,46 +259,46 @@ var simplemaps_worldmap_mapdata={
       name: "Honduras"
     },
     HR: {
-      name: "Croatia"
+      name: "Croatie"
     },
     HT: {
-      name: "Haiti"
+      name: "Haïti"
     },
     HU: {
-      name: "Hungary"
+      name: "Hongrie"
     },
     ID: {
-      name: "Indonesia"
+      name: "Indonésie"
     },
     IN: {
-      name: "India"
+      name: "Inde"
     },
     IE: {
-      name: "Ireland"
+      name: "Irlande"
     },
     IR: {
       name: "Iran"
     },
     IQ: {
-      name: "Iraq"
+      name: "Irak"
     },
     IS: {
-      name: "Iceland"
+      name: "Islande"
     },
     IL: {
-      name: "Israel"
+      name: "Israël"
     },
     IT: {
-      name: "Italy"
+      name: "Italie"
     },
     JM: {
-      name: "Jamaica"
+      name: "Jamaïque"
     },
     JO: {
-      name: "Jordan"
+      name: "Jordanie"
     },
     JP: {
-      name: "Japan"
+      name: "Japon"
     },
     KZ: {
       name: "Kazakhstan"
@@ -307,31 +307,31 @@ var simplemaps_worldmap_mapdata={
       name: "Kenya"
     },
     KG: {
-      name: "Kyrgyzstan"
+      name: "Kirghizistan"
     },
     KH: {
-      name: "Cambodia"
+      name: "Cambodge"
     },
     KR: {
-      name: "Republic of Korea"
+      name: "Corée du Sud"
     },
     XK: {
       name: "Kosovo"
     },
     KW: {
-      name: "Kuwait"
+      name: "Koweït"
     },
     LA: {
-      name: "Lao PDR"
+      name: "République démocratique populaire lao"
     },
     LB: {
-      name: "Lebanon"
+      name: "Liban"
     },
     LR: {
-      name: "Liberia"
+      name: "Libéria"
     },
     LY: {
-      name: "Libya"
+      name: "Libye"
     },
     LK: {
       name: "Sri Lanka"
@@ -340,28 +340,28 @@ var simplemaps_worldmap_mapdata={
       name: "Lesotho"
     },
     LT: {
-      name: "Lithuania"
+      name: "Lituanie"
     },
     LU: {
       name: "Luxembourg"
     },
     LV: {
-      name: "Latvia"
+      name: "Lettonie"
     },
     MA: {
-      name: "Morocco"
+      name: "Maroc"
     },
     MD: {
-      name: "Moldova"
+      name: "Moldavie"
     },
     MG: {
       name: "Madagascar"
     },
     MX: {
-      name: "Mexico"
+      name: "Mexique"
     },
     MK: {
-      name: "Macedonia"
+      name: "Macédoine"
     },
     ML: {
       name: "Mali"
@@ -370,46 +370,46 @@ var simplemaps_worldmap_mapdata={
       name: "Myanmar"
     },
     ME: {
-      name: "Montenegro"
+      name: "Monténégro"
     },
     MN: {
-      name: "Mongolia"
+      name: "Mongolie"
     },
     MZ: {
       name: "Mozambique"
     },
     MR: {
-      name: "Mauritania"
+      name: "Mauritanie"
     },
     MW: {
       name: "Malawi"
     },
     MY: {
-      name: "Malaysia"
+      name: "Malaisie"
     },
     NA: {
-      name: "Namibia"
+      name: "Namibie"
     },
     NE: {
       name: "Niger"
     },
     NG: {
-      name: "Nigeria"
+      name: "Nigéria"
     },
     NI: {
       name: "Nicaragua"
     },
     NL: {
-      name: "Netherlands"
+      name: "Pays-Bas"
     },
     NO: {
-      name: "Norway"
+      name: "Norvège"
     },
     NP: {
-      name: "Nepal"
+      name: "Népal"
     },
     NZ: {
-      name: "New Zealand"
+      name: "Nouvelle-Zélande"
     },
     OM: {
       name: "Oman"
@@ -421,19 +421,19 @@ var simplemaps_worldmap_mapdata={
       name: "Panama"
     },
     PE: {
-      name: "Peru"
+      name: "Pérou"
     },
     PH: {
       name: "Philippines"
     },
     PG: {
-      name: "Papua New Guinea"
+      name: "Papouasie-Nouvelle-Guinée"
     },
     PL: {
-      name: "Poland"
+      name: "Pologne"
     },
     KP: {
-      name: "Dem. Rep. Korea"
+      name: "République populaire démocratique de Corée"
     },
     PT: {
       name: "Portugal"
@@ -448,28 +448,28 @@ var simplemaps_worldmap_mapdata={
       name: "Qatar"
     },
     RO: {
-      name: "Romania"
+      name: "Roumanie"
     },
     RU: {
-      name: "Russia"
+      name: "Russie"
     },
     RW: {
       name: "Rwanda"
     },
     EH: {
-      name: "Western Sahara"
+      name: "Sahara occidental"
     },
     SA: {
-      name: "Saudi Arabia"
+      name: "Arabie saoudite"
     },
     SD: {
-      name: "Sudan"
+      name: "Soudan"
     },
     SS: {
-      name: "South Sudan"
+      name: "Soudan du Sud"
     },
     SN: {
-      name: "Senegal"
+      name: "Sénégal"
     },
     SL: {
       name: "Sierra Leone"
@@ -478,58 +478,58 @@ var simplemaps_worldmap_mapdata={
       name: "El Salvador"
     },
     RS: {
-      name: "Serbia"
+      name: "Serbie"
     },
     SR: {
       name: "Suriname"
     },
     SK: {
-      name: "Slovakia"
+      name: "Slovaquie"
     },
     SI: {
-      name: "Slovenia"
+      name: "Slovénie"
     },
     SE: {
-      name: "Sweden"
+      name: "Suède"
     },
     SZ: {
-      name: "Swaziland"
+      name: "Eswatini"
     },
     SY: {
-      name: "Syria"
+      name: "Syrie"
     },
     TD: {
-      name: "Chad"
+      name: "Tchad"
     },
     TG: {
       name: "Togo"
     },
     TH: {
-      name: "Thailand"
+      name: "Thaïlande"
     },
     TJ: {
-      name: "Tajikistan"
+      name: "Tadjikistan"
     },
     TM: {
-      name: "Turkmenistan"
+      name: "Turkménistan"
     },
     TL: {
       name: "Timor-Leste"
     },
     TN: {
-      name: "Tunisia"
+      name: "Tunisie"
     },
     TR: {
-      name: "Turkey"
+      name: "Turquie"
     },
     TW: {
-      name: "Taiwan"
+      name: "Taïwan"
     },
     TZ: {
-      name: "Tanzania"
+      name: "Tanzanie"
     },
     UG: {
-      name: "Uganda"
+      name: "Ouganda"
     },
     UA: {
       name: "Ukraine"
@@ -538,43 +538,43 @@ var simplemaps_worldmap_mapdata={
       name: "Uruguay"
     },
     US: {
-      name: "United States"
+      name: "États-Unis"
     },
     UZ: {
-      name: "Uzbekistan"
+      name: "Ouzbékistan"
     },
     VE: {
       name: "Venezuela"
     },
     VN: {
-      name: "Vietnam"
+      name: "Viêt Nam"
     },
     VU: {
       name: "Vanuatu"
     },
     YE: {
-      name: "Yemen"
+      name: "Yémen"
     },
     ZA: {
-      name: "South Africa"
+      name: "Afrique du Sud"
     },
     ZM: {
-      name: "Zambia"
+      name: "Zambie"
     },
     ZW: {
       name: "Zimbabwe"
     },
     SO: {
-      name: "Somalia"
+      name: "Somalie"
     },
     GF: {
-      name: "France"
+      name: "Guyane française"
     },
     FR: {
       name: "France"
     },
     ES: {
-      name: "Spain"
+      name: "Espagne"
     },
     AW: {
       name: "Aruba"
@@ -583,121 +583,121 @@ var simplemaps_worldmap_mapdata={
       name: "Anguilla"
     },
     AD: {
-      name: "Andorra"
+      name: "Andorre"
     },
     AG: {
-      name: "Antigua and Barbuda"
+      name: "Antigua-et-Barbuda"
     },
     BS: {
       name: "Bahamas"
     },
     BM: {
-      name: "Bermuda"
+      name: "Bermudes"
     },
     BB: {
-      name: "Barbados"
+      name: "Barbade"
     },
     KM: {
-      name: "Comoros"
+      name: "Comores"
     },
     CV: {
-      name: "Cape Verde"
+      name: "Cap-Vert"
     },
     KY: {
-      name: "Cayman Islands"
+      name: "Îles Caïmans"
     },
     DM: {
-      name: "Dominica"
+      name: "Dominique"
     },
     FK: {
-      name: "Falkland Islands"
+      name: "Îles Falkland"
     },
     FO: {
-      name: "Faeroe Islands"
+      name: "Îles Féroé"
     },
     GD: {
-      name: "Grenada"
+      name: "Grenade"
     },
     HK: {
       name: "Hong Kong"
     },
     KN: {
-      name: "Saint Kitts and Nevis"
+      name: "Saint-Christophe-et-Niévès"
     },
     LC: {
-      name: "Saint Lucia"
+      name: "Sainte-Lucie"
     },
     LI: {
       name: "Liechtenstein"
     },
     MF: {
-      name: "Saint Martin (French)"
+      name: "Saint-Martin (français)"
     },
     MV: {
       name: "Maldives"
     },
     MT: {
-      name: "Malta"
+      name: "Malte"
     },
     MS: {
       name: "Montserrat"
     },
     MU: {
-      name: "Mauritius"
+      name: "Maurice"
     },
     NC: {
-      name: "New Caledonia"
+      name: "Nouvelle-Calédonie"
     },
     NR: {
       name: "Nauru"
     },
     PN: {
-      name: "Pitcairn Islands"
+      name: "Îles Pitcairn"
     },
     PR: {
-      name: "Puerto Rico"
+      name: "Porto Rico"
     },
     PF: {
-      name: "French Polynesia"
+      name: "Polynésie française"
     },
     SG: {
-      name: "Singapore"
+      name: "Singapour"
     },
     SB: {
-      name: "Solomon Islands"
+      name: "Îles Salomon"
     },
     ST: {
-      name: "São Tomé and Principe"
+      name: "Sao Tomé-et-Principe"
     },
     SX: {
-      name: "Saint Martin (Dutch)"
+      name: "Saint-Martin (néerlandais)"
     },
     SC: {
       name: "Seychelles"
     },
     TC: {
-      name: "Turks and Caicos Islands"
+      name: "Îles Turques-et-Caïques"
     },
     TO: {
       name: "Tonga"
     },
     TT: {
-      name: "Trinidad and Tobago"
+      name: "Trinité-et-Tobago"
     },
     VC: {
-      name: "Saint Vincent and the Grenadines"
+      name: "Saint-Vincent-et-les-Grenadines"
     },
     VG: {
-      name: "British Virgin Islands"
+      name: "Îles Vierges britanniques"
     },
     VI: {
-      name: "United States Virgin Islands"
+      name: "Îles Vierges des États-Unis"
     },
     CY: {
-      name: "Cyprus"
+      name: "Chypre"
     },
     RE: {
-      name: "Reunion (France)"
+      name: "Réunion (France)"
     },
     YT: {
       name: "Mayotte (France)"
@@ -709,10 +709,10 @@ var simplemaps_worldmap_mapdata={
       name: "Guadeloupe (France)"
     },
     CW: {
-      name: "Curaco (Netherlands)"
+      name: "Curaçao (Pays-Bas)"
     },
     IC: {
-      name: "Canary Islands (Spain)"
+      name: "Îles Canaries (Espagne)"
     }
   },
   labels: {},
