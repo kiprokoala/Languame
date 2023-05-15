@@ -46,7 +46,7 @@ class controllerObjet
         /// titre de l'url à voir
 
         $objet = $table::getObjetById($identifiant);
-        return $objet;
+        include("view/generic/objet.php");
 
     }
 }
