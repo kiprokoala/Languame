@@ -1,7 +1,6 @@
 # Languame
 
-Les fichiers index.html et index-en.html sont la base de la carte.
+Create a multi-language game where people from every country try to find what does the idiomatic expression.
 
-Le fichier mapdata.js contient la fonction permettant d'afficher les capitales sur la carte.
-
-Le fichier worldmap.js contient toutes les fonctions permettant de faire fonctionner la carte, il ne faut pas y toucher.
+Branch alignement for alignement part
+Branch nationality for nationality part
