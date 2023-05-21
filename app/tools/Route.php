@@ -42,6 +42,9 @@ class Route
 
         // Check if the path matches the current path
         if ($path == $_SERVER['REQUEST_URI']) {
+            // We instanciate the controller
+            $controller[0] = new $controller[0];
+
             // We will call the controller
             return call_user_func_array([$controller[0], $controller[1]], []);
         }
