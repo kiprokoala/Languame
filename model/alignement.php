@@ -15,5 +15,3 @@ class Alignement extends Objet
         echo Alignement::$objet . " n°" . $this->id_alignement . " est lié à l'Utilisateur n°" . $this->id_utilisateur;
     }
 }
-
-?>
