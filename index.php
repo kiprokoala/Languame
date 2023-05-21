@@ -7,6 +7,3 @@ foreach (glob("controller/*.{php}", GLOB_BRACE) as $file) {
 
 include 'routes/web.php';
 include 'routes/api.php';
-
-
-?>

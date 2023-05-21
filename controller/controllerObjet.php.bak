@@ -1,5 +1,5 @@
 <?php
-
+// TODO: Code de Clément récupéré de je ne sais où. Voir avec Clément.
 require_once("model/utilisateur.php");
 require_once("model/objet.php");
 
