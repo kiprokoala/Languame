@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/expression.php");
-require_once("controller/controllerObjet.php.bak");
+require_once("controller/controllerObjet.php");
 
 class controllerExpression extends controllerObjet
 {

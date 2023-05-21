@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/reponse.php");
-require_once("controller/controllerObjet.php.bak");
+require_once("controller/controllerObjet.php");
 
 class controllerReponse extends controllerObjet
 {
