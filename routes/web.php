@@ -6,6 +6,7 @@ use controller\controllerHome;
 
 // Partie utilisateurs
 Route::get('/', [controllerHome::class, 'index']);
+Route::get('/theme', [controllerTheme::class, 'lireObjets']);
 
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);

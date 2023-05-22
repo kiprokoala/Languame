@@ -31,8 +31,9 @@ class controllerObjet
             }
             $tableau[] .= "<div style='height: 40px; width: 40px; background-color: red; margin-left: 20px;'></div></div>";
         }
-
+        include("view/generic/header.php");
         include("view/generic/listeObjets.php");
+        include("view/generic/footer.php");
     }
 
     ///charger un objet dans un tableau qui sera retourné
