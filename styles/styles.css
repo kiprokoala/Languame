@@ -268,12 +268,15 @@ body {
 
 #containerAccountInfoUser {
     border-bottom: solid 1px rgba(0, 0, 0, 0.473); 
+    display: flex;
+    flex-direction: column;
 }
 
 #accountInfoUserTop{
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-top: 20px;
 }
 
 .defaultAvatarModify {
@@ -282,5 +285,44 @@ body {
 }
 
 .titleChamps {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+#profilePicContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+#profileInfoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.subBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.inputContainer {
+    min-width : 500px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer input{
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.473);
+    padding: 10px;
+}
+
+#langBlock {
+    padding: 20px;
+    min-width : 500px;
 }

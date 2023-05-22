@@ -78,9 +78,43 @@
                     <span class="material-symbols-outlined defaultAvatarModify">
                         account_circle
                     </span>
-                    <div>
-                        <label class="titleChamps" for="profilePicture">Photo de profil:</label>
+                    <div id="profilePicContainer">
+                        <label class="titleChamps" for="profilePicture">Photo de profil</label>
                         <input type="file" id="profilePicture" name="profilePicture">
+                    </div>
+                </div>
+                <div id="profileInfoContainer">
+                    <div class="subBlock">
+                        <div class="inputContainer">
+                            <!-- nom -->
+                            <label class="titleChamps" for="lastname">Nom</label>
+                            <input type="text" id="lastname" name="lastname">
+                        </div>
+                        <div class="inputContainer">
+                            <!-- prenom -->
+                            <label class="titleChamps" for="firstname">Prénom</label>
+                            <input type="text" id="firstname" name="" firstname>
+                        </div>
+                    </div>
+                    <div class="subBlock">
+                        <div class="inputContainer">
+                            <!-- email -->
+                            <label class="titleChamps" for="email">E-mail</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="inputContainer">
+                            <!-- mdp -->
+                            <label class="titleChamps" for="password">Mot de passe</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="langBlock">
+                <div>
+                    <div class="inputContainer">
+                        <label class="titleChamps" for="langs">Langues</label>
+                        <input type="text" id="langs" name="langs">
                     </div>
                 </div>
             </div>
