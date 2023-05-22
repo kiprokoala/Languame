@@ -8,6 +8,7 @@ use controller\controllerHome;
 Route::get('/', [controllerHome::class, 'index']);
 Route::get('/theme', [controllerTheme::class, 'lireObjets']);
 Route::get('/users', [controllerUtilisateur::class, 'lireObjets']);
+Route::get('/adminProfil', [controllerUtilisateur::class, 'voirProfilAdmin']);
 
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);
