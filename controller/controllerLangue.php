@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/Langue.php");
-require_once("controller/controllerObjet.php.bak");
+require_once("controller/controllerObjet.php");
 
 class controllerLangue extends controllerObjet
 {

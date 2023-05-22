@@ -1,5 +1,5 @@
 <?php
-// TODO: Code de Clément récupéré de je ne sais où. Voir avec Clément.
+
 require_once("model/utilisateur.php");
 require_once("model/objet.php");
 
@@ -50,6 +50,7 @@ class controllerObjet
 
     }
 
+    // TODO: Code de Clément récupéré de je ne sais où. Voir avec Clément.
     /*protected static function gererObjet()
     {
         $utilisateur = $_SESSION["id"] ? Utilisateur::getObjetById($_SESSION["id"]) : 0;
@@ -87,4 +88,5 @@ class controllerObjet
         }
     }*/
 }
+
 ?>

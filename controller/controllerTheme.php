@@ -1,7 +1,7 @@
 <?php
 
 require_once("model/theme.php");
-require_once("controller/controllerObjet.php.bak");
+require_once("controller/controllerObjet.php");
 
 class controllerTheme extends controllerObjet
 {
