@@ -19,14 +19,13 @@ class controllerObjet
         //Ceci fonctionne uniquement pour les thèmes pour le moment
         foreach ($tableauDonnees as $ligne) {
             $tableau[] = "<div style='display: flex; align-items: center;'>";
+            $id = $ligne->get($cle);
             switch ($objet) {
                 case "Theme":
-                    $id = $ligne->get($cle);
                     $tableau[] .= "Coucou, voici le $objet n°" . $ligne->get($cle) . ". Le nom du thème est " . $ligne->get("nomTheme");
                     break;
                 case "Utilisateur":
-                    $id = $ligne->get($cle);
-                    $tableau[] .= "Coucou, voici le $objet n°" . $ligne->get($cle) . ". Le nom de l'utilisateur est " . $ligne->get("prenom");
+                    $tableau[] .= "Coucou, voici le $objet n°" . $ligne->get($cle) . ". L'utilisateur s'appelle " . $ligne->get("nom") . " " . $ligne->get("prenom") . ".";
                     break;
             }
             $tableau[] .= "<div style='height: 40px; width: 40px; background-color: red; margin-left: 20px;'></div></div>";
