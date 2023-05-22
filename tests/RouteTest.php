@@ -8,13 +8,23 @@ use PHPUnit\Framework\TestCase;
 
 class RouteTest extends TestCase
 {
-    public function testGet()
+    public function testGetHome()
     {
         $_SERVER['REQUEST_URI'] = "/";
         // We test if we obtain 'Hello World!'
         $this->assertEquals(
             'Hello World!',
             Route::get('/', [TestController::class, 'index'])
+        );
+    }
+
+    public function testGetAnotherPath()
+    {
+        $_SERVER['REQUEST_URI'] = "/page2";
+        // We test if we obtain 'Hello World!'
+        $this->assertEquals(
+            'This is the second page!',
+            Route::get('/page2', [TestController::class, 'secondPage'])
         );
     }
 }
