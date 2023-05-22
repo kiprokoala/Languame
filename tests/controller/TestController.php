@@ -8,4 +8,9 @@ class TestController
     {
         return 'Hello World!';
     }
+
+    public function secondPage()
+    {
+        return 'This is the second page!';
+    }
 }
