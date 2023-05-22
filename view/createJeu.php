@@ -7,15 +7,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    BODY{
-        display:flex;
-        justify-content:space-around;
-        align-items:center;
-    }
-
-    SECTION{
-        width:50%;
-    }
 
     .row{
         margin-top:2%;
@@ -33,13 +24,14 @@
     }
 
     INPUT[type=text]{
-        padding:2%;
-        font-size:1rem;
+        padding:1%;
+        font-size:1.5rem;
         border-radius:5px;
         width:50%;
         font-family:"Inter";
         font-weight:bold;
         border:2px solid #A4A4A4;
+        color:#EEEEEE;
     }
 
     SELECT{
@@ -55,6 +47,7 @@
     SELECT OPTION{
         font-family:"Inter";
         font-weight:bold;
+        color:#EEEEEE;
     }
 
     INPUT[type=checkbox]{
@@ -132,7 +125,7 @@
     </div>
     <div class="row">
         <label class="mainLabel">Groupe de langues</label>
-        <select name="pets" id="pet-select">
+        <select name="langues" id="langues">
             <option value="">Choisir...</option>
             <?php 
                 foreach($groupesLangues as $groupeLangues){
@@ -143,7 +136,7 @@
     </div>
     <div class="row">
         <label class="mainLabel">Equipes</label>
-        <select name="pets" id="pet-select">
+        <select name="equipes" id="equipes">
             <option value="">Choisir...</option>
             <?php 
                 foreach($equipes as $equipe){
