@@ -8,4 +8,3 @@ class controllerEquipe extends controllerObjet
     protected static $objet = "Equipe";
     protected static $cle = "id_equipe";
 }
-?>

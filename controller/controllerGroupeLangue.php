@@ -8,4 +8,3 @@ class controllerGroupeLangue extends controllerObjet
     protected static $objet = "groupeLangue";
     protected static $cle = "id_groupeLangue";
 }
-?>

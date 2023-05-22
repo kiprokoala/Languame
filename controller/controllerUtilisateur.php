@@ -8,4 +8,3 @@ class controllerUtilisateur extends controllerObjet
     protected static $objet = "Utilisateur";
     protected static $cle = "id_utilisateur";
 }
-?>

@@ -8,4 +8,3 @@ class controllerAlignement extends controllerObjet
     protected static $objet = "Alignement";
     protected static $cle = "id_alignement";
 }
-?>

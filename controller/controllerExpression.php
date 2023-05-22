@@ -8,4 +8,3 @@ class controllerExpression extends controllerObjet
     protected static $objet = "Expression";
     protected static $cle = "id_expression";
 }
-?>
