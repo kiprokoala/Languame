@@ -35,7 +35,7 @@ include('../generic/header.php'); ?>
             <div class="col2">
                 <div class="search-bar">
                     <i class='bx bxs-location-plus' style="font-size: 30px;color:#2a9d8f; margin-right:20px"></i>
-                    <input type="text">
+                    <input id="search" type="text">
                     <i class='bx bx-search-alt-2' style="font-size: 30px;color:#2a9d8f"></i>
                 </div>
                 <div id="map" class="map">

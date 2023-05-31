@@ -31,5 +31,21 @@ class Pays {
             die("Erreur lors de la recherche dans la base de données.");
         }
     }
+
+    public static function getCodeByPays($nom) {
+        try {
+            // Préparation de la requête
+            $sql = "SELECT * FROM pays WHERE nomPays='$nom'";
+            $req_prep = Connexion::pdo()->prepare($sql);
+            $req_prep->execute();
+            $req_prep->setFetchMode(PDO::FETCH_OBJ);
+            $tabResults = $req_prep->fetchAll();
+            // renvoi du tableau
+            return $tabResults;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die("Erreur lors de la recherche");
+        }
+    }
 }
 ?>

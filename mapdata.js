@@ -721,6 +721,7 @@ var simplemaps_worldmap_mapdata={
   },
   regions: {},
 };
+
 function chargerDonneesAJAX() {
 	let xhr = new XMLHttpRequest();
 	xhr.open("GET","../../actions/carte/chargerDonneesMySQL.php", true);
@@ -767,6 +768,22 @@ function getPaysByCode(country_code) {
 	xhr.send();
 }
 
+function getCodeByPays(nom) {
+  let xhr = new XMLHttpRequest();
+	xhr.open("GET","../../actions/carte/chargerCodeParPays.php?nom="+nom, true);
+	xhr.onload = function() {
+		if(xhr.status === 200) {
+			let data = JSON.parse(xhr.responseText);
+      // Variable qui contiendra les données JSON des pays
+      console.log(data[0][0].raccourciPays);
+      
+      var divPays = document.getElementById("divPays");
+      divPays.innerHTML = "<p>"+data[0][0].nomPays+"</p>";
+    }
+	}
+	xhr.send();
+}
+
 window.addEventListener('load', function() {
   var elements = document.getElementsByClassName("sm_state");
   var clickedCountries = []; // tableau pour stocker les pays cliqués
@@ -797,7 +814,7 @@ window.addEventListener('load', function() {
 
         // vérifier si le nombre de pays cliqués est inférieur ou égal à 2
         if (clickedCountries.length <= 2) {
-          this.setAttribute("fill", "black");
+          this.setAttribute("fill", "red");
         } else {
           // réinitialiser la couleur de tous les pays cliqués
           elements.forEach(function(element) {
@@ -815,3 +832,17 @@ window.addEventListener('load', function() {
 });
 
 
+// Gestion de la barre de recherche de pays
+function getInputValue() {
+  var input = document.getElementById("search");
+  var inputValue = input.value;
+  // Faites quelque chose avec la valeur saisie, par exemple affichez-la dans la console
+  console.log("Contenu de l'input :", inputValue);
+  getCodeByPays(inputValue);
+}
+
+document.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    getInputValue();
+  }
+});
