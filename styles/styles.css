@@ -150,7 +150,7 @@ body {
 
 #rightContainerAccountView{
     width: 69%;
-    height: 86vh;
+    height: 80vh;
     background-color: white;
     border-radius: 5px;
     padding: 30px;
@@ -240,6 +240,10 @@ body {
     margin-right: 30px;
 }
 
+#langs {
+    width : 80%;
+}
+
 #languesTitle{
     font-weight: bold;
     padding-right: 10px;
@@ -320,6 +324,22 @@ body {
     border-radius: 6px;
     border: solid 1px rgba(0, 0, 0, 0.473);
     padding: 10px;
+}
+
+#addLangBtn {
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 1em;
+    align-self: center;
+    cursor: pointer;
+    width: 10%;
+    margin-left: 20px;
+}
+
+#addLangBtn:hover {
+    background-color: rgb(187, 187, 187);
 }
 
 #containerBottomItems {
