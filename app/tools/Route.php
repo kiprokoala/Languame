@@ -14,6 +14,11 @@ class Route
      */
     public static function get($path, $controller)
     {
+        $requestedPath = $_SERVER['REQUEST_URI'];
+        if(strpos($requestedPath, '?')) {
+            $requestedPath = substr($requestedPath, 0, strpos($requestedPath, "?"));
+        }
+
         // Firstly we will check the parameters
         // Check if path is a string
         if (!is_string($path)) {
@@ -41,7 +46,7 @@ class Route
         }
 
         // Check if the path matches the current path
-        if ($path == $_SERVER['REQUEST_URI']) {
+        if ($path == $requestedPath) {
             // We instanciate the controller
             $controller[0] = new $controller[0];
 
