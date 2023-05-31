@@ -88,12 +88,12 @@
                         <div class="inputContainer">
                             <!-- nom -->
                             <label class="titleChamps" for="lastname">Nom</label>
-                            <input type="text" id="lastname" name="lastname">
+                            <input type="text" id="lastname" name="lastname" value='<?php echo $user->get("nom") ?>'>
                         </div>
                         <div class="inputContainer">
                             <!-- prenom -->
                             <label class="titleChamps" for="firstname">Prénom</label>
-                            <input type="text" id="firstname" name="" firstname>
+                            <input type="text" id="firstname" name="" firstname value='<?php echo $user->get("prenom") ?>'>
                         </div>
                     </div>
                     <div class="subBlock">

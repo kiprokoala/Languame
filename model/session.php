@@ -9,7 +9,7 @@ class Session {
         $user = Utilisateur::connexionUtilisateur($_POST["login"], $_POST["password"]);
         if($user != null) {
             $_SESSION["id"] = $user->get("id_utilisateur");
-            include("view/generic/test.php");
+            include("view/accountView.php");
         }else{
             print("t'es pas connecté le reuf");
         }
