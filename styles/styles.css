@@ -1,33 +1,388 @@
-@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap");
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
+
 body {
-  background-image: url("../assets/fond.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
+    background-image: url("/assets/fond.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
 }
 
 #title {
-  font-size: 4em;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Signika", sans-serif;
+     font-size: 4em;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Signika', sans-serif;
+    display: inline;
+    margin-top: 200px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container p {
-  color: white;
-  font-family: "Signika", sans-serif;
-  font-size: 2em;
-  text-align: center;
-  font-weight: 300;
+    color: white;
+    font-family: 'Signika', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 100px;
+    
+}
+
+.btns {
+    background-color: #26465380;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    justify-content: center;
+    width: 230px;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.btns button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: white;
+    width: 230px;
+    cursor: pointer;
+
+}
+
+.iconAccount{
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+/* Page accountView */
+#generalContainerAccountView{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7vh;
+}
+
+#leftContainerAccountView{
+    width: 25%;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#btnBack{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    text-decoration: none;
+    color:white;
+    font-size: 1.5em;
+    padding-top: 20px;
+}
+
+#titleAccountView {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+#infosUser{
+    width: 100%;
+    height: 85%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#infosUserHeader{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#firstnameLastname{
+    font-size: 1.6em;
+    font-weight: bold;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#rightContainerAccountView{
+    width: 69%;
+    height: 86vh;
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.iconBack{
+    color: white;   
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.defaultAvatar{
+    font-size: 150px;
+    color: #2A9D8F;
+}
+
+#containerStatsDeco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.deconnectBtn {
+    background-color: #B5446E;
+    color: white;
+    border-radius: 5px;
+    padding: 15px 100px 15px 100px;
+    font-size: 1.5em;
+    font-weight: bold;
+    align-self: center;
+    cursor: pointer;
+}
+
+.statsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 50px;
+}
+
+.statsSubContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.statsSubSubContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nbStat{
+    padding-left: 20px;
+}
+
+#games{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#wins{
+    color: #00AD1C;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#losses{
+    color: #EA0513;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#languesUserContainer{
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#languesTitle{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+#languesListe{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: lighter;
+    flex-wrap: wrap;
+    height: 100px;
+}
+
+#languesListe span{
+    padding-bottom: 5px;
+    padding-right: 30px;
+}
+
+#titleAccountInfo {
+    font-weight: bold;
+    font-size: 1.6em;
+    padding-bottom: 20px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+}
+
+#containerAccountInfoUser {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473); 
+    display: flex;
+    flex-direction: column;
+}
+
+#accountInfoUserTop{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.defaultAvatarModify {
+    font-size: 100px;
+    color: #2A9D8F;
+}
+
+.titleChamps {
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+#profilePicContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+#profileInfoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.subBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.inputContainer {
+    min-width : 500px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer input{
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.473);
+    padding: 10px;
+}
+
+#containerBottomItems {
+    display: flex;
+    flex-direction: row;
+}
+
+#langBlock {
+    padding: 20px;
+    min-width : 500px;
+    width: 70%;
+}
+
+#tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagLang {
+    background-color: #2A9D8F;
+    color: white;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+#imgClose {
+    height: 15px;
+    padding-left: 5px;
+}
+
+#btnsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:30%;
+}
+
+#btnSave {
+    background-color: #2A9D8F;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+}
+
+#btnCancel {
+    background-color: #B5446E;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    align-self: center;
+    cursor: pointer;
+    width: 80%;
 }
