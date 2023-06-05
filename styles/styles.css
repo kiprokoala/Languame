@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
-html,body{
+
+html,
+body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -18,7 +20,7 @@ body {
 }
 
 #title {
-     font-size: 4em;
+    font-size: 4em;
     color: white;
     text-align: center;
     text-transform: uppercase;
@@ -42,7 +44,7 @@ body {
     text-align: center;
     font-weight: 300;
     margin-top: 100px;
-    
+
 }
 
 .btns {
@@ -70,7 +72,7 @@ body {
 
 }
 
-.iconAccount{
+.iconAccount {
     color: white;
     position: absolute;
     top: 20px;
@@ -80,22 +82,22 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 /* Page accountView */
-#generalContainerAccountView{
+#generalContainerAccountView {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 7vh;
 }
 
-#leftContainerAccountView{
+#leftContainerAccountView {
     width: 25%;
     height: 86vh;
     display: flex;
@@ -103,13 +105,13 @@ body {
     justify-content: space-between;
 }
 
-#btnBack{
+#btnBack {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     text-decoration: none;
-    color:white;
+    color: white;
     font-size: 1.5em;
     padding-top: 20px;
 }
@@ -119,7 +121,7 @@ body {
     font-weight: bold;
 }
 
-#infosUser{
+#infosUser {
     width: 100%;
     height: 85%;
     background-color: white;
@@ -129,7 +131,7 @@ body {
     justify-content: space-between;
 }
 
-#infosUserHeader{
+#infosUserHeader {
     padding-top: 25px;
     padding-bottom: 25px;
     align-items: center;
@@ -141,14 +143,14 @@ body {
     margin-right: 30px;
 }
 
-#firstnameLastname{
+#firstnameLastname {
     font-size: 1.6em;
-    font-weight: bold;  
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#rightContainerAccountView{
+#rightContainerAccountView {
     width: 69%;
     height: 80vh;
     background-color: white;
@@ -156,13 +158,13 @@ body {
     padding: 30px;
 }
 
-.iconBack{
-    color: white;   
+.iconBack {
+    color: white;
     font-size: 40px;
     cursor: pointer;
 }
 
-.defaultAvatar{
+.defaultAvatar {
     font-size: 150px;
     color: #2A9D8F;
 }
@@ -185,7 +187,7 @@ body {
     cursor: pointer;
 }
 
-.statsContainer{
+.statsContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -194,42 +196,42 @@ body {
     padding-right: 50px;
 }
 
-.statsSubContainer{
+.statsSubContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-bottom: 100px;
 }
 
-.statsSubSubContainer{
+.statsSubSubContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 20px;
 }
 
-.nbStat{
+.nbStat {
     padding-left: 20px;
 }
 
-#games{
+#games {
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#wins{
+#wins {
     color: #00AD1C;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#losses{
+#losses {
     color: #EA0513;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#languesUserContainer{
+#languesUserContainer {
     display: flex;
     flex-direction: row;
     padding-left: 40px;
@@ -241,15 +243,15 @@ body {
 }
 
 #langs {
-    width : 80%;
+    width: 80%;
 }
 
-#languesTitle{
+#languesTitle {
     font-weight: bold;
     padding-right: 10px;
 }
 
-#languesListe{
+#languesListe {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
@@ -258,7 +260,7 @@ body {
     height: 100px;
 }
 
-#languesListe span{
+#languesListe span {
     padding-bottom: 5px;
     padding-right: 30px;
 }
@@ -271,12 +273,12 @@ body {
 }
 
 #containerAccountInfoUser {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.473); 
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
     display: flex;
     flex-direction: column;
 }
 
-#accountInfoUserTop{
+#accountInfoUserTop {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -314,13 +316,13 @@ body {
 }
 
 .inputContainer {
-    min-width : 500px;
+    min-width: 500px;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.inputContainer input{
+.inputContainer input {
     border-radius: 6px;
     border: solid 1px rgba(0, 0, 0, 0.473);
     padding: 10px;
@@ -349,7 +351,7 @@ body {
 
 #langBlock {
     padding: 20px;
-    min-width : 500px;
+    min-width: 500px;
     width: 70%;
 }
 
@@ -378,7 +380,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width:30%;
+    width: 30%;
 }
 
 #btnSave {
@@ -406,3 +408,200 @@ body {
     cursor: pointer;
     width: 80%;
 }
+
+/* PAGE modale */
+
+.xrapper {
+    height: 100%;
+    padding: 5rem;
+    display: flex;
+    box-sizing: border-box;
+
+}
+
+.warning {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8em;
+    min-width: 20%;
+    background-color: #00000040;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.warning p {
+    margin: 0;
+    padding: 0.50rem 0;
+    font-family: "Inter", #f7c2f9;
+    color: #eeeeee;
+}
+
+.warning h4 {
+    margin: 0;
+    padding: 0.50rem 0;
+    font-family: "Inter", #f7c2f9;
+    color: #eeeeee;
+}
+
+.content {
+    padding-left: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content h1 {
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+.content-modal {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+@media all and (max-width: 800px) {
+    .xrapper {
+        padding: 1rem;
+    }
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    background-color: #7b38d8;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #f7c2f9;
+}
+
+
+.separation {
+    display: flex;
+    align-items: center;
+    font-family: "Inter", #f7c2f9;
+    color: #f2ebf2;
+}
+
+.separation h2 {
+    font-size: 1em;
+}
+
+/* MODALES */
+#footerModalCreerJeu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnFooterModal {
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#annulerBtn {
+    background-color: #2A9D8F;
+}
+
+#validerBtn {
+    background-color: #2A9D8F;
+}
+
+/* Modale créer jeu */
+#modaleCreerJeuDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+#formCreerJeuDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.ligneDiv {
+    display: flex;
+    flex-direction: row;
+    height: 45px;
+}
+
+.ligneSubDivLeft {
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ligneSubDivRight {
+    width: 75%;
+}
+
+#themeTextDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+#groupeLanguesSelect {
+    width: 25%;
+}
+
+#equipesLanguesSelect {
+    width: 25%;
+}
+
+.textModale1 {
+    font-weight: bold;
+}
+
+
+
+
+/* Modale créer equipe */
