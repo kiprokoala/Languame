@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
-html,body{
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html,
+body {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -18,20 +19,20 @@ body {
 }
 
 #title {
-     font-size: 4em;
+    font-size: 4em;
     color: white;
     text-align: center;
     text-transform: uppercase;
     font-family: 'Signika', sans-serif;
     display: inline;
-    margin-top: 200px;
 }
 
 .container {
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -41,8 +42,7 @@ body {
     font-size: 2em;
     text-align: center;
     font-weight: 300;
-    margin-top: 100px;
-    
+
 }
 
 .btns {
@@ -53,9 +53,8 @@ body {
     padding: 10px;
     border-radius: 8px;
     justify-content: center;
-    width: 230px;
+    width: 250px;
     align-items: center;
-    margin-top: 120px;
 }
 
 .btns button {
@@ -70,7 +69,7 @@ body {
 
 }
 
-.iconAccount{
+.iconAccount {
     color: white;
     position: absolute;
     top: 20px;
@@ -80,22 +79,22 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 /* Page accountView */
-#generalContainerAccountView{
+#generalContainerAccountView {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 7vh;
 }
 
-#leftContainerAccountView{
+#leftContainerAccountView {
     width: 25%;
     height: 86vh;
     display: flex;
@@ -103,13 +102,13 @@ body {
     justify-content: space-between;
 }
 
-#btnBack{
+#btnBack {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     text-decoration: none;
-    color:white;
+    color: white;
     font-size: 1.5em;
     padding-top: 20px;
 }
@@ -119,7 +118,7 @@ body {
     font-weight: bold;
 }
 
-#infosUser{
+#infosUser {
     width: 100%;
     height: 85%;
     background-color: white;
@@ -129,7 +128,7 @@ body {
     justify-content: space-between;
 }
 
-#infosUserHeader{
+#infosUserHeader {
     padding-top: 25px;
     padding-bottom: 25px;
     align-items: center;
@@ -141,14 +140,14 @@ body {
     margin-right: 30px;
 }
 
-#firstnameLastname{
+#firstnameLastname {
     font-size: 1.6em;
-    font-weight: bold;  
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#rightContainerAccountView{
+#rightContainerAccountView {
     width: 69%;
     height: 80vh;
     background-color: white;
@@ -156,13 +155,13 @@ body {
     padding: 30px;
 }
 
-.iconBack{
-    color: white;   
+.iconBack {
+    color: white;
     font-size: 40px;
     cursor: pointer;
 }
 
-.defaultAvatar{
+.defaultAvatar {
     font-size: 150px;
     color: #2A9D8F;
 }
@@ -185,7 +184,7 @@ body {
     cursor: pointer;
 }
 
-.statsContainer{
+.statsContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -194,42 +193,42 @@ body {
     padding-right: 50px;
 }
 
-.statsSubContainer{
+.statsSubContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-bottom: 100px;
 }
 
-.statsSubSubContainer{
+.statsSubSubContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 20px;
 }
 
-.nbStat{
+.nbStat {
     padding-left: 20px;
 }
 
-#games{
+#games {
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#wins{
+#wins {
     color: #00AD1C;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#losses{
+#losses {
     color: #EA0513;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#languesUserContainer{
+#languesUserContainer {
     display: flex;
     flex-direction: row;
     padding-left: 40px;
@@ -241,15 +240,15 @@ body {
 }
 
 #langs {
-    width : 80%;
+    width: 80%;
 }
 
-#languesTitle{
+#languesTitle {
     font-weight: bold;
     padding-right: 10px;
 }
 
-#languesListe{
+#languesListe {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
@@ -258,7 +257,7 @@ body {
     height: 100px;
 }
 
-#languesListe span{
+#languesListe span {
     padding-bottom: 5px;
     padding-right: 30px;
 }
@@ -271,12 +270,12 @@ body {
 }
 
 #containerAccountInfoUser {
-    border-bottom: solid 1px rgba(0, 0, 0, 0.473); 
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
     display: flex;
     flex-direction: column;
 }
 
-#accountInfoUserTop{
+#accountInfoUserTop {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -314,13 +313,13 @@ body {
 }
 
 .inputContainer {
-    min-width : 500px;
+    min-width: 500px;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.inputContainer input{
+.inputContainer input {
     border-radius: 6px;
     border: solid 1px rgba(0, 0, 0, 0.473);
     padding: 10px;
@@ -349,7 +348,7 @@ body {
 
 #langBlock {
     padding: 20px;
-    min-width : 500px;
+    min-width: 500px;
     width: 70%;
 }
 
@@ -378,7 +377,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    width:30%;
+    width: 30%;
 }
 
 #btnSave {
@@ -468,4 +467,26 @@ body {
     font-weight: bold;
     border: none;
     margin-top: 20px;
+
+}
+
+#containerDetailAlign {
+    background-color: #F1F1F1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+#headerDetailAlign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+}
+
+#headerDetailAlign>.defaultAvatar {
+    font-size: 40px;
+    padding: 5px;
 }
