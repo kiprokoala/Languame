@@ -11,7 +11,9 @@ class Session {
             $_SESSION["id"] = $user->get("id_utilisateur");
             include("view/accountView.php");
         }else{
-            print("t'es pas connecté le reuf");
+            include("view/generic/header.php");
+            echo "<p style='color:white;'>Votre compte ne semble pas exister !</p>";
+            echo "<a href='/formConnect'><button>Retour à la connexion</button></a>";
         }
     }
 }
