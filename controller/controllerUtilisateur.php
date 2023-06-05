@@ -24,7 +24,7 @@ class controllerUtilisateur extends controllerObjet
 
     public static function formConnect(){
         include("view/generic/header.php");
-        include("view/generic/formUtilisateur.php");
+        include("view/generic/formUtilisateur.html");
         include("view/generic/footer.php");
     }
 
