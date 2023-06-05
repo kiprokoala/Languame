@@ -16,19 +16,11 @@ class Equipe extends Objet
         echo Equipe::$objet . " n°" . $this->id_equipe . " a pour nom " . $this->nomEquipe;
     }
 
-    public function definirChef($user)
+    public function definirChef($userId)
     {
-        $old = $this->idChefEquipe;
-        $requete = "UPDATE equipe SET idChefEquipe = :c_tag where id_equipe = :i_tag";
-        $requete2 = "UPDATE utilisateur SET isChef = 0 WHERE id_utilisateur = :o_tag";
-        $requete3 = "UPDATE utilisateur SET isChef = 1 WHERE id_utilisateur = :u_tag";
-        $req_prep = Connexion::pdo()->prepare($requete);
-        $req_prep2 = Connexion::pdo()->prepare($requete2);
-        $req_prep3 = Connexion::pdo()->prepare($requete3);
+        $requete = "UPDATE equipe as e INNER JOIN utilisateur AS u ON u.id_utilisateur = e.idChefEquipe SET e.idChefEquipe = :id_nouveauChef, u.isChef = CASE WHEN u.id_utilisateur = :id_nouveauChef THEN 1 ELSE 0 END WHERE e.idEquipe = :id_equipe AND u.isChef = 1;";
         try {
-            $req_prep->execute(array("c_tag" => $user, "i_tag" => $this->id_equipe));
-            $req_prep2->execute(array("o_tag" => $old));
-            $req_prep3->execute(array("u_tag" => $user));
+            $requete->execute(array("id_nouveauChef" => $userId, "id_equipe" => $this->id_equipe));
         } catch (PDOException $e) {
             echo $e;
         }

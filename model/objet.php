@@ -1,5 +1,5 @@
 <?php
-require_once("config/connexion.php");
+require_once("conf/connexion.php");
 Connexion::connect();
 
 class Objet

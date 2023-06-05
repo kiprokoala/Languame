@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languizz</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="/styles/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="dialogModal">
+        <!-- Formulaire -->
+        <div>
+            <form action="" method="get">
+                <div>
+                    <label for="titreJeu">Titre du jeu</label>
+                    <input type="text" id="titreJeu" name="titreJeu" required minlength="1" maxlength="20"
+                        placeholder="Titre du jeu...">
+                </div>
+                <div>
+                    <div>
+                        <span for="themes-select">Thèmes</span>
+                        <span>(choisir 4 parmi la liste)</span>
+                    </div>
+
+                    <fieldset>
+                        <div id="listeCheckboxThemes"></div>
+                    </fieldset>
+                </div>
+                <div>
+                    <span>Groupe de langues</span>
+                    <select id="groupeLanguesSelect"></select>
+                </div>
+                <div>
+                    <span>Equipes</span>
+                    <select id="equipesLanguesSelect"></select>
+                </div>
+            </form>
+        </div>
+        <!-- Footer (btns) -->
+        <div>
+            <button id="annulerBtn">Annuler</button>
+            <input id="validerBtn" type="submit" value="Créer jeu">
+        </div>
+
+    </div>
+</body>
+
+<script>
+    // // Génération des checkbox pour "Thèmes"
+    // // Récupérer le conteneur des checkboxes
+    // var checkboxContainer = document.getElementById("listeCheckboxThemes");
+
+    // // Boucle pour créer les checkboxes
+    // for (var i = 1; i <= 8; i++) {
+    //     var checkboxLabel = document.createElement("label");
+    //     var checkbox = document.createElement("input");
+    //     checkbox.type = "checkbox";
+    //     checkbox.name = "option" + i;
+    //     checkboxLabel.appendChild(checkbox);
+    //     checkboxLabel.appendChild(document.createTextNode(" Option " + i));
+    //     checkboxContainer.appendChild(checkboxLabel);
+    // }
+
+    // // Génération du select pour "groupe de langues"
+
+    // // Tableau avec les valeurs pour le select
+    // var options = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
+
+    // // Récupérer l'élément select
+    // var selectElement = document.getElementById("groupeLanguesSelect");
+
+    // // Boucle pour ajouter les options au select
+    // for (var i = 0; i < options.length; i++) {
+    //     var option = document.createElement("option");
+    //     option.value = options[i];
+    //     option.text = options[i];
+    //     selectElement.appendChild(option);
+    // }
+
+    // // Génération du select pour "Equipes"
+
+    // // Tableau avec les valeurs pour le select
+    // var options = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
+
+    // // Récupérer l'élément select
+    // var selectElement = document.getElementById("equipesLanguesSelect");
+
+    // // Boucle pour ajouter les options au select
+    // for (var i = 0; i < options.length; i++) {
+    //     var option = document.createElement("option");
+    //     option.value = options[i];
+    //     option.text = options[i];
+    //     selectElement.appendChild(option);
+    // }
+</script>
+
+
+
+
+<style>
+   
+
+</style>
