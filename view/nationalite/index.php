@@ -2,12 +2,6 @@
 
 include('../generic/header.php'); ?>
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,8 +10,8 @@ include('../generic/header.php'); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
-    <link href="../../styles/styles.css" rel="stylesheet">
-    <link href="../../styles/nationalite.css" rel="stylesheet">
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/nationalite.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -28,7 +22,7 @@ include('../generic/header.php'); ?>
                 <div class="minimap">
 
                 </div>
-                <div class="pays">
+                <div id="divPays" class="pays">
                     <p>FRANCE</p>
                 </div>
 
@@ -41,11 +35,12 @@ include('../generic/header.php'); ?>
             <div class="col2">
                 <div class="search-bar">
                     <i class='bx bxs-location-plus' style="font-size: 30px;color:#2a9d8f; margin-right:20px"></i>
-                    <input type="text">
+                    <input id="search" type="text">
                     <i class='bx bx-search-alt-2' style="font-size: 30px;color:#2a9d8f"></i>
                 </div>
-                <div class="map">
-
+                <div id="map" class="map">
+                    <script src="../../mapdata.js"></script>
+                    <script src="../../worldmap.js"></script>
                 </div>
                 <div class="choix-sens">
 
