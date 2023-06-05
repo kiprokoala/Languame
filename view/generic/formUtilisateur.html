@@ -1,25 +1,43 @@
-<form action="connecting" method="POST">
-    <label class="titleChamps" for="login">Login</label>
-    <input type="text" name="login"> 
-    <label class="titleChamps" for="password">Mot de passe</label>
-    <input type="text" name="password"> 
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="fr">
 
-<form action="subscribing" method="POST" id="formSignUp">
-    <label class="titleChamps" for="login">Login</label>
-    <input type="text" name="login">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languizz</title>
+    <link href="/styles/styles.css" rel="stylesheet">
+</head>
 
-    <label class="titleChamps" for="password">Mot de passe</label>
-    <input type="text" name="password">
+<body>
+        <div id="formSigningContainer">
+            <form action="connecting" method="POST" id="formSignIn">
+                <div class="titleFormSign">Connexion</div>
+                <label class="titleChamps" for="login">Login</label>
+                <input type="text" name="login">
+                <label class="titleChamps" for="password">Mot de passe</label>
+                <input type="text" name="password">
+                <input type="submit" class="validerBtnSign" value="Se connecter">
+            </form>
+            <form action="subscribing" method="POST" id="formSignUp">
+                <div class="titleFormSign">Inscription</div>
+                <label class="titleChamps" for="login">Login</label>
+                <input type="text" name="login">
 
-    <label class="titleChamps" for="prenom">Prénom</label>
-    <input type="text" name="prenom">
+                <label class="titleChamps" for="password">Mot de passe</label>
+                <input type="text" name="password">
 
-    <label class="titleChamps" for="nom">Nom</label>
-    <input type="text" name="nom">
+                <label class="titleChamps" for="prenom">Prénom</label>
+                <input type="text" name="prenom">
 
-    <label class="titleChamps" for="email">E-mail</label>
-    <input type="email" name="email">
-    <input type="submit">
-</form>
+                <label class="titleChamps" for="nom">Nom</label>
+                <input type="text" name="nom">
+
+                <label class="titleChamps" for="email">E-mail</label>
+                <input type="email" name="email">
+                <input type="submit" class="validerBtnSign" value="S'inscrire">
+            </form>
+        </div>
+</body>
+
+</html>

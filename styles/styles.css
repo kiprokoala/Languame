@@ -406,3 +406,66 @@ body {
     cursor: pointer;
     width: 80%;
 }
+
+#formSigningContainer {
+    display: flex;
+    flex-direction: row;
+    align-items:self-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+#formSignIn {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d353fa4;
+    border-radius: 6px;
+    padding: 40px;
+    width: 250px;
+    margin-right: 30px;
+    margin-top: 150px;
+}
+
+#formSignUp {
+    display: flex;
+    flex-direction: column;
+    background-color: #1d353fa4;
+    border-radius: 6px;
+    padding: 40px;
+    margin-top: 150px;
+    width: 400px;
+}
+
+#formSignIn label {
+    color: white;
+    padding-top: 30px;
+}
+
+#formSignIn input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+#formSignUp input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+#formSignUp label {
+    color: white;
+    padding-top: 30px;
+}
+
+.titleFormSign {
+    font-size: 2em;
+    font-weight: bold;
+    color:white;
+}
+
+.validerBtnSign {
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+}
