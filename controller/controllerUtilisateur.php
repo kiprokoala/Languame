@@ -32,4 +32,27 @@ class controllerUtilisateur extends controllerObjet
         session_destroy();
         header("Location: /");
     }
+
+    public static function subscribing(){
+
+        $login = $_POST['login'];
+        $mdp = $_POST['password'];
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $email = $_POST['email'];
+
+        $user = Utilisateur::addObjet(
+            array(
+                "login" => $login,
+                "mdp" => $mdp,
+                "nom" => $nom,
+                "prenom" => $prenom,
+                "email" => $email,
+                "isAdmin" => 0,
+                "isChef" => 0
+            )
+        );
+
+        self::connect();
+    }
 }

@@ -18,10 +18,11 @@ class Utilisateur extends Objet
     protected $nom;
     protected $isChef;
     protected $isAdmin;
+    protected $email;
 
     public function afficher()
     {
-        Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin;
+        Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin . " et son email " . $this->email;
     }
 
     public static function connexionUtilisateur($login, $mdp)

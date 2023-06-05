@@ -13,6 +13,7 @@ Route::get('/profil', [controllerUtilisateur::class, 'profil']);
 Route::get('/connecting', [controllerUtilisateur::class, 'connect']);
 Route::get('/formConnect', [controllerUtilisateur::class, 'formConnect']);
 Route::get('/disconnect', [controllerUtilisateur::class, 'disconnect']);
+Route::get('/subscribing', [controllerUtilisateur::class, 'subscribing']);
 
 // Nationality
 Route::get('/nationality', [controllerHome::class, 'nationality']);
