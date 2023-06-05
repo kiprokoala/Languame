@@ -2,19 +2,36 @@
 
 require_once("../../config/connexion.php");
 Connexion::connect();
+
+# le fichier sur lequelle il est pointer doit etre modoifier et etre merge avec
+# require_once("../../model/pays.php");
+
 require_once("../../model/paysTest.php");
+
+// Vérifie si le paramètre "nom" est présent dans la requête GET
+if (!isset($_GET["nom"])) {
+    // Si le paramètre "nom" n'est pas fourni, renvoie une erreur
+    echo json_encode(["error" => "Le paramètre 'nom' est manquant"], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
 $nom = $_GET["nom"];
 
-// 1. on récupère les tableaux de livres et d'adhérents
+// Obtient le code du pays en utilisant la méthode statique de la classe Pays
 $code = Pays::getCodeByPays($nom);
 
-// 2. on construit le tableau de données contenant les livres et les adhérents
-$donnees = array();
+// Vérifie si le code du pays est trouvé
+if ($code === false) {
+    // Si le code du pays n'est pas trouvé, renvoie une erreur
+    echo json_encode(["error" => "Pays non trouvé"], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 
-// 3. on remplit ce tableau avec les deux tableaux issus des requêtes
-$donnees[] = $code;
+// Construit le tableau de données contenant le code du pays
+$donnees = [
+    "code" => $code
+];
 
-// 4. on affiche le tableau $donnees format JSON pour qu'il soit récupéré proprement
-// par la requête AJAX à l'origine de cette recherche
+// Affiche le tableau $donnees au format JSON
 echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
 ?>
