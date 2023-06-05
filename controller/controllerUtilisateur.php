@@ -9,18 +9,27 @@ class controllerUtilisateur extends controllerObjet
     protected static $objet = "Utilisateur";
     protected static $cle = "id_utilisateur";
 
-    public function profil(){
-        $_SESSION['id'] = 1;
-        $user = Utilisateur::getObjetById(Session::getIdUserConnected());
+    public static function profil(){
+        if(isset($_SESSION["id"])){
+            $user = Utilisateur::getObjetById(Session::getIdUserConnected());
+            include("view/accountView.php");
+        }else{
+            self::formConnect();
+        }
     }
 
-    public function connectUser(){
+    public static function connect(){
         Session::userConnectingAccount();
     }
 
-    public function formConnect(){
+    public static function formConnect(){
         include("view/generic/header.php");
         include("view/generic/formUtilisateur.php");
         include("view/generic/footer.php");
+    }
+
+    public static function disconnect(){
+        session_destroy();
+        header("Location: /");
     }
 }

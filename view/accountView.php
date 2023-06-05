@@ -18,7 +18,7 @@
         <div id="leftContainerAccountView">
             <!-- Container titre + icone retour -->
             <div>
-                <a id="btnBack" href="/view/homeView.html">
+                <a id="btnBack" href="/">
                     <span class="material-symbols-outlined iconBack">
                         arrow_back
                     </span>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <!-- Bouton déconnexion -->
-                    <a class="deconnectBtn">Déconnexion</a>
+                    <a class="deconnectBtn" href="/disconnect">Déconnexion</a>
                 </div>
             </div>
         </div>

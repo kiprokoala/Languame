@@ -2,7 +2,7 @@
 class Session {
 
     public static function getIdUserConnected(){
-        return isset($_SESSION["id"]);
+        return $_SESSION["id"];
     }
 
     public static function userConnectingAccount(){
@@ -15,4 +15,3 @@ class Session {
         }
     }
 }
-?>
