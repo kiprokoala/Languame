@@ -18,7 +18,7 @@
         <div id="leftContainerAccountView">
             <!-- Container titre + icone retour -->
             <div>
-                <a id="btnBack" href="/view/homeView.html">
+                <a id="btnBack" href="/">
                     <span class="material-symbols-outlined iconBack">
                         arrow_back
                     </span>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <!-- Bouton déconnexion -->
-                    <a class="deconnectBtn">Déconnexion</a>
+                    <a class="deconnectBtn" href="/disconnect">Déconnexion</a>
                 </div>
             </div>
         </div>
@@ -88,12 +88,12 @@
                         <div class="inputContainer">
                             <!-- nom -->
                             <label class="titleChamps" for="lastname">Nom</label>
-                            <input type="text" id="lastname" name="lastname">
+                            <input type="text" id="lastname" name="lastname" value='<?php echo $user->get("nom") ?>'>
                         </div>
                         <div class="inputContainer">
                             <!-- prenom -->
                             <label class="titleChamps" for="firstname">Prénom</label>
-                            <input type="text" id="firstname" name="" firstname>
+                            <input type="text" id="firstname" name="" firstname value='<?php echo $user->get("prenom") ?>'>
                         </div>
                     </div>
                     <div class="subBlock">

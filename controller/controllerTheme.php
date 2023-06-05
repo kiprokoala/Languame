@@ -8,4 +8,3 @@ class controllerTheme extends controllerObjet
     protected static $objet = "Theme";
     protected static $cle = "id_theme";
 }
-?>

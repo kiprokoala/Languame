@@ -1,19 +1,10 @@
 <?php
-foreach(glob("controller/*.{php}", GLOB_BRACE) AS $file) {
-    require_once($file);
-}
+    require_once 'app/tools/Route.php';
 
-if(!empty($_GET["cible"]) AND !empty($_GET["action"])){
-    $cible = $_GET["cible"];
-    if (in_array($_GET["action"],get_class_methods("controller$cible"))){
-        $action = $_GET["action"];
-        ("controller$cible")::$action();
-    }else{
-        controllerSite::error404();
+    foreach (glob("controller/*.{php}", GLOB_BRACE) as $file) {
+        require_once($file);
     }
-}else{
-    controllerSite::homePage();
-}
 
-
+    include 'routes/web.php';
+    include 'routes/api.php';
 ?>

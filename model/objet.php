@@ -38,7 +38,6 @@ class Objet
         // traitement de la réponse
         $resultat->setFetchmode(PDO::FETCH_CLASS, $table);
         $tableau = $resultat->fetchAll();
-        var_dump($tableau);
         return $tableau;
     }
 

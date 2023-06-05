@@ -3,8 +3,8 @@
 
         static private $hostname = "localhost";
         static private $database = "prj-prism-rfrome2";
-        static private $login = "prj-prism-rfrome2";
-        static private $password = "ThsUpKNCZ0JOnxSI";
+        static private $login = "root";
+        static private $password = "";
 
         static private $tabUTF8 = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 
