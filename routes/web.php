@@ -14,6 +14,9 @@ Route::get('/connecting', [controllerUtilisateur::class, 'connect']);
 Route::get('/formConnect', [controllerUtilisateur::class, 'formConnect']);
 Route::get('/disconnect', [controllerUtilisateur::class, 'disconnect']);
 
+// Nationality
+Route::get('/nationality', [controllerHome::class, 'nationality']);
+
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);
 Route::get('/equipe', [controllerEquipe::class, 'equipe']);

@@ -1,6 +1,5 @@
 <?php
-
-include('../generic/header.php'); ?>
+ ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -52,10 +51,3 @@ include('../generic/header.php'); ?>
 </body>
 
 </html>
-
-
-
-
-
-
-<?php include('../generic/footer.php');
