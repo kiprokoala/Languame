@@ -124,6 +124,22 @@
                             </div>
 
                         </div>
+
+                        <div class="inputContainer">
+                            <label class="titleChamps" for="langs">Langue native</label>
+                            <?php if($lang!=''){ ?>
+                            <div>
+                                <select id="langs" name="id_langue">
+                                    <?php echo $available_langs ?>
+                                </select>
+                            </div>
+                            <?php } ?>
+                            <div>
+                                <span><?php echo $lang ?></span>
+                            </div>
+
+                        </div>
+
                         <div id="tagsContainer">
                             <?php echo $tag_langs ?>
    <!--                         <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>

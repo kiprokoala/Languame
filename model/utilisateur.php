@@ -56,7 +56,9 @@ class Utilisateur extends Objet
     }
 
     public function getAllLanguesNonSpoken(){
-        $requete = "SELECT * FROM Langue WHERE id_langue NOT IN (SELECT id_langue FROM parle_le WHERE id_utilisateur = $this->id_utilisateur ) ORDER BY nomLangue";
+        $requete = "SELECT * FROM Langue WHERE id_langue NOT IN (SELECT id_langue FROM parle_le WHERE id_utilisateur = $this->id_utilisateur 
+                                                                            UNION
+                                                                SELECT id_langue FROM utilisateur WHERE id_utilisateur = $this->id_utilisateur) ORDER BY nomLangue";
         try {
             $resultat = Connexion::pdo()->query($requete);
             $resultat->setFetchmode(PDO::FETCH_CLASS, "Langue");
