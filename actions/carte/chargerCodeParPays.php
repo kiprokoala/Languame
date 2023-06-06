@@ -12,6 +12,7 @@ require_once("../../model/paysTest.php");
 if (!isset($_GET["nom"])) {
     // Si le paramètre "nom" n'est pas fourni, renvoie une erreur
     echo json_encode(["error" => "Le paramètre 'nom' est manquant"], JSON_UNESCAPED_UNICODE);
+    echo json_encode("test");
     exit;
 }
 
@@ -24,6 +25,8 @@ $code = Pays::getCodeByPays($nom);
 if ($code === false) {
     // Si le code du pays n'est pas trouvé, renvoie une erreur
     echo json_encode(["error" => "Pays non trouvé"], JSON_UNESCAPED_UNICODE);
+    echo json_encode("test2");
+
     exit;
 }
 
@@ -34,4 +37,5 @@ $donnees = [
 
 // Affiche le tableau $donnees au format JSON
 echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
+
 ?>

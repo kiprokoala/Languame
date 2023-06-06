@@ -1,4 +1,5 @@
 <?php
+
 class Pays extends Objet {
     
     // attributs de classe

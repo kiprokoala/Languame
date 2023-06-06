@@ -770,15 +770,13 @@ function getPaysByCode(country_code) {
 
 function getCodeByPays(nom) {
   let xhr = new XMLHttpRequest();
-	xhr.open("GET","actions/carte/chargerCodeParPays.php?nom="+nom, true);
+	xhr.open("GET","./actions/carte/chargerCodeParPays.php?nom="+nom, true);
 	xhr.onload = function() {
 		if(xhr.status === 200) {
 			let data = JSON.parse(xhr.responseText);
       // Variable qui contiendra les données JSON des pays
-      console.log(data[0][0].raccourciPays);
-      
       var divPays = document.getElementById("divPays");
-      divPays.innerHTML = "<p>"+data[0][0].nomPays+"</p>";
+      divPays.innerHTML = "<p>"+data.code[0].nomPays+"</p>";
     }
 	}
 	xhr.send();
@@ -837,7 +835,6 @@ function getInputValue() {
   var input = document.getElementById("search");
   var inputValue = input.value;
   // Faites quelque chose avec la valeur saisie, par exemple affichez-la dans la console
-  console.log("Contenu de l'input :", inputValue);
   getCodeByPays(inputValue);
 }
 
