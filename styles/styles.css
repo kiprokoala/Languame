@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
->>>>>>> 3709ac62038bf0beb9b0b4e0d5e12ff678f4a598
 
 html,
 body {
@@ -47,11 +42,6 @@ body {
     font-size: 2em;
     text-align: center;
     font-weight: 300;
-<<<<<<< HEAD
-    margin-top: 100px;
-=======
->>>>>>> 3709ac62038bf0beb9b0b4e0d5e12ff678f4a598
-
 }
 
 .btns {
@@ -415,7 +405,6 @@ body {
     width: 80%;
 }
 
-<<<<<<< HEAD
 /* PAGE modale */
 
 .xrapper {
@@ -475,40 +464,6 @@ body {
         padding: 1rem;
     }
 }
-
-button {
-    position: relative;
-    display: inline-block;
-    background-color: #7b38d8;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 10px;
-    padding: 5px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-button span:after {
-    content: "\00bb";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-button:hover {
-    background-color: #f7c2f9;
-}
-
 
 .separation {
     display: flex;
@@ -612,7 +567,6 @@ button:hover {
 
 
 /* Modale créer equipe */
-=======
 #formSigningContainer {
     display: flex;
     flex-direction: row;
@@ -717,4 +671,3 @@ button:hover {
     text-align: center;
     padding: 2px;
 }
->>>>>>> 3709ac62038bf0beb9b0b4e0d5e12ff678f4a598
