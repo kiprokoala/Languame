@@ -9,7 +9,7 @@ class Session {
         $user = Utilisateur::connexionUtilisateur($_POST["login"], $_POST["password"]);
         if($user != null) {
             $_SESSION["id"] = $user->get("id_utilisateur");
-            include("view/accountView.php");
+            header('Location: /profil');
         }else{
             include("view/generic/header.php");
             echo "<p style='color:white;'>Votre compte ne semble pas exister !</p>";

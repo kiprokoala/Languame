@@ -95,6 +95,7 @@ class controllerUtilisateur extends controllerObjet
         $_POST["isChef"] = $user->get("isChef");
         $_POST["isAdmin"] = $user->get("isAdmin");
         $_POST["login"] = $user->get("login");
+        $_POST["password"] = trim($_POST['password']) == '' ? $user->get('mdp') : $_POST['password'];
 
         $tab = $_POST;
         $langs = $tab["langs"];
