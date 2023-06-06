@@ -7,7 +7,8 @@ session_start();
 
 // Partie utilisateurs
 Route::get('/', [controllerHome::class, 'index']);
-Route::get('/theme', [controllerTheme::class, 'lireObjets']);
+
+//Utilisateur
 Route::get('/users', [controllerUtilisateur::class, 'lireObjets']);
 Route::get('/profil', [controllerUtilisateur::class, 'profil']);
 Route::get('/connecting', [controllerUtilisateur::class, 'connect']);
