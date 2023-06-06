@@ -3,6 +3,7 @@ class Langue extends Objet {
     
     // attributs de classe
 	protected static $objet = "Langue";
+	protected static $cle = "id_langue";
 
     protected $id_langue;
     protected $nomLangue;

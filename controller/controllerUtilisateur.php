@@ -13,8 +13,8 @@ class controllerUtilisateur extends controllerObjet
         if(isset($_SESSION["id"])){
             $user = Utilisateur::getObjetById(Session::getIdUserConnected());
             $langs = $user->parle();
-            $all_langs = "";
-            $tag_langs = "";
+            $all_langs = $tag_langs = $lang = "";
+
             foreach($langs as $lang){
                 $all_langs .= "<span>".$lang->get("nomLangue")."</span>";
                 $tag_langs .= "
@@ -30,6 +30,9 @@ class controllerUtilisateur extends controllerObjet
             foreach ($nonSpokenLang as $lang){
                 $available_langs .= "<option value='".$lang->get('id_langue')."'>".$lang->get("nomLangue")."</option>";
             }
+
+            $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
+
             include("view/accountView.php");
         }else{
             self::formConnect();
@@ -95,7 +98,7 @@ class controllerUtilisateur extends controllerObjet
         $_POST["isChef"] = $user->get("isChef");
         $_POST["isAdmin"] = $user->get("isAdmin");
         $_POST["login"] = $user->get("login");
-        $_POST["password"] = trim($_POST['password']) == '' ? $user->get('mdp') : $_POST['password'];
+        $_POST["mdp"] = trim($_POST['mdp']) == '' ? $user->get('mdp') : $_POST['mdp'];
 
         $tab = $_POST;
         $langs = $tab["langs"];
