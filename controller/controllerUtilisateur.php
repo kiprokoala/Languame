@@ -12,10 +12,42 @@ class controllerUtilisateur extends controllerObjet
     public static function profil(){
         if(isset($_SESSION["id"])){
             $user = Utilisateur::getObjetById(Session::getIdUserConnected());
+            $langs = $user->parle();
+            $all_langs = "";
+            $tag_langs = "";
+            foreach($langs as $lang){
+                $all_langs .= "<span>".$lang->get("nomLangue")."</span>";
+                $tag_langs .= "
+                    <div class='tagLang'>".$lang->get("nomLangue")."
+                        <button type='submit' formaction='removingLang' name='id' value='".$lang->get('id_langue')."' style='background-color: transparent; border: none;'>
+                            <img src='/assets/close.png' id='imgClose'>
+                        </button>
+                    </div>";
+            }
+
+            $nonSpokenLang = $user->getAllLanguesNonSpoken();
+            $available_langs = "<option value=''>Please select a lang</option>";
+            foreach ($nonSpokenLang as $lang){
+                $available_langs .= "<option value='".$lang->get('id_langue')."'>".$lang->get("nomLangue")."</option>";
+            }
             include("view/accountView.php");
         }else{
             self::formConnect();
         }
+    }
+
+    public static function addingLang(){
+        if(trim($_POST["langs"]) !== ""){
+            $user = Utilisateur::getObjetById($_SESSION['id']);
+            $user->addLangToUser($_POST["langs"]);
+        }
+        self::profil();
+    }
+
+    public static function removingLang(){
+        $user = Utilisateur::getObjetById($_SESSION['id']);
+        $user->removeLangToUser($_POST["id"]);
+        self::profil();
     }
 
     public static function connect(){
@@ -24,7 +56,7 @@ class controllerUtilisateur extends controllerObjet
 
     public static function formConnect(){
         include("view/generic/header.php");
-        include("view/generic/formUtilisateur.php");
+        include("view/generic/formUtilisateur.html");
         include("view/generic/footer.php");
     }
 
@@ -54,5 +86,23 @@ class controllerUtilisateur extends controllerObjet
         );
 
         self::connect();
+    }
+
+    public static function modifyAccount(){
+        $_POST["id_utilisateur"] = $_SESSION["id"];
+        $user = Utilisateur::getObjetById($_SESSION["id"]);
+
+        $_POST["isChef"] = $user->get("isChef");
+        $_POST["isAdmin"] = $user->get("isAdmin");
+        $_POST["login"] = $user->get("login");
+
+        $tab = $_POST;
+        $langs = $tab["langs"];
+        unset($tab["langs"]);
+        // A ENLEVER OBLIGATOIREMENT SINON LES PHOTOS NE SERONT PAS UPLOADES
+        unset($tab["profilePicture"]);
+
+        Utilisateur::updateObjet($tab);
+        header("Location: /profil");
     }
 }
