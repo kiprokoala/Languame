@@ -26,6 +26,9 @@ class Equipe extends Objet
         }
     }
 
+    public static function creatingTeam(){
+        $groupeLangue = GroupeLangue::getAllObjets();
+    }
 }
 
 
