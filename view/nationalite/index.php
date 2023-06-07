@@ -19,14 +19,24 @@
         <div class="row">
             <div class="col1">
                 <div class="minimap">
-
+                  <ul class="scrolling-list">
+                     <li>Élément 1</li>
+                     <li>Élément 2</li>
+                     <li>Élément 3</li>
+                     <li>Élément 4</li>
+                  </ul>
                 </div>
                 <div id="divPays" class="pays">
                     <p>FRANCE</p>
                 </div>
 
                 <div class="menu-deroulant">
-
+                  <ul class="scrolling-list">
+                     <li>Élément 1</li>
+                     <li>Élément 2</li>
+                     <li>Élément 3</li>
+                     <li>Élément 4</li>
+                  </ul>
 
                 </div>
 
