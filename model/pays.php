@@ -11,10 +11,19 @@ class Pays extends Objet {
     protected $latitudeCapitalePays;
     protected $longitudeCapitalePays;
 
-    function afficher(){
-        Pays::$objet . " n°" . $this->id_pays . " a pour nom " . $this->nomPays . ". Son raccoursi est " . $this->raccourciPays . ". Il a pour latitude " . $this->latitudeCapitalePays . " et pour longitude " . $this->longitudeCapitalePays;
+    /**
+     * Méthode pour afficher les informations du pays.
+     */
+    public function afficher(){
+        echo Pays::$objet . " n°" . $this->id_pays . " a pour nom " . $this->nomPays . ". Son raccourci est " . $this->raccourciPays . 
+		". Il a pour latitude " . $this->latitudeCapitalePays . " et pour longitude " . $this->longitudeCapitalePays;
     }
 
+    /**
+     * Méthode pour récupérer les expressions liées à ce pays.
+     *
+     * @return array|false Tableau contenant les expressions liées à ce pays ou false en cas d'erreur.
+     */
     public function getExpressionsByPays(){
         $requete = "SELECT * FROM Expression WHERE id_pays = ".$this->get("id_pays").";";
         try {
@@ -23,9 +32,15 @@ class Pays extends Objet {
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
+            return false;
         }
     }
 
+    /**
+     * Méthode statique pour récupérer tous les pays.
+     *
+     * @return array|false Tableau contenant tous les pays ou false en cas d'erreur.
+     */
     public static function getAllPays() {
         try {
             // préparation de la requête
@@ -42,6 +57,12 @@ class Pays extends Objet {
         }
     }
 
+    /**
+     * Méthode statique pour récupérer un pays en fonction de son code.
+     *
+     * @param string $code Code du pays à récupérer.
+     * @return array|false Tableau contenant le pays correspondant au code ou false en cas d'erreur.
+     */
     public static function getPaysByCode($code) {
         try {
             // préparation de la requête
@@ -54,10 +75,16 @@ class Pays extends Objet {
             return $tabResults;
         } catch (PDOException $e) {
             echo $e->getMessage();
-            die("Erreur lors de la recherche dans la base de données.");
+            return false;
         }
     }
 
+    /**
+     * Méthode statique pour récupérer le code d'un pays en fonction de son nom.
+     *
+     * @param string $nom Nom du pays.
+     * @return array|false Tableau contenant le code du pays correspondant au nom ou false en cas d'erreur.
+     */
     public static function getCodeByPays($nom) {
         try {
             // Préparation de la requête
@@ -70,10 +97,9 @@ class Pays extends Objet {
             return $tabResults;
         } catch (PDOException $e) {
             echo $e->getMessage();
-            die("Erreur lors de la recherche");
+            return false;
         }
     }
 }
-
 
 ?>
