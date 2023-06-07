@@ -14,10 +14,7 @@ class Session
 
             if ($user != null) {
                 $_SESSION["id"] = $user->get("id_utilisateur");
-                include("resources/views/accountView.php");
-                // Comme les vues ne fonctionnent pas en retournant quelque chose, on fait un exit pour ne pas
-                // Executer le code ci-dessous
-                exit;
+                header('Location: /profil')
             }
         }
         include("resources/views/generic/header.php");

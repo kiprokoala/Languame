@@ -14,6 +14,9 @@ Route::get('/connecting', [controllerUtilisateur::class, 'connect']);
 Route::get('/formConnect', [controllerUtilisateur::class, 'formConnect']);
 Route::get('/disconnect', [controllerUtilisateur::class, 'disconnect']);
 Route::get('/subscribing', [controllerUtilisateur::class, 'subscribing']);
+Route::get('/modifyAccount', [controllerUtilisateur::class, 'modifyAccount']);
+Route::get('/addingLang', [controllerUtilisateur::class, 'addingLang']);
+Route::get('/removingLang', [controllerUtilisateur::class, 'removingLang']);
 
 // Nationality
 Route::get('/nationality', [controllerHome::class, 'nationality']);
