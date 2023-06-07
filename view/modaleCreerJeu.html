@@ -22,19 +22,16 @@
             <p>A vous d'organiser le jeu.</p>
             <h4>Gestion d'une partie</h4>
             <hr style=width:100%>
-            <button
-                style="background-color: white; color: darkblue; border: 0; border-radius: 5px; width: 100%; height: 50px; font-weight: bold; font-size: 16px; margin-bottom: 10px;">Créer
-                un jeu</button>
-            <button
-                style="background-color: white; color: darkblue; border: 0; border-radius: 5px; width: 100%; height: 50px; font-weight: bold; font-size: 16px; margin-bottom: 10px;">Créer
-                une équipe</button>
-            <button
-                style="background-color: white; color: darkblue; border: 0; border-radius: 5px; width: 100%; height: 50px; font-weight: bold; font-size: 16px; margin-bottom: 10px;">Historique
-                des parties</button>
+            <div id="btnsModale">
+                <button onclick="toggleClass(1)" class="afficherModaleBtn">Créer un jeu</button>
+                <button onclick="toggleClass(2)" class="afficherModaleBtn">Créer une équipe</button>
+                <button onclick="toggleClass(3)" class="afficherModaleBtn">Historique des parties</button>
+            </div>
         </div>
         <div class="content">
             <h1>Titre Modale</h1>
             <div class="content-modal">
+                <!-- MODALE CREER JEU -->
                 <div id="modaleCreerJeuDiv">
                     <form id="formCreerJeuDiv" action="" method="get">
                         <div class="ligneDiv">
@@ -43,7 +40,7 @@
                                 minlength="1" maxlength="20" placeholder="Titre du jeu...">
                         </div>
                         <div class="ligneDiv">
-                            <div class="ligneSubDivLeft"s>
+                            <div class="ligneSubDivLeft">
                                 <div id="themeTextDiv">
                                     <span class="textModale1" for="themes-select">Thèmes</span>
                                     <span class="textModale3">(choisir 4 parmi la liste)</span>
@@ -57,10 +54,6 @@
                             </div>
                         </div>
                         <div class="ligneDiv">
-                            <span class="textModale1 ligneSubDivLeft">Groupe de langues</span>
-                            <select class="ligneSubDivRight" id="groupeLanguesSelect"></select>
-                        </div>
-                        <div class="ligneDiv">
                             <span class="textModale1 ligneSubDivLeft">Equipes</span>
                             <select class="ligneSubDivRight" id="equipesLanguesSelect"></select>
                         </div>
@@ -72,9 +65,99 @@
                         <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
                     </div>
                 </div>
+
+                <!-- MODALE Créer équipe -->
+                <div class="displayNone" id="modaleCreerEquipe">
+
+                </div>
+                <!-- MODALE Historique partie -->
+                <div class="displayNone" id="modaleHistoriquePartie">
+
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+
+
+<script>
+    //Recuperer chaque modale
+    var modaleCreerJeuDiv = document.getElementById("modaleCreerJeuDiv");
+    var modaleCreerEquipe = document.getElementById("modaleCreerEquipe");
+    var modaleHistoriquePartie = document.getElementById("modaleHistoriquePartie");
+
+    function toggleClass(modaleToDisplay) {
+        switch (modaleToDisplay) {
+            case 1:
+                modaleCreerJeuDiv.classList.remove("displayNone");
+                modaleCreerEquipe.classList.add("displayNone");
+                modaleHistoriquePartie.classList.add("displayNone");
+                console.log("Afficher la modale 1");
+                break;
+
+            case 2:
+                modaleCreerEquipe.classList.remove("displayNone");
+                modaleCreerJeuDiv.classList.add("displayNone");
+                modaleHistoriquePartie.classList.add("displayNone");
+                console.log("Afficher la modale 2");
+                break;
+
+            case 3:
+                modaleHistoriquePartie.classList.remove("displayNone");
+                modaleCreerJeuDiv.classList.add("displayNone");
+                modaleCreerEquipe.classList.add("displayNone");
+                console.log("Afficher la modale 3");
+                break;
+
+            default:
+                // Action à effectuer si modaleToDisplay ne correspond à aucun des cas précédents
+                console.log("Valeur invalide pour modaleToDisplay");
+                break;
+        }
+    }
+
+
+
+    // MODALE CREER JEU
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
+    // -----REMPLIR LES BOUTONS "Thèmes"-----
+    // Tableau
+    var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
+
+    // Récupérer l'élement conteneur des checkboxes
+    var listeCheckboxThemes = document.getElementById("listeCheckboxThemes");
+
+    themes.forEach((theme) => {
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = theme;
+        checkbox.className = "checkbox-button";
+
+        const label = document.createElement("label");
+        label.htmlFor = theme;
+        label.textContent = theme;
+
+        listeCheckboxThemes.appendChild(checkbox);
+        listeCheckboxThemes.appendChild(label);
+    });
+
+
+    //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
+    // -----REMPLIR LE SELECT 'Equipes'-----
+    // Tableau
+    var exemples = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
+
+    // Récupérer l'élément select
+    var selectElement = document.getElementById("equipesLanguesSelect");
+
+    // Boucle pour ajouter les options au select
+    for (var i = 0; i < exemples.length; i++) {
+        var option = document.createElement("option");
+        option.value = exemples[i];
+        option.text = exemples[i];
+        selectElement.appendChild(option);
+    }
+</script>
 
 </html>
