@@ -8,7 +8,7 @@
     <title>Languizz</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="/styles/styles.css" rel="stylesheet">
+    <link href="/resources/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -50,17 +50,17 @@
                     <div class="statsContainer">
 
                         <div class="statsSubContainer">
-                            <img src="/assets/game-controller.png" alt="Game controller Icon" width="50px"
-                                height="50px" />
+                            <img src="/assets/images/game-controller.png" alt="Game controller Icon" width="50px"
+                                 height="50px" />
                             <div class="nbStat" id="games">12</div>
                         </div>
                         <div class="statsSubContainer">
                             <div class="statsSubSubContainer">
-                                <img src="/assets/medal.png" alt="Medal Icon" width="50px" height="50px" />
+                                <img src="/assets/images/medal.png" alt="Medal Icon" width="50px" height="50px" />
                                 <div class="nbStat" id="wins">8</div>
                             </div>
                             <div class="statsSubSubContainer">
-                                <img src="/assets/skull.png" alt="Skull Icon" width="50px" height="50px" />
+                                <img src="/assets/images/skull.png" alt="Skull Icon" width="50px" height="50px" />
                                 <div class="nbStat" id="losses">4</div>
                             </div>
                         </div>
@@ -118,17 +118,17 @@
                         
                     </div>
                     <div id="tagsContainer">
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
-                        <div class="tagLang">Français <img src="/assets/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
+                        <div class="tagLang">Français <img src="/assets/images/close.png" id="imgClose" /></div>
                     </div>
                 </div>
                 <div id="btnsContainer">

@@ -1,5 +1,5 @@
 <?php
-require_once('view/header.html');
+require_once("resources/views/header.html");
 ?>
 
 <body style="background-color: #d5d5d5;">
@@ -7,12 +7,6 @@ require_once('view/header.html');
         <div class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px;">
             <div class="card-body">
                 <form action="" method="GET">
-                <div class="mb-3">
-                        <label for="sensId" class="form-label">Selectionner un sens :</label>
-                        <select class="form-select" name="sens" id="sensId">
-                            <option value="1">un sens</option>
-                        </select>
-                    </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="origineId" name="origine" placeholder="Expression dans la langue d'origine">
                     </div>
@@ -33,5 +27,5 @@ require_once('view/header.html');
 </body>
 
 <?php
-require_once('view/footer.html');
+require_once("resources/views/footer.html");
 ?>

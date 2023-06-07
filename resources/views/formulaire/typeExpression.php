@@ -1,5 +1,5 @@
 <?php
-require_once('view/header.html');
+require_once("resources/views/header.html");
 
 $pays = $_GET["pays"];
 $langue = $_GET["langue"];
@@ -39,5 +39,5 @@ $langue = $_GET["langue"];
 </body>
 
 <?php
-require_once('view/footer.html');
+require_once("resources/views/footer.html");
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once('view/header.html');
+require_once("resources/views/header.html");
 ?>
 
 <body style="background-color: #d5d5d5;">
@@ -25,5 +25,5 @@ require_once('view/header.html');
 </body>
 
 <?php
-require_once('view/footer.html');
+require_once("resources/views/footer.html");
 ?>

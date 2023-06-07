@@ -1,10 +1,12 @@
 <?php
-    require_once 'app/tools/Route.php';
+require_once "config/connexion.php";
+require_once 'app/tools/Route.php';
 
-    foreach (glob("controller/*.{php}", GLOB_BRACE) as $file) {
-        require_once($file);
-    }
+Connexion::connect();
 
-    include 'routes/web.php';
-    include 'routes/api.php';
-?>
+foreach (glob("controller/*.{php}", GLOB_BRACE) as $file) {
+    require_once($file);
+}
+
+include 'routes/web.php';
+include 'routes/api.php';

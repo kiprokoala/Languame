@@ -12,7 +12,7 @@ class controllerUtilisateur extends controllerObjet
     public static function profil(){
         if(isset($_SESSION["id"])){
             $user = Utilisateur::getObjetById(Session::getIdUserConnected());
-            include("view/accountView.php");
+            include("resources/views/accountView.php");
         }else{
             self::formConnect();
         }
@@ -23,9 +23,9 @@ class controllerUtilisateur extends controllerObjet
     }
 
     public static function formConnect(){
-        include("view/generic/header.php");
-        include("view/generic/formUtilisateur.html");
-        include("view/generic/footer.php");
+        include("resources/views/generic/header.php");
+        include("resources/views/generic/formUtilisateur.html");
+        include("resources/views/generic/footer.php");
     }
 
     public static function disconnect(){
@@ -34,7 +34,6 @@ class controllerUtilisateur extends controllerObjet
     }
 
     public static function subscribing(){
-
         $login = $_POST['login'];
         $mdp = $_POST['password'];
         $nom = $_POST['nom'];

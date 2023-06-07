@@ -6,12 +6,10 @@ class controllerHome
 {
     public function index()
     {
-        require_once("view/homeView.html");
+        require_once("resources/views/homeView.html");
     }
 
     public function nationality(){
-        include('view/generic/header.php');
-        require_once("view/nationalite/index.php");
-        include('view/generic/footer.php');
+        require_once("resources/views/nationalite/index.php");
     }
 }

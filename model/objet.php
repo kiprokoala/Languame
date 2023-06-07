@@ -1,6 +1,4 @@
 <?php
-require_once("conf/connexion.php");
-Connexion::connect();
 
 class Objet
 {

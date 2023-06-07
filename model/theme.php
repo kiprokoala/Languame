@@ -1,6 +1,6 @@
 <?php
 
-require_once("conf/connexion.php");
+
 require_once("model/objet.php");
 Connexion::connect();
 

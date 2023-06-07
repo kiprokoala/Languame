@@ -1,7 +1,4 @@
 <?php
-
-require_once("../../config/connexion.php");
-Connexion::connect();
 require_once("../../model/paysTest.php");
 $code = $_GET["code"];
 
