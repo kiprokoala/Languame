@@ -97,3 +97,21 @@
   margin: 0;
   font-size: 2.5em;
 }
+.minimap {
+  height: 200px;
+  overflow: auto;
+}
+
+.scrolling-list {
+  list-style-type: none;
+}
+
+.scrolling-list li {
+  color: black;
+  transition: color 0.3s;
+}
+
+.scrolling-list li:hover {
+  color: #aa34d3;
+}
+
