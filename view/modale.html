@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="/styles/styles.css" rel="stylesheet">
 </head>
 
@@ -23,9 +25,18 @@
             <h4>Gestion d'une partie</h4>
             <hr style=width:100%>
             <div id="btnsModale">
-                <button onclick="toggleClass(1)" class="afficherModaleBtn"><img class="imag1" src="plusCircle.png">Créer un jeu</button>
-                <button onclick="toggleClass(2)" class="afficherModaleBtn"><img class="imag1" src="addUser.png">Créer une équipe</button>
-                <button onclick="toggleClass(3)" class="afficherModaleBtn"><img class="imag1" src="history.png">Historique des parties</button>
+                <button onclick="toggleClass(1)" class="afficherModaleBtn">
+                    <span class="material-symbols-outlined">
+                        add_circle
+                    </span>Créer un jeu</button>
+                <button onclick="toggleClass(2)" class="afficherModaleBtn">
+                    <span class="material-symbols-outlined">
+                        group_add
+                    </span>Créer une équipe</button>
+                <button onclick="toggleClass(3)" class="afficherModaleBtn">
+                    <span class="material-symbols-outlined">
+                        history
+                    </span>Historique des parties</button>
             </div>
         </div>
         <div class="content">
