@@ -762,24 +762,51 @@ function getPaysByCode(country_code) {
       // Variable qui contiendra les données JSON des pays
       var divPays = document.getElementById("divPays");
       divPays.innerHTML = "<p>"+data[0][0].nomPays+"</p>";
-
       }
 	}
 	xhr.send();
 }
 
 function getCodeByPays(nom) {
-  let xhr = new XMLHttpRequest();
-	xhr.open("GET","./actions/carte/chargerCodeParPays.php?nom="+nom, true);
-	xhr.onload = function() {
-		if(xhr.status === 200) {
-			let data = JSON.parse(xhr.responseText);
-      // Variable qui contiendra les données JSON des pays
-      var divPays = document.getElementById("divPays");
-      divPays.innerHTML = "<p>"+data.code[0].nomPays+"</p>";
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET","./actions/carte/chargerCodeParPays.php?nom="+nom, true);
+    xhr.onload = function() {
+      if(xhr.status === 200) {
+        let data = JSON.parse(xhr.responseText);
+        // Variable qui contiendra les données JSON des pays
+        var divPays = document.getElementById("divPays");
+        divPays.innerHTML = "<p>"+data.code[0].nomPays+"</p>";
+        resolve([data.code[0].raccourciPays, data.code[0].id_pays]);
+      }
+      else {
+        reject(xhr);
+      }
     }
-	}
-	xhr.send();
+    xhr.send();
+  });
+}
+
+function getExpressionsByID(id) {
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "./actions/carte/chargerExpressionParPays.php?id_pays="+id, true);
+  console.log(xhr);
+  xhr.onload = function() {
+    if(xhr.status === 200) {
+      console.log(xhr.responseText);
+      let data = JSON.parse(xhr.responseText);
+
+      var listeExpressions = document.getElementById("liste-expressions");
+
+      listeExpressions.innerHTML = "";
+
+      for (let i=0;i<data.length; i++) {
+        listeExpressions.innerHTML += "<li>"+data[i].id_expression + data[i].litteralTradExpression+"</li>";
+      }
+
+    }
+  }
+  xhr.send();
 }
 
 window.addEventListener('load', function() {
@@ -835,7 +862,11 @@ function getInputValue() {
   var input = document.getElementById("search");
   var inputValue = input.value;
   // Faites quelque chose avec la valeur saisie, par exemple affichez-la dans la console
-  getCodeByPays(inputValue);
+  Promise.all([getCodeByPays(inputValue)]).then((values) => {
+    getExpressionsByID(values[0][1]);
+  });
+  
+
 }
 
 document.addEventListener("keyup", function(event) {

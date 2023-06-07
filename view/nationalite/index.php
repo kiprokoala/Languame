@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
     <link href="../../assets/styles/styles.css" rel="stylesheet">
-    <link href="../../assets/styles/nationalite.css" rel="stylesheet">
+    <link href="../../styles/nationalite.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -25,8 +25,9 @@
                     <p>FRANCE</p>
                 </div>
 
-                <div class="menu-deroulant">
-
+                <div id="expression" class="menu-deroulant">
+                    <ul id="liste-expressions" class="scrolling-list">
+                  </ul>
 
                 </div>
 
