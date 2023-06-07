@@ -28,6 +28,18 @@ class Partie extends Objet
             echo $e->getMessage();
         }
     }
+
+    public static function createGame($titre, $index){
+        $req_prep = Connexion::pdo()->prepare("INSERT INTO 
+                    Partie (titre, id_liste_equipe) VALUES (:tag_titre, :tag_index);");
+        try {
+            $req_prep->execute(array("tag_titre" => $titre, "tag_index" => $index));
+            $obj = Connexion::pdo()->LastInsertId();
+            return $obj;
+        } catch (PDOException $e) {
+            return null;
+        }
+    }
 }
 
 ?>

@@ -26,8 +26,25 @@ class Equipe extends Objet
         }
     }
 
-    public static function creatingTeam(){
-        $groupeLangue = GroupeLangue::getAllObjets();
+    public static function getMaxListIndex(){
+        $requete = "SELECT MAX(id_liste_equipe) FROM liste_equipe";
+        try {
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchMode(PDO::FETCH_NUM);
+            $obj = $resultat->fetch();
+            return $obj[0];
+        } catch (PDOException $e) {
+
+        }
+    }
+
+    public static function addTeamToList($list, $team){
+        $requete = "INSERT INTO liste_equipe VALUES($list, $team)";
+        try {
+            Connexion::pdo()->query($requete);
+        } catch (PDOException $e) {
+
+        }
     }
 }
 

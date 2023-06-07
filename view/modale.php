@@ -38,54 +38,60 @@
                     </span>Historique des parties</button>
             </div>
         </div>
-        <div class="content">
-            <h1>Titre Modale</h1>
-            <div class="content-modal">
-                <!-- MODALE CREER JEU -->
-                <div id="modaleCreerJeuDiv">
-                    <form id="formCreerJeuDiv" action="" method="get">
-                        <div class="ligneDiv">
-                            <label class="textModale1 ligneSubDivLeft" for="titreJeu">Titre du jeu</label>
-                            <input class="ligneSubDivRight" type="text" id="titreJeu" name="titreJeu" required
-                                minlength="1" maxlength="20" placeholder="Titre du jeu...">
-                        </div>
-                        <div class="ligneDiv">
-                            <div class="ligneSubDivLeft">
-                                <div id="themeTextDiv">
-                                    <span class="textModale1" for="themes-select">Thèmes</span>
-                                    <span class="textModale3">(choisir 4 parmi la liste)</span>
+        <form action="/createGame" method="POST">
+            <div class="content">
+                <h1>Titre Modale</h1>
+                <div class="content-modal">
+                    <!-- MODALE CREER JEU -->
+                    <div id="modaleCreerJeuDiv">
+                        <form id="formCreerJeuDiv" action="" method="get">
+                            <div class="ligneDiv">
+                                <label class="textModale1 ligneSubDivLeft" for="titreJeu">Titre du jeu</label>
+                                <input class="ligneSubDivRight" type="text" id="titreJeu" name="titreJeu" required
+                                    minlength="1" maxlength="20" placeholder="Titre du jeu...">
+                            </div>
+                            <div class="ligneDiv">
+                                <div class="ligneSubDivLeft">
+                                    <div id="themeTextDiv">
+                                        <span class="textModale1" for="themes-select">Thèmes</span>
+                                        <span class="textModale3">(choisir 4 parmi la liste)</span>
+                                    </div>
+                                </div>
+
+                                <div class="ligneSubDivRight">
+                                    <fieldset>
+                                        <div id="listeCheckboxThemes">
+                                            <?php echo $themes ?>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
-
-                            <div class="ligneSubDivRight">
-                                <fieldset>
-                                    <div id="listeCheckboxThemes"></div>
-                                </fieldset>
+                            <div class="ligneDiv">
+                                <span class="textModale1 ligneSubDivLeft">Equipes</span>
+                                <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
+                                    <?php echo $teams ?>
+                                </select>
                             </div>
-                        </div>
-                        <div class="ligneDiv">
-                            <span class="textModale1 ligneSubDivLeft">Equipes</span>
-                            <select class="ligneSubDivRight" id="equipesLanguesSelect"></select>
-                        </div>
-                    </form>
+                        </form>
 
-                    <!-- Footer (btns) -->
-                    <div id="footerModalCreerJeu">
-                        <button class="btnFooterModal" id="annulerBtn">Annuler</button>
-                        <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
+                        <!-- Footer (btns) -->
+                        <div id="footerModalCreerJeu">
+                            <button class="btnFooterModal" id="annulerBtn">Annuler</button>
+                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
+                        </div>
+                    </div>
+
+                    <!-- MODALE Créer équipe -->
+                    <div class="displayNone" id="modaleCreerEquipe">
+
+                    </div>
+                    <!-- MODALE Historique partie -->
+                    <div class="displayNone" id="modaleHistoriquePartie">
+
                     </div>
                 </div>
-
-                <!-- MODALE Créer équipe -->
-                <div class="displayNone" id="modaleCreerEquipe">
-
-                </div>
-                <!-- MODALE Historique partie -->
-                <div class="displayNone" id="modaleHistoriquePartie">
-
-                </div>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 
@@ -133,7 +139,7 @@
     //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
     // -----REMPLIR LES BOUTONS "Thèmes"-----
     // Tableau
-    var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
+    /*var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
 
     // Récupérer l'élement conteneur des checkboxes
     var listeCheckboxThemes = document.getElementById("listeCheckboxThemes");
@@ -156,7 +162,7 @@
     //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
     // -----REMPLIR LE SELECT 'Equipes'-----
     // Tableau
-    var exemples = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
+    /*var exemples = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
 
     // Récupérer l'élément select
     var selectElement = document.getElementById("equipesLanguesSelect");
@@ -167,6 +173,6 @@
         option.value = exemples[i];
         option.text = exemples[i];
         selectElement.appendChild(option);
-    }
+    }*/
 </script>
 </html>

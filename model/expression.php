@@ -30,6 +30,16 @@ class Expression extends Objet
         }
     }
 
+    public static function getExpressionsByTheme($id_theme){
+        $requete = "SELECT * FROM Expression WHERE id_theme = ".$id_theme.";";
+        try {
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, "Expression");
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 }
 
 ?>

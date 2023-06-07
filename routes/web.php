@@ -25,6 +25,9 @@ Route::get('/nationality', [controllerHome::class, 'nationality']);
 // Alignement
 Route::get('/alignement/home', [controllerAlignement::class, 'home']);
 
+// Partie
+Route::get('/createGame', [controllerPartie::class, 'createGame']);
+
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);
 Route::get('/equipe', [controllerEquipe::class, 'equipe']);
