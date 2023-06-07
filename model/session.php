@@ -14,7 +14,7 @@ class Session
 
             if ($user != null) {
                 $_SESSION["id"] = $user->get("id_utilisateur");
-                header('Location: /profil')
+                header('Location: /profil');
             }
         }
         include("resources/views/generic/header.php");

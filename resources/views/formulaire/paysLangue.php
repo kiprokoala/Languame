@@ -3,7 +3,7 @@ require_once("resources/views/header.html");
 ?>
 
 <body style="background-color: #d5d5d5;">
-    <div class="container d-flex justify-content-center mt-5" style="width: max-width; height: max-height;">
+    <div class="container d-flex justify-content-center mt-5" >
         <div class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px;">
             <div class="card-body">
                 <form action="typeExpression.php" method="GET">

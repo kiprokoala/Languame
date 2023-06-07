@@ -430,14 +430,14 @@ body {
 .warning p {
     margin: 0;
     padding: 0.50rem 0;
-    font-family: "Inter", #f7c2f9;
+    font-family: "Inter";
     color: #eeeeee;
 }
 
 .warning h4 {
     margin: 0;
     padding: 0.50rem 0;
-    font-family: "Inter", #f7c2f9;
+    font-family: "Inter";
     color: #eeeeee;
 }
 
@@ -503,7 +503,7 @@ button:hover {
 .separation {
     display: flex;
     align-items: center;
-    font-family: "Inter", #f7c2f9;
+    font-family: "Inter";
     color: #f2ebf2;
 }
 
