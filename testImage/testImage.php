@@ -5,7 +5,7 @@
     <title>Formulaire d'upload de fichiers</title>
 </head>
 <body>
-    <form action="testImage.php" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
         <h2>Upload Fichier</h2>
         <label for="fileUpload">Fichier:</label>
         <input type="file" name="photo" id="fileUpload">
@@ -19,12 +19,16 @@
 
 include("../conf/connexion.php");
 
-function getAllImage() {
+public static function getAllImage() {
     try {
         // préparation de la requête
-        $sql = "INSERT INTO utilisateur (filename) VALUES (:filename) WHERE id_utilisateur = '1' ";
+        $util = $_POST['id_utilisateur'];
+        $sql = "UPDATE utilisateur
+        SET filename = :filename
+        WHERE id_utilisateur = $util";
         $req_prep = Connexion::pdo()->prepare($sql);
-        $req_prep->execute(array('filename' => $_FILES["photo"]["name"]));
+        $req_prep->execute();
+        $req_prep->setFetchMode(PDO::FETCH_OBJ);
         $tabResults = $req_prep->fetchAll();
         // renvoi du tableau de résultats
         return $tabResults;
@@ -54,15 +58,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Vérifie le type MIME du fichier
         if(in_array($filetype, $allowed)){
             // Vérifie si le fichier existe avant de le télécharger.
-            if(file_exists("Photos/" . $_FILES["photo"]["name"])){
+            if(file_exists("upload/" . $_FILES["photo"]["name"])){
                 echo $_FILES["photo"]["name"] . " existe déjà.";
             } else{
-                $filePath = "Photos/" . $_FILES["photo"]["name"];
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "Photos/" . $_FILES["photo"]["name"]);
+                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
                 echo "Votre fichier a été téléchargé avec succès.";
-                Connexion::connect();
-                getAllImage($filePath);
-                
+                getAllImage();
             } 
         } else{
             echo "Error: Il y a eu un problème de téléchargement de votre fichier. Veuillez réessayer."; 
