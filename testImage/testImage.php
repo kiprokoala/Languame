@@ -22,7 +22,7 @@ include("../conf/connexion.php");
 function getAllImage() {
     try {
         // préparation de la requête
-        $sql = "INSERT INTO photos (filename) VALUES (:filename)";
+        $sql = "INSERT INTO utilisateur (filename) VALUES (:filename) WHERE id_utilisateur = '1' ";
         $req_prep = Connexion::pdo()->prepare($sql);
         $req_prep->execute(array('filename' => $_FILES["photo"]["name"]));
         $tabResults = $req_prep->fetchAll();
