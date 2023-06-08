@@ -28,11 +28,26 @@ class controllerAlignement extends controllerObjet
 
     public static function submitAlignement(){
         $alignement_id = Alignement::createAlignement($_SESSION['id']);
+        echo "<h2>Liste des réponses</h2>";
         foreach ($_POST as $question => $reponse){
             $question_id = explode("question", $question)[1];
             $reponse_id = Reponse::createReponse($reponse, $alignement_id, $_SESSION['id'], $question_id);
             $reponse = Reponse::getObjetById($reponse_id);
-            var_dump($reponse->checkReponseTheme());
+            $expression = Expression::getObjetById(Question::getObjetById($question_id)->get('id_expression'));
+            echo "Pour l'expression "
+                .$expression->get('litteralTradExpression')
+                ." ou dit dans la langue natale "
+                .$expression->get('texteLangueExpression')
+                ." votre réponse est : "
+                .Theme::getObjetById($reponse->get('id_theme'))->get('nomTheme')
+                ." et la réponse était "
+                .Theme::getObjetById($expression->get('id_theme'))->get('nomTheme')
+                .'.';
+            if($reponse->checkReponseTheme()){
+                echo " Bravo ! <br>";
+            }else{
+                echo " Dommage...<br>";
+            }
         }
     }
 }
