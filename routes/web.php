@@ -24,6 +24,7 @@ Route::get('/nationality', [controllerHome::class, 'nationality']);
 
 // Alignement
 Route::get('/alignement/home', [controllerAlignement::class, 'home']);
+Route::get('/alignement/submitAlignement', [controllerAlignement::class, 'submitAlignement']);
 
 // Partie
 Route::get('/createGame', [controllerPartie::class, 'createGame']);

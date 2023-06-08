@@ -25,4 +25,14 @@ class controllerAlignement extends controllerObjet
         }
         include("view/modale.php");
     }
+
+    public static function submitAlignement(){
+        $alignement_id = Alignement::createAlignement($_SESSION['id']);
+        foreach ($_POST as $question => $reponse){
+            $question_id = explode("question", $question)[1];
+            $reponse_id = Reponse::createReponse($reponse, $alignement_id, $_SESSION['id'], $question_id);
+            $reponse = Reponse::getObjetById($reponse_id);
+            var_dump($reponse->checkReponseTheme());
+        }
+    }
 }

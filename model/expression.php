@@ -5,6 +5,7 @@ class Expression extends Objet
 
     // attributs de classe
     protected static $objet = "Expression";
+    protected static $cle = "id_expression";
 
     protected $id_expression;
     protected $texteLangueExpression;

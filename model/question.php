@@ -31,10 +31,14 @@ class Question extends Objet {
 
     public function getThemes()
     {
-        $requete = "SELECT id_theme FROM Question WHERE id_question = ".$this->get("id_question").";";
+        $requete = "SELECT c.id_theme, nomTheme FROM Contient c
+                    INNER JOIN Theme t ON t.id_theme = c.id_theme
+                    INNER JOIN Question q ON q.id_question = c.id_question
+                    INNER JOIN Expression e ON e.id_expression = q.id_expression
+                    WHERE q.id_question = ".$this->get("id_question").";";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_NUM);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, "Theme");
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
