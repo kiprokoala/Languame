@@ -49,5 +49,6 @@ class controllerAlignement extends controllerObjet
                 echo " Dommage...<br>";
             }
         }
+        echo"<a href='/'>Retour au menu</a>";
     }
 }
