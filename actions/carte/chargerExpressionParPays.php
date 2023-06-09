@@ -1,6 +1,14 @@
 <?php
+
+require_once("../../config/connexion.php");
+Connexion::connect();
+require_once("../../model/pays.php");
+$code = $_GET["code"];
+
 // 1. on récupère les tableaux de livres et d'adhérents
-$pays = Pays::getAllPays();
+$pays = Pays::getPaysByCode($code);
+
+$expressions = $pays->getExpressionsByPays();
 
 // 2. on construit le tableau de données contenant les livres et les adhérents
 $donnees = array();

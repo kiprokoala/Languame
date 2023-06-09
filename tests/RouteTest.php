@@ -27,4 +27,14 @@ class RouteTest extends TestCase
             Route::get('/page2', [TestController::class, 'secondPage'])
         );
     }
+
+    public function testWithUrlParams()
+    {
+        $_SERVER['REQUEST_URI'] = "/?testParma=test&secondTest=true";
+        // We test if we obtain 'Hello World!'
+        $this->assertEquals(
+            'Hello World!',
+            Route::get('/', [TestController::class, 'index'])
+        );
+    }
 }
