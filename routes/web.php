@@ -28,6 +28,8 @@ Route::get('/alignement/submitAlignement', [controllerAlignement::class, 'submit
 
 // Partie
 Route::get('/createGame', [controllerPartie::class, 'createGame']);
+Route::get('/play', [controllerPartie::class, 'getQuestionsForPartie']);
+Route::get('/seeParties', [controllerUtilisateur::class, 'getAllParties']);
 
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);

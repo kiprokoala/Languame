@@ -7,6 +7,7 @@ class Question extends Objet {
 
     protected $id_question;
     protected $id_expression;
+    protected $id_partie;
 
     public function afficher(){
         Question::$objet . " n°" . $this->id_question . " est liée à l'espression n°" . $this->id_expression;
@@ -45,8 +46,8 @@ class Question extends Objet {
         }
     }
 
-    public static function createQuestion($id_expression){
-        $requete = "INSERT INTO Question (id_expression) VALUES ($id_expression);";
+    public static function createQuestion($id_expression, $id_partie){
+        $requete = "INSERT INTO Question (id_expression, id_partie) VALUES ($id_expression, $id_partie);";
         try {
             Connexion::pdo()->query($requete);
             $obj = Connexion::pdo()->LastInsertId();

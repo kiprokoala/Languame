@@ -10,7 +10,6 @@ class controllerPartie extends controllerObjet
 
     public static function createGame()
     {
-        echo "<form action='/alignement/submitAlignement' method='POST'>";
         $index = Equipe::getMaxListIndex()+1;
         if(!isset($_POST['teams'])){
             header('Location: /alignement/home');
@@ -18,7 +17,8 @@ class controllerPartie extends controllerObjet
         foreach ($_POST["teams"] as $team) {
             Equipe::addTeamToList($index,$team);
         }
-        $_SESSION['partie_id'] = Partie::createGame($_POST["titreJeu"], $index);
+        $id_partie = Partie::createGame($_POST["titreJeu"], $index);
+
         $themes = [];
         foreach ($_POST as $id_theme => $nomTheme){
             if(str_contains($id_theme, "theme")){
@@ -42,12 +42,19 @@ class controllerPartie extends controllerObjet
             $theme3 = $themes[2]->get("id_theme");
             $themes = $temp;
             $expressions = Expression::getExpressionsByTheme($theme);
-            $question_id = Question::createQuestion($expressions[rand(0, count($expressions)-1)]->get("id_expression"));
+            $question_id = Question::createQuestion($expressions[rand(0, count($expressions)-1)]->get("id_expression"), $id_partie);
             $question = Question::getObjetById($question_id);
             $question->createContient($theme, $theme1, $theme2, $theme3);
             $questions[] = $question;
         }
+        header('Location: /alignement/home');
+    }
 
+    public static function getQuestionsForPartie(){
+        $partie = Partie::getObjetById($_POST['id_partie']);
+        //$partie = Partie::getObjetById($partie);
+        $questions = $partie->getQuestions();
+        echo "<form action='/alignement/submitAlignement' method='POST'>";
         foreach($questions as $question){
             $expression = Expression::getObjetById($question->get("id_expression"));
             $themes = $question->getThemes();

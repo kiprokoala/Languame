@@ -109,4 +109,11 @@ class controllerUtilisateur extends controllerObjet
         Utilisateur::updateObjet($tab);
         header("Location: /profil");
     }
+
+
+    public static function getAllParties(){
+        $user = Utilisateur::getObjetById($_SESSION['id']);
+        $parties = $user->getAllParties();
+        include ("view/listeParties.php");
+    }
 }
