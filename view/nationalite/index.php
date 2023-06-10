@@ -18,6 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col1">
+                <img id="flag" src="" alt="Drapeau" />
 
                 <div class="minimap">
 
