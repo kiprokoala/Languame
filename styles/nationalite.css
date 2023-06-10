@@ -13,6 +13,7 @@
   height: 90%;
   gap: 15px;
 }
+
 .col1 {
   width: 25%;
   display: flex;
@@ -22,6 +23,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .col2 {
   width: 70%;
   display: flex;
@@ -41,6 +43,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .pays {
   background-color: #2a9d8f;
   width: 97%;
@@ -50,6 +53,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .menu-deroulant {
   background-color: #edecec;
   width: 97%;
@@ -61,6 +65,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .search-bar {
   background-color: #fff;
   width: 100%;
@@ -71,6 +76,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .search-bar input {
   width: 90%;
   height: 80%;
@@ -79,6 +85,7 @@
   outline: none;
   padding-left: 10px;
 }
+
 .map {
   background-color: #edecec;
   width: 100%;
@@ -88,30 +95,44 @@
   justify-content: center;
   align-items: center;
 }
+
 .choix-sens {
   background-color: #eee;
   width: 100%;
   height: 7%;
 }
+
 .pays p {
   margin: 0;
   font-size: 2.5em;
 }
+
 .minimap {
   height: 200px;
+  /* Hauteur de la div minimap (ajustez selon vos besoins) */
   overflow: auto;
+  /* Affichage de la barre de défilement si nécessaire */
+  padding: 50px;
+
 }
 
 .scrolling-list {
   list-style-type: none;
+  /* Masquer les puces */
+  padding: 20px;
 }
 
 .scrolling-list li {
   color: black;
+  /* Couleur de texte par défaut */
   transition: color 0.3s;
+  /* Animation de transition pour le changement de couleur */
+  padding: 20px;
+
 }
+
+
 
 .scrolling-list li:hover {
   color: #aa34d3;
 }
-

@@ -18,8 +18,13 @@
     <div class="container">
         <div class="row">
             <div class="col1">
+
                 <div class="minimap">
 
+                    <ul class="scrolling-list">
+                       
+                   
+                    </ul>
                 </div>
                 <div id="divPays" class="pays">
                     <p>FRANCE</p>
@@ -27,7 +32,8 @@
 
                 <div id="expression" class="menu-deroulant">
                     <ul id="liste-expressions" class="scrolling-list">
-                  </ul>
+
+                    </ul>
 
                 </div>
 
@@ -50,5 +56,20 @@
         </div>
     </div>
 </body>
+
+
+
+<script>
+
+function getCountryFlag(countryCode) {
+  const flagUrl = `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
+
+  const flagElement = document.getElementById('flag');
+  flagElement.src = flagUrl;
+}
+
+getCountryFlag('FR');
+</script>
+
 
 </html>

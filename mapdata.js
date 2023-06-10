@@ -1,13 +1,13 @@
-var simplemaps_worldmap_mapdata={
+var simplemaps_worldmap_mapdata = {
   main_settings: {
-   //General settings
+    //General settings
     width: "responsive", //'700' or 'responsive'
     height: "responsive",
     background_color: "#75CFF0",
     background_transparent: "no",
     border_color: "#000",
     popups: "detect",
-    
+
     //State defaults
     state_description: "Cliquez pour voir les expressions",
     state_color: "#E2ECBD",
@@ -16,7 +16,7 @@ var simplemaps_worldmap_mapdata={
     border_size: "0.3",
     all_states_inactive: "no",
     all_states_zoomable: "no",
-    
+
     //Location defaults
     location_description: "Location description",
     location_color: "#FF0067",
@@ -31,14 +31,14 @@ var simplemaps_worldmap_mapdata={
     location_hover_border: 1,
     all_locations_inactive: "no",
     all_locations_hidden: "no",
-    
+
     //Label defaults
     label_color: "#d5ddec",
     label_hover_color: "#d5ddec",
     label_size: 22,
     label_font: "Arial",
     hide_labels: "no",
-   
+
     //Zoom settings
     zoom: "yes",
     back_image: "no",
@@ -50,7 +50,7 @@ var simplemaps_worldmap_mapdata={
     zoom_out_incrementally: "yes",
     zoom_percentage: 0.99,
     zoom_time: 0.5,
-    
+
     //Popup settings
     popup_color: "white",
     popup_opacity: 0.9,
@@ -58,7 +58,7 @@ var simplemaps_worldmap_mapdata={
     popup_corners: 5,
     popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
-    
+
     //Advanced settings
     div: "map",
     auto_load: "yes",
@@ -723,60 +723,60 @@ var simplemaps_worldmap_mapdata={
 };
 
 function chargerDonneesAJAX() {
-	let xhr = new XMLHttpRequest();
-	xhr.open("GET","actions/carte/chargerDonneesMySQL.php", true);
-	xhr.onload = function() {
-		if(xhr.status === 200) {
-			let data = JSON.parse(xhr.responseText);
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "actions/carte/chargerDonneesMySQL.php", true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      let data = JSON.parse(xhr.responseText);
       // Variable qui contiendra les données JSON des pays
       var dataText = '{';
-      for(var index = 0; index < data[0].length; index++) {
+      for (var index = 0; index < data[0].length; index++) {
         var nomPays = data[0][index].nomPays;
         var latitude = data[0][index].latitudeCapitalePays;
         var longitude = data[0][index].longitudeCapitalePays;
 
         // Création de la string qui contient toutes les informations d'un pays et ajout cumulatif des pays
-        dataText += '"'+nomPays+'" : {"name" : "'+nomPays+'", "lat" : '+latitude+', "lng" : '+longitude+'}';
+        dataText += '"' + nomPays + '" : {"name" : "' + nomPays + '", "lat" : ' + latitude + ', "lng" : ' + longitude + '}';
         // Si on atteint le dernier pays, on ne met pas de virgule à la fin de la variable JSON
-        if(data[0][index+1] != null) {
+        if (data[0][index + 1] != null) {
           dataText += ',';
         }
-      } 
-      dataText+= '}';
+      }
+      dataText += '}';
 
       // Remplissage de la variable d'information de la carte avec la variable JSON créée
-      simplemaps_worldmap_mapdata.locations = JSON.parse(dataText); 
-		}
-	}
-	xhr.send();
+      simplemaps_worldmap_mapdata.locations = JSON.parse(dataText);
+    }
+  }
+  xhr.send();
 }
 chargerDonneesAJAX();
 
 
 function getPaysByCode(country_code) {
   let xhr = new XMLHttpRequest();
-	xhr.open("GET","actions/carte/chargerPaysParCode.php?code="+country_code, true);
-	xhr.onload = function() {
-		if(xhr.status === 200) {
-			let data = JSON.parse(xhr.responseText);
+  xhr.open("GET", "actions/carte/chargerPaysParCode.php?code=" + country_code, true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      let data = JSON.parse(xhr.responseText);
       // Variable qui contiendra les données JSON des pays
       var divPays = document.getElementById("divPays");
-      divPays.innerHTML = "<p>"+data[0][0].nomPays+"</p>";
-      }
-	}
-	xhr.send();
+      divPays.innerHTML = "<p>" + data[0][0].nomPays + "</p>";
+    }
+  }
+  xhr.send();
 }
 
 function getCodeByPays(nom) {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET","./actions/carte/chargerCodeParPays.php?nom="+nom, true);
-    xhr.onload = function() {
-      if(xhr.status === 200) {
+    xhr.open("GET", "./actions/carte/chargerCodeParPays.php?nom=" + nom, true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
         let data = JSON.parse(xhr.responseText);
         // Variable qui contiendra les données JSON des pays
         var divPays = document.getElementById("divPays");
-        divPays.innerHTML = "<p>"+data.code[0].nomPays+"</p>";
+        divPays.innerHTML = "<p>" + data.code[0].nomPays + "</p>";
         resolve([data.code[0].raccourciPays, data.code[0].id_pays]);
       }
       else {
@@ -789,10 +789,10 @@ function getCodeByPays(nom) {
 
 function getExpressionsByID(id) {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "./actions/carte/chargerExpressionParPays.php?id_pays="+id, true);
+  xhr.open("GET", "./actions/carte/chargerExpressionParPays.php?id_pays=" + id, true);
   console.log(xhr);
-  xhr.onload = function() {
-    if(xhr.status === 200) {
+  xhr.onload = function () {
+    if (xhr.status === 200) {
       console.log(xhr.responseText);
       let data = JSON.parse(xhr.responseText);
 
@@ -800,8 +800,8 @@ function getExpressionsByID(id) {
 
       listeExpressions.innerHTML = "";
 
-      for (let i=0;i<data.length; i++) {
-        listeExpressions.innerHTML += "<li>"+data[i].id_expression + data[i].litteralTradExpression+"</li>";
+      for (let i = 0; i < data.length; i++) {
+        listeExpressions.innerHTML += "<li> <small class='hidden'>" + data[i].id_expression + "</small>" + data[i].litteralTradExpression + "</li>";
       }
 
     }
@@ -809,23 +809,23 @@ function getExpressionsByID(id) {
   xhr.send();
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   var elements = document.getElementsByClassName("sm_state");
   var clickedCountries = []; // tableau pour stocker les pays cliqués
 
   for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("click", function() {
+    elements[i].addEventListener("click", function () {
       let country_code = this.classList.value.replace('sm_state sm_state_', '');
 
       // vérifier si le pays a déjà été cliqué
       if (clickedCountries.includes(country_code)) {
         // retirer le pays du tableau des pays cliqués
-        clickedCountries = clickedCountries.filter(function(code) {
+        clickedCountries = clickedCountries.filter(function (code) {
           return code !== country_code;
         });
 
         // réinitialiser la couleur de tous les pays cliqués
-        elements.forEach(function(element) {
+        elements.forEach(function (element) {
           let code = element.classList.value.replace('sm_state sm_state_', '');
           if (clickedCountries.includes(code)) {
             element.setAttribute("fill", "black");
@@ -842,7 +842,7 @@ window.addEventListener('load', function() {
           this.setAttribute("fill", "red");
         } else {
           // réinitialiser la couleur de tous les pays cliqués
-          elements.forEach(function(element) {
+          elements.forEach(function (element) {
             element.setAttribute("fill", "");
           });
 
@@ -852,6 +852,7 @@ window.addEventListener('load', function() {
         }
       }
       getPaysByCode(country_code);
+      getCountryFlag(country_code);
     });
   }
 });
@@ -865,12 +866,21 @@ function getInputValue() {
   Promise.all([getCodeByPays(inputValue)]).then((values) => {
     getExpressionsByID(values[0][1]);
   });
-  
+
 
 }
 
-document.addEventListener("keyup", function(event) {
+document.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     getInputValue();
   }
 });
+
+function getCountryFlag(countryCode) {
+  const flagUrl = `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
+
+  const flagElement = document.getElementById('flag');
+  flagElement.src = flagUrl;
+}
+
+getCountryFlag('FR');
