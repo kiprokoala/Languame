@@ -1,5 +1,11 @@
 <?php
 
+namespace app\Models;
+
+use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
+
 class Partie extends Objet
 {
 
@@ -23,16 +29,17 @@ class Partie extends Objet
             inner join liste_equipe l on e.id_equipe = l.id_equipe WHERE id_liste_equipe = $this->id_equipe;";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, "Equipe");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Equipe'));
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public static function createGame($titre, $index){
+    public static function createGame($titre, $index)
+    {
         $req_prep = Connexion::pdo()->prepare("INSERT INTO 
-                    Partie (titre, id_liste_equipe) VALUES (:tag_titre, :tag_index);");
+                    partie (titre, id_liste_equipe) VALUES (:tag_titre, :tag_index);");
         try {
             $req_prep->execute(array("tag_titre" => $titre, "tag_index" => $index));
             return Connexion::pdo()->LastInsertId();;
@@ -41,14 +48,15 @@ class Partie extends Objet
         }
     }
 
-    public function getQuestions(){
+    public function getQuestions()
+    {
         $requete = "SELECT id_question, id_expression, id_partie
-                    FROM Question where id_partie = ".$this->id_partie;
-        try{
+                    FROM question where id_partie = " . $this->id_partie;
+        try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchMode(PDO::FETCH_CLASS, "Question");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Question'));
             return $resultat->fetchAll();
-        }catch(PDOException $e){
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }

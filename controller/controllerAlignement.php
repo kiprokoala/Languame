@@ -1,7 +1,13 @@
 <?php
 
-require_once("Models/Alignement.php");
-require_once("Models/Equipe.php");
+use app\Models\Alignement;
+use app\Models\Equipe;
+use app\Models\Expression;
+use app\Models\Question;
+use app\Models\Reponse;
+use app\Models\Theme;
+
+
 require_once("controller/controllerObjet.php");
 
 class controllerAlignement extends controllerObjet

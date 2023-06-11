@@ -1,7 +1,7 @@
 <?php
 
-require_once("Models/Utilisateur.php");
-require_once("Models/Objet.php");
+
+
 
 class controllerObjet
 {
@@ -23,7 +23,7 @@ class controllerObjet
                 case "Theme":
                     $tableau[] .= "Coucou, voici le $objet n°" . $ligne->get($cle) . ". Le nom du thème est " . $ligne->get("nomTheme");
                     break;
-                case "Utilisateur":
+                case "tilisateur":
                     $tableau[] .= "Coucou, voici le $objet n°" . $ligne->get($cle) . ". L'utilisateur s'appelle " . $ligne->get("nom") . " " . $ligne->get("prenom") . ".";
                     break;
             }
@@ -39,7 +39,7 @@ class controllerObjet
 
     public static function lireObjet()
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $identifiant = static::$cle;
 
         /// titre de l'url à voir
@@ -49,5 +49,3 @@ class controllerObjet
         return $objet;
     }
 }
-
-?>

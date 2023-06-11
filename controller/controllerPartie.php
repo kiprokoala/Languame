@@ -1,6 +1,12 @@
 <?php
 
-require_once("Models/Partie.php");
+use app\Models\Equipe;
+use app\Models\Expression;
+use app\Models\Partie;
+use app\Models\Question;
+use app\Models\Theme;
+
+
 require_once("controller/controllerObjet.php");
 
 class controllerPartie extends controllerObjet
@@ -53,13 +59,13 @@ class controllerPartie extends controllerObjet
     public static function getQuestionsForPartie()
     {
         $partie = Partie::getObjetById($_POST['id_partie']);
-        //$partie = Partie::getObjetById($partie);
+        //$partie = app\Models\Partie::getObjetById($partie);
         $questions = $partie->getQuestions();
         echo "<form action='/alignement/submitAlignement' method='POST'>";
         foreach ($questions as $question) {
             $expression = Expression::getObjetById($question->get("id_expression"));
             $themes = $question->getThemes();
-            echo "Expression : " . $expression->get('texteLangueExpression') . "<br>";
+            echo "expression : " . $expression->get('texteLangueExpression') . "<br>";
             echo "Traduction littérale : " . $expression->get('litteralTradExpression') . "<br>";
             echo "A quel thème cette expression correspond ?<br>";
             echo "

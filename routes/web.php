@@ -1,14 +1,14 @@
 <?php
 
-use app\tools\Route;
+use app\Utils\Route;
 use controller\controllerHome;
 
 session_start();
 
-// Partie utilisateurs
+// app\Models\Partie utilisateurs
 Route::get('/', [controllerHome::class, 'index']);
 
-//Utilisateur
+//app\Models\Utilisateur
 Route::get('/users', [controllerUtilisateur::class, 'lireObjets']);
 Route::get('/profil', [controllerUtilisateur::class, 'profil']);
 Route::get('/connecting', [controllerUtilisateur::class, 'connect']);
@@ -22,11 +22,11 @@ Route::get('/removingLang', [controllerUtilisateur::class, 'removingLang']);
 // Nationality
 Route::get('/nationality', [controllerHome::class, 'nationality']);
 
-// Alignement
+// app\Models\Alignement
 Route::get('/alignement/home', [controllerAlignement::class, 'home']);
 Route::get('/alignement/submitAlignement', [controllerAlignement::class, 'submitAlignement']);
 
-// Partie
+// app\Models\Partie
 Route::get('/createGame', [controllerPartie::class, 'createGame']);
 Route::get('/play', [controllerPartie::class, 'getQuestionsForPartie']);
 Route::get('/seeParties', [controllerUtilisateur::class, 'getAllParties']);

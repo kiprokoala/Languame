@@ -1,22 +1,32 @@
 <?php
-class Question extends Objet {
-    
+
+namespace app\Models;
+
+use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
+
+class Question extends Objet
+{
+
     // attributs de classe
-	protected static $objet = "Question";
-	protected static $cle = "id_question";
+    protected static $objet = "Question";
+    protected static $cle = "id_question";
 
     protected $id_question;
     protected $id_expression;
     protected $id_partie;
 
-    public function afficher(){
+    public function afficher()
+    {
         Question::$objet . " n°" . $this->id_question . " est liée à l'espression n°" . $this->id_expression;
     }
 
-    public function afficherQuestion(){
+    public function afficherQuestion()
+    {
         //On récupère l'expression pour l'afficher
         $expression = Expression::getObjetById($this->id_expression);
-        echo "Expression : " + $expression->get("texteLangueExpression");
+        echo "expression : " + $expression->get("texteLangueExpression");
         echo "<br>";
 
         //On affiche ses thèmes (évidemment à modifier)
@@ -33,21 +43,22 @@ class Question extends Objet {
     public function getThemes()
     {
         $requete = "SELECT c.id_theme, nomTheme FROM Contient c
-                    INNER JOIN Theme t ON t.id_theme = c.id_theme
-                    INNER JOIN Question q ON q.id_question = c.id_question
-                    INNER JOIN Expression e ON e.id_expression = q.id_expression
-                    WHERE q.id_question = ".$this->get("id_question").";";
+                    INNER JOIN theme t ON t.id_theme = c.id_theme
+                    INNER JOIN question q ON q.id_question = c.id_question
+                    INNER JOIN expression e ON e.id_expression = q.id_expression
+                    WHERE q.id_question = " . $this->get("id_question") . ";";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, "Theme");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Theme'));
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public static function createQuestion($id_expression, $id_partie){
-        $requete = "INSERT INTO Question (id_expression, id_partie) VALUES ($id_expression, $id_partie);";
+    public static function createQuestion($id_expression, $id_partie)
+    {
+        $requete = "INSERT INTO question (id_expression, id_partie) VALUES ($id_expression, $id_partie);";
         try {
             Connexion::pdo()->query($requete);
             $obj = Connexion::pdo()->LastInsertId();
@@ -57,7 +68,8 @@ class Question extends Objet {
         }
     }
 
-    public function createContient($theme1, $theme2, $theme3, $theme4){
+    public function createContient($theme1, $theme2, $theme3, $theme4)
+    {
         $requete = "
             INSERT INTO CONTIENT (id_question, id_theme) VALUES($this->id_question, $theme1);
             INSERT INTO CONTIENT (id_question, id_theme) VALUES($this->id_question, $theme2);

@@ -9,6 +9,6 @@ Le fichier worldmap.js contient toutes les fonctions permettant de faire fonctio
 # Information au sujet du nouveau routeur
 
 Le nouveau routeur permet l'usage des chemins de l'url pour naviguer dans le site. 
-Par exemple, si vous voulez accéder à la page des utilisateurs, vous pourriez configurer `/users` au lieu de `/index.php?cible=Utilisateur&action=listAll`.
+Par exemple, si vous voulez accéder à la page des utilisateurs, vous pourriez configurer `/users` au lieu de `/index.php?cible=utilisateur&action=listAll`.
 
 Vous trouvez dans le fichier `web.php` des exemples de route. Tous les routeurs sont toujours importés à la racine du site internet.

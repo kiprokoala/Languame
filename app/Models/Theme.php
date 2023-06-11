@@ -1,12 +1,9 @@
 <?php
 
-
-require_once("Models/Objet.php");
-Connexion::connect();
+namespace app\Models;
 
 class Theme extends Objet
 {
-
     // attributs de classe
 	protected static $objet = "Theme";
     protected static $cle = "id_theme";
@@ -14,11 +11,13 @@ class Theme extends Objet
     protected $nomTheme;
 
     //Méthode d'affichage simple
-    public function afficher(){
+    public function afficher()
+    {
         return "<p>Thème n° $this->id_theme a pour nom : $this->nomTheme";
     }
 
-    public function giveExpressionToTheme($id_expression){
+    public function giveExpressionToTheme($id_expression)
+    {
         $expression = Expression::getObjetById($id_expression);
         Expression::updateObjet($id_expression,
             $expression->get("texteLangueExpression"),

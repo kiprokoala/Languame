@@ -1,8 +1,8 @@
 <?php
 # le fichier sur lequelle il est pointer doit etre modoifier et etre merge avec
-# require_once("../../Models/Pays.php");
+# require_once("app/Models/Pays.php");
 
-require_once("../../Models/PaysTest.php");
+use app\Models\Pays;
 
 // Vérifie si le paramètre "nom" est présent dans la requête GET
 if (!isset($_GET["nom"])) {
@@ -13,7 +13,7 @@ if (!isset($_GET["nom"])) {
 
 $nom = $_GET["nom"];
 
-// Obtient le code du pays en utilisant la méthode statique de la classe Pays
+// Obtient le code du pays en utilisant la méthode statique de la classePays
 $code = Pays::getCodeByPays($nom);
 
 // Vérifie si le code du pays est trouvé

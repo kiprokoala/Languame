@@ -1,6 +1,11 @@
 <?php
 
-require_once("Models/Objet.php");
+namespace app\Models;
+
+use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
+
 
 class Utilisateur extends Objet
 {
@@ -27,11 +32,11 @@ class Utilisateur extends Objet
 
     public static function connexionUtilisateur($login, $mdp)
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $req_prep = Connexion::pdo()->prepare("SELECT * FROM $table WHERE login = :tag_login and mdp = :tag_mdp;");
         try {
             $req_prep->execute(array("tag_login" => $login, "tag_mdp" => $mdp));
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, $table);
+            $req_prep->setFetchmode(PDO::FETCH_CLASS, config('aliases.'.ucfirst($table)));
             $obj = $req_prep->fetch();
             return $obj;
         } catch (PDOException $e) {
@@ -39,15 +44,17 @@ class Utilisateur extends Objet
         }
     }
 
-    public function estConnecte(){
+    public function estConnecte()
+    {
         return (bool)$_SESSION["id"];
     }
 
-    public function parle(){
-        $requete = "SELECT * FROM parle_le p INNER JOIN Langue l ON p.id_langue = l.id_langue WHERE id_utilisateur = $this->id_utilisateur";
+    public function parle()
+    {
+        $requete = "SELECT * FROM parle_le p INNER JOIN langue l ON p.id_langue = l.id_langue WHERE id_utilisateur = $this->id_utilisateur";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, "Langue");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Langue'));
             $obj = $resultat->fetchAll();
             return $obj;
         } catch (PDOException $e) {
@@ -55,13 +62,14 @@ class Utilisateur extends Objet
         }
     }
 
-    public function getAllLanguesNonSpoken(){
-        $requete = "SELECT * FROM Langue WHERE id_langue NOT IN (SELECT id_langue FROM parle_le WHERE id_utilisateur = $this->id_utilisateur 
+    public function getAllLanguesNonSpoken()
+    {
+        $requete = "SELECT * FROM langue WHERE id_langue NOT IN (SELECT id_langue FROM parle_le WHERE id_utilisateur = $this->id_utilisateur 
                                                                             UNION
                                                                 SELECT id_langue FROM utilisateur WHERE id_utilisateur = $this->id_utilisateur) ORDER BY nomLangue";
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, "Langue");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Langue'));
             $obj = $resultat->fetchAll();
             return $obj;
         } catch (PDOException $e) {
@@ -69,7 +77,8 @@ class Utilisateur extends Objet
         }
     }
 
-    public function addLangToUser($lang){
+    public function addLangToUser($lang)
+    {
         $requete = "INSERT INTO parle_le VALUES($this->id_utilisateur, $lang)";
         try {
             Connexion::pdo()->query($requete);
@@ -78,7 +87,8 @@ class Utilisateur extends Objet
         }
     }
 
-    public function removeLangToUser($lang){
+    public function removeLangToUser($lang)
+    {
         $requete = "DELETE FROM parle_le WHERE id_utilisateur = $this->id_utilisateur AND id_langue = $lang";
         try {
             Connexion::pdo()->query($requete);
@@ -87,19 +97,21 @@ class Utilisateur extends Objet
         }
     }
 
-    public function getAllParties(){
+    public function getAllParties()
+    {
         $requete = "SELECT id_partie, titre, winner, p.id_liste_equipe
                     FROM Partie p
                     INNER JOIN liste_equipe l ON l.id_liste_equipe = p.id_liste_equipe
                     INNER JOIN est_dans e ON e.id_equipe = l.id_equipe
-                    WHERE id_utilisateur = ".$this->id_utilisateur;
-        try{
+                    WHERE id_utilisateur = " . $this->id_utilisateur;
+        try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchMode(PDO::FETCH_CLASS, "Partie");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Partie'));
             return $resultat->fetchAll();
-        }catch (PDOException $e){
+        } catch (PDOException $e) {
             $e->getMessage();
         }
     }
 }
+
 ?>

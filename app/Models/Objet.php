@@ -1,5 +1,10 @@
 <?php
 
+namespace app\Models;
+use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
+
 class Objet
 {
 
@@ -28,13 +33,14 @@ class Objet
 
     public static function getAllObjets()
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         //écriture de la requête
         $requete = "SELECT * from $table";
         // envoi de la requête et stockage de la réponse
         $resultat = Connexion::pdo()->query($requete);
         // traitement de la réponse
-        $resultat->setFetchmode(PDO::FETCH_CLASS, $table);
+        $class = static::$objet;
+        $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.'.ucfirst($table)));
         $tableau = $resultat->fetchAll();
         return $tableau;
     }
@@ -42,12 +48,12 @@ class Objet
 
     public static function getObjetById($id)
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $cle = static::$cle;
         $req_prep = Connexion::pdo()->prepare("SELECT * FROM $table WHERE $cle = :tag_id;");
         try {
             $req_prep->execute(array("tag_id" => $id));
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, $table);
+            $req_prep->setFetchmode(PDO::FETCH_CLASS, config('aliases.'.ucfirst($table)));
             $obj = $req_prep->fetch();
             return $obj;
         } catch (PDOException $e) {
@@ -57,7 +63,7 @@ class Objet
 
     public static function deleteObjetById($id)
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $cle = static::$cle;
         $req_prep = Connexion::pdo()->prepare("DELETE FROM $table WHERE $cle = :tag_id;");
         try {
@@ -70,7 +76,7 @@ class Objet
 
     public static function addObjet($tab)
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $columns = "(";
         $tags = "(";
         $element = array_key_last($tab);
@@ -96,7 +102,7 @@ class Objet
 
     public static function updateObjet($tab)
     {
-        $table = static::$objet;
+        $table = strtolower(static::$objet);
         $cle = static::$cle;
         $mini = "";
         $value_key = "";

@@ -1,5 +1,10 @@
 <?php
 
+namespace app\Models;
+
+use app\Utils\Database as Connexion;
+use PDOException;
+
 class Reponse extends Objet
 {
 
@@ -15,10 +20,11 @@ class Reponse extends Objet
     //Méthode d'affichage simple
     function afficher()
     {
-        echo Reponse::$objet . " est liée à l'Alignement n°" . $this->id_alignement . ", l'Utilisateur n°" . $this->id_utilisateur . ", la Question n°" . $this->id_question . " et le Thème n°" . $this->id_theme;
+        echo Reponse::$objet . " est liée à l'alignement n°" . $this->id_alignement . ", l'utilisateur n°" . $this->id_utilisateur . ", la app\Models\Question n°" . $this->id_question . " et le Thème n°" . $this->id_theme;
     }
 
-    public function checkReponseTheme(){
+    public function checkReponseTheme()
+    {
 
         //On récupère la question, son expression, puis le thème lié à l'expression
         $question = Question::getObjetById($this->get("id_question"));
@@ -28,16 +34,17 @@ class Reponse extends Objet
         return $the_expression->get("id_theme") == $this->get("id_theme");
     }
 
-    public static function createReponse($theme, $alignement, $utilisateur, $question){
+    public static function createReponse($theme, $alignement, $utilisateur, $question)
+    {
         $req_prep = Connexion::pdo()->prepare("INSERT INTO 
-                    Reponse (id_theme, id_alignement, id_utilisateur, id_question) 
+                    reponse (id_theme, id_alignement, id_utilisateur, id_question) 
                     VALUES (:tag_theme, :tag_alignement, :tag_utilisateur, :tag_question);");
         try {
             $req_prep->execute(array(
-                "tag_theme"=>$theme,
+                "tag_theme" => $theme,
                 "tag_alignement" => $alignement,
                 "tag_utilisateur" => $utilisateur,
-                "tag_question" =>$question));
+                "tag_question" => $question));
             return Connexion::pdo()->LastInsertId();
         } catch (PDOException $e) {
             echo $e->getMessage();

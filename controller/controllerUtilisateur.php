@@ -1,7 +1,9 @@
 <?php
 
-require_once("Models/Utilisateur.php");
-require_once("Models/Session.php");
+use app\Models\Langue;
+use app\Models\Session;
+use app\Models\Utilisateur;
+
 require_once("controller/controllerObjet.php");
 
 class controllerUtilisateur extends controllerObjet

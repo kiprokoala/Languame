@@ -1,5 +1,10 @@
 <?php
 
+namespace app\Models;
+
+use app\Utils\Database as Connexion;
+use PDOException;
+
 class Equipe extends Objet
 {
 
@@ -26,7 +31,8 @@ class Equipe extends Objet
         }
     }
 
-    public static function getMaxListIndex(){
+    public static function getMaxListIndex()
+    {
         $requete = "SELECT MAX(id_liste_equipe) FROM liste_equipe";
         try {
             $resultat = Connexion::pdo()->query($requete);
@@ -38,7 +44,8 @@ class Equipe extends Objet
         }
     }
 
-    public static function addTeamToList($list, $team){
+    public static function addTeamToList($list, $team)
+    {
         $requete = "INSERT INTO liste_equipe VALUES($list, $team)";
         try {
             Connexion::pdo()->query($requete);
