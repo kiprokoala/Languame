@@ -11,7 +11,7 @@ return [
         // adapter le code existant.
         'Alignement' => \app\Models\Alignement::class,
         'Equipe' => \app\Models\Equipe::class,
-        'Expression' => \PhpParser\Node\Expr::class,
+        'Expression' => \app\Models\Expression::class,
         'GroupeLangue' => \app\Models\GroupeLangue::class,
         'Langue' => \app\Models\Langue::class,
         'Partie' => \app\Models\Partie::class,
