@@ -9,6 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="/resources/css/styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/ressources/images/l.png">
 </head>
 
 <body>
