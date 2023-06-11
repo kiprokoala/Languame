@@ -1,5 +1,7 @@
 <?php
 
+namespace controller;
+
 use app\Models\Langue;
 use app\Models\Session;
 use app\Models\Utilisateur;
@@ -43,8 +45,11 @@ class controllerUtilisateur extends controllerObjet
                 $available_langs .= "<option value='" . $lang->get('id_langue') . "'>" . $lang->get("nomLangue") . "</option>";
             }
 
-            $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
-
+            $userLang = $user->get('id_langue');
+            $lang = null;
+            if (!empty($userLang)) {
+                $lang = Langue::getObjetById($userLang)->get('nomLangue');
+            }
             include("resources/views/accountView.php");
         } else {
             self::formConnect();

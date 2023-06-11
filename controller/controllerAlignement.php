@@ -1,11 +1,14 @@
 <?php
 
+namespace controller;
+
 use app\Models\Alignement;
 use app\Models\Equipe;
 use app\Models\Expression;
 use app\Models\Question;
 use app\Models\Reponse;
 use app\Models\Theme;
+use app\Models\Utilisateur;
 
 
 require_once("controller/controllerObjet.php");
@@ -36,7 +39,7 @@ class controllerAlignement extends controllerObjet
             $teams .= "<option value='$id'>$id - $name</option>";
         }
         $all_parties = controllerPartie::getAllFinishedGames();
-        include("view/modale.php");
+        include("resources/views/modale.php");
     }
 
     public static function submitAlignement()

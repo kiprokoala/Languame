@@ -3,6 +3,7 @@
 namespace app\Models;
 
 use app\Utils\Database as Connexion;
+use PDO;
 use PDOException;
 
 class Equipe extends Objet
@@ -17,20 +18,6 @@ class Equipe extends Objet
     protected $idChefEquipe;
 
     //Une méthode d'affichage simple
-    public function afficher()
-    {
-        echo Equipe::$objet . " n°" . $this->id_equipe . " a pour nom " . $this->nomEquipe;
-    }
-
-    public function definirChef($userId)
-    {
-        $requete = "UPDATE equipe as e INNER JOIN utilisateur AS u ON u.id_utilisateur = e.idChefEquipe SET e.idChefEquipe = :id_nouveauChef, u.isChef = CASE WHEN u.id_utilisateur = :id_nouveauChef THEN 1 ELSE 0 END WHERE e.idEquipe = :id_equipe AND u.isChef = 1;";
-        try {
-            $requete->execute(array("id_nouveauChef" => $userId, "id_equipe" => $this->id_equipe));
-        } catch (PDOException $e) {
-            echo $e;
-        }
-    }
 
     public static function getMaxListIndex()
     {
@@ -52,6 +39,21 @@ class Equipe extends Objet
             Connexion::pdo()->query($requete);
         } catch (PDOException $e) {
 
+        }
+    }
+
+    public function afficher()
+    {
+        echo Equipe::$objet . " n°" . $this->id_equipe . " a pour nom " . $this->nomEquipe;
+    }
+
+    public function definirChef($userId)
+    {
+        $requete = "UPDATE equipe as e INNER JOIN utilisateur AS u ON u.id_utilisateur = e.idChefEquipe SET e.idChefEquipe = :id_nouveauChef, u.isChef = CASE WHEN u.id_utilisateur = :id_nouveauChef THEN 1 ELSE 0 END WHERE e.idEquipe = :id_equipe AND u.isChef = 1;";
+        try {
+            $requete->execute(array("id_nouveauChef" => $userId, "id_equipe" => $this->id_equipe));
+        } catch (PDOException $e) {
+            echo $e;
         }
     }
 }

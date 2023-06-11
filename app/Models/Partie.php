@@ -69,7 +69,7 @@ class Partie extends Objet
                     WHERE winner IS NOT NULL AND id_utilisateur = ".$id;
         try{
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchMode(PDO::FETCH_CLASS, "Partie");
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Partie'));
             return $resultat->fetchAll();
         }catch(PDOException $e){
             echo $e->getMessage();

@@ -1,5 +1,6 @@
 <?php
 
+namespace controller;
 class controllerSite
 {
     public static function homePage()
