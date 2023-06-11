@@ -114,6 +114,10 @@ class controllerUtilisateur extends controllerObjet
         $_POST["login"] = $user->get("login");
         $_POST["mdp"] = trim($_POST['mdp']) == '' ? $user->get('mdp') : $_POST['mdp'];
 
+        if(trim($_POST['id_langue']) == ""){
+            $_POST['id_langue'] = $user->get('id_langue');
+        }
+
         $tab = $_POST;
         unset($tab["langs"]);
         // A ENLEVER OBLIGATOIREMENT SINON LES PHOTOS NE SERONT PAS UPLOADES

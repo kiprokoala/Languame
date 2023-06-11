@@ -51,7 +51,16 @@ class Utilisateur extends Objet
 
     public function parle()
     {
-        $requete = "SELECT * FROM parle_le p INNER JOIN langue l ON p.id_langue = l.id_langue WHERE id_utilisateur = $this->id_utilisateur";
+        $requete = "SELECT l.id_langue, nomLangue, codeLangue, id_groupeLangue  
+                    FROM parle_le p 
+                    INNER JOIN langue l ON p.id_langue = l.id_langue 
+                    WHERE id_utilisateur = $this->id_utilisateur
+                    UNION 
+                    SELECT l.id_langue, nomLangue, codeLangue, id_groupeLangue
+                    FROM utilisateur u
+                    INNER JOIN langue l on l.id_langue = u.id_langue
+                    WHERE id_utilisateur = $this->id_utilisateur";
+
         try {
             $resultat = Connexion::pdo()->query($requete);
             $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Langue'));
