@@ -83,6 +83,7 @@ class controllerUtilisateur extends controllerObjet
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
+        $id_langue = $_POST['id_langue'];
 
         Utilisateur::addObjet(
             array(
@@ -92,7 +93,8 @@ class controllerUtilisateur extends controllerObjet
                 "prenom" => $prenom,
                 "email" => $email,
                 "isAdmin" => 0,
-                "isChef" => 0
+                "isChef" => 0,
+                "id_langue" => $id_langue
             )
         );
 
