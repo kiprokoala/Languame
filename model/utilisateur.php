@@ -92,7 +92,13 @@ class Utilisateur extends Objet
                     FROM Partie p
                     INNER JOIN liste_equipe l ON l.id_liste_equipe = p.id_liste_equipe
                     INNER JOIN est_dans e ON e.id_equipe = l.id_equipe
-                    WHERE id_utilisateur = ".$this->id_utilisateur;
+                    WHERE id_utilisateur = ".$this->id_utilisateur."
+                    and id_partie not in (
+                        SELECT id_partie 
+                        	from reponse r 
+                        	inner join question q on q.id_question = r.id_question 
+                        	where id_utilisateur = ".$this->id_utilisateur.") 
+                    AND winner IS NULL";
         try{
             $resultat = Connexion::pdo()->query($requete);
             $resultat->setFetchMode(PDO::FETCH_CLASS, "Partie");
