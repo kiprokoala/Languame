@@ -121,6 +121,9 @@ class controllerUtilisateur extends controllerObjet
 
     public static function getAllParties()
     {
+        if (!isset($_SESSION['id'])) {
+            header("Location: /profil");
+        }
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $parties = $user->getAllParties();
         include("resources/views/listeParties.php");

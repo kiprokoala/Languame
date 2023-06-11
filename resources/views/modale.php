@@ -14,11 +14,12 @@
     <div class="xrapper">
         <div class="warning">
             <div class="separation">
-                <h2>Wsh mon Kho MaMeyne !</h2>
-                <button>
+                <h2>Bonjour <?php echo $user->get('login') ?> !</h2>
+                <?php if($user->get('isAdmin')){ ?><button>
                     <span>Admin
                     </span>
                 </button>
+                <?php } ?>
             </div>
             <p>A vous d'organiser le jeu.</p>
             <h4>Gestion d'une partie</h4>
@@ -87,7 +88,9 @@
                     </div>
                     <!-- MODALE Historique partie -->
                     <div class="displayNone" id="modaleHistoriquePartie">
-
+                        <?php
+                        echo $all_parties;
+                        ?>
                     </div>
                 </div>
             </div>
