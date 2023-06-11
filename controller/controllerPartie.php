@@ -1,6 +1,6 @@
 <?php
 
-require_once("model/Partie.php");
+require_once("Models/Partie.php");
 require_once("controller/controllerObjet.php");
 
 class controllerPartie extends controllerObjet
@@ -10,28 +10,28 @@ class controllerPartie extends controllerObjet
 
     public static function createGame()
     {
-        $index = Equipe::getMaxListIndex()+1;
-        if(!isset($_POST['teams'])){
+        $index = Equipe::getMaxListIndex() + 1;
+        if (!isset($_POST['teams'])) {
             header('Location: /alignement/home');
         }
         foreach ($_POST["teams"] as $team) {
-            Equipe::addTeamToList($index,$team);
+            Equipe::addTeamToList($index, $team);
         }
         $id_partie = Partie::createGame($_POST["titreJeu"], $index);
 
         $themes = [];
-        foreach ($_POST as $id_theme => $nomTheme){
-            if(str_contains($id_theme, "theme")){
-                $id = explode("theme",$id_theme)[1];
+        foreach ($_POST as $id_theme => $nomTheme) {
+            if (strpos($id_theme, "theme") !== false) {
+                $id = explode("theme", $id_theme)[1];
                 $this_item = Theme::getObjetById($id);
                 $themes[] = $this_item;
             }
         }
-        if(count($themes) <> 4){
+        if (count($themes) <> 4) {
             header('Location: /alignement/home');
         }
         $questions = [];
-        for($i = 1; $i <= 12; $i++){
+        for ($i = 1; $i <= 12; $i++) {
             // Création des questions pour la partie
             $id = rand(0, count($themes) - 1);
             $temp = $themes;
@@ -42,7 +42,7 @@ class controllerPartie extends controllerObjet
             $theme3 = $themes[2]->get("id_theme");
             $themes = $temp;
             $expressions = Expression::getExpressionsByTheme($theme);
-            $question_id = Question::createQuestion($expressions[rand(0, count($expressions)-1)]->get("id_expression"), $id_partie);
+            $question_id = Question::createQuestion($expressions[rand(0, count($expressions) - 1)]->get("id_expression"), $id_partie);
             $question = Question::getObjetById($question_id);
             $question->createContient($theme, $theme1, $theme2, $theme3);
             $questions[] = $question;
@@ -50,34 +50,35 @@ class controllerPartie extends controllerObjet
         header('Location: /alignement/home');
     }
 
-    public static function getQuestionsForPartie(){
+    public static function getQuestionsForPartie()
+    {
         $partie = Partie::getObjetById($_POST['id_partie']);
         //$partie = Partie::getObjetById($partie);
         $questions = $partie->getQuestions();
         echo "<form action='/alignement/submitAlignement' method='POST'>";
-        foreach($questions as $question){
+        foreach ($questions as $question) {
             $expression = Expression::getObjetById($question->get("id_expression"));
             $themes = $question->getThemes();
-            echo "Expression : ".$expression->get('texteLangueExpression')."<br>";
-            echo "Traduction littérale : ".$expression->get('litteralTradExpression')."<br>";
+            echo "Expression : " . $expression->get('texteLangueExpression') . "<br>";
+            echo "Traduction littérale : " . $expression->get('litteralTradExpression') . "<br>";
             echo "A quel thème cette expression correspond ?<br>";
             echo "
                 <fieldset>
                     <label>
-                        <input type='radio' value='".$themes[0]->get('id_theme')."' name='question".$question->get('id_question')."' checked>
-                        ".$themes[0]->get('nomTheme')."
+                        <input type='radio' value='" . $themes[0]->get('id_theme') . "' name='question" . $question->get('id_question') . "' checked>
+                        " . $themes[0]->get('nomTheme') . "
                     </label>
                     <label>
-                        <input type='radio' value='".$themes[1]->get('id_theme')."' name='question".$question->get('id_question')."'>
-                        ".$themes[1]->get('nomTheme')."
+                        <input type='radio' value='" . $themes[1]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
+                        " . $themes[1]->get('nomTheme') . "
                     </label>                    
                     <label>
-                        <input type='radio' value='".$themes[2]->get('id_theme')."' name='question".$question->get('id_question')."'>
-                        ".$themes[2]->get('nomTheme')."
+                        <input type='radio' value='" . $themes[2]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
+                        " . $themes[2]->get('nomTheme') . "
                     </label>
                     <label>
-                        <input type='radio' value='".$themes[3]->get('id_theme')."' name='question".$question->get('id_question')."'>
-                        ".$themes[3]->get('nomTheme')."
+                        <input type='radio' value='" . $themes[3]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
+                        " . $themes[3]->get('nomTheme') . "
                     </label>
                 </fieldset>";
         }

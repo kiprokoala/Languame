@@ -1,5 +1,5 @@
 <?php
-require_once("model/objet.php");
+require_once("Models/objet.php");
 
 class Alignement extends Objet
 {

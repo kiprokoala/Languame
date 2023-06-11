@@ -1,13 +1,22 @@
 <?php
 
-require_once("model/utilisateur.php");
-require_once("model/session.php");
+require_once("Models/utilisateur.php");
+require_once("Models/session.php");
 require_once("controller/controllerObjet.php");
 
 class controllerUtilisateur extends controllerObjet
 {
     protected static $objet = "Utilisateur";
     protected static $cle = "id_utilisateur";
+
+    public static function addingLang()
+    {
+        if (trim($_POST["langs"]) !== "") {
+            $user = Utilisateur::getObjetById($_SESSION['id']);
+            $user->addLangToUser($_POST["langs"]);
+        }
+        self::profil();
+    }
 
     public static function profil()
     {
@@ -21,7 +30,7 @@ class controllerUtilisateur extends controllerObjet
                 $tag_langs .= "
                     <div class='tagLang'>" . $lang->get("nomLangue") . "
                         <button type='submit' formaction='removingLang' name='id' value='" . $lang->get('id_langue') . "' style='background-color: transparent; border: none;'>
-                            <img src='/assets/close.png' id='imgClose'>
+                            <img src='/resources/images/close.png' id='imgClose' alt='Close'>
                         </button>
                     </div>";
             }
@@ -40,13 +49,11 @@ class controllerUtilisateur extends controllerObjet
         }
     }
 
-    public static function addingLang()
+    public static function formConnect()
     {
-        if (trim($_POST["langs"]) !== "") {
-            $user = Utilisateur::getObjetById($_SESSION['id']);
-            $user->addLangToUser($_POST["langs"]);
-        }
-        self::profil();
+        include("resources/views/generic/header.php");
+        include("resources/views/generic/formUtilisateur.html");
+        include("resources/views/generic/footer.php");
     }
 
     public static function removingLang()
@@ -54,18 +61,6 @@ class controllerUtilisateur extends controllerObjet
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $user->removeLangToUser($_POST["id"]);
         self::profil();
-    }
-
-    public static function connect()
-    {
-        Session::userConnectingAccount();
-    }
-
-    public static function formConnect()
-    {
-        include("resources/views/generic/header.php");
-        include("resources/views/generic/formUtilisateur.html");
-        include("resources/views/generic/footer.php");
     }
 
     public static function disconnect()
@@ -82,7 +77,7 @@ class controllerUtilisateur extends controllerObjet
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
 
-        $user = Utilisateur::addObjet(
+        Utilisateur::addObjet(
             array(
                 "login" => $login,
                 "mdp" => $mdp,
@@ -97,6 +92,11 @@ class controllerUtilisateur extends controllerObjet
         self::connect();
     }
 
+    public static function connect()
+    {
+        Session::userConnectingAccount();
+    }
+
     public static function modifyAccount()
     {
         $_POST["id_utilisateur"] = $_SESSION["id"];
@@ -108,7 +108,6 @@ class controllerUtilisateur extends controllerObjet
         $_POST["mdp"] = trim($_POST['mdp']) == '' ? $user->get('mdp') : $_POST['mdp'];
 
         $tab = $_POST;
-        $langs = $tab["langs"];
         unset($tab["langs"]);
         // A ENLEVER OBLIGATOIREMENT SINON LES PHOTOS NE SERONT PAS UPLOADES
         unset($tab["profilePicture"]);
@@ -118,9 +117,10 @@ class controllerUtilisateur extends controllerObjet
     }
 
 
-    public static function getAllParties(){
+    public static function getAllParties()
+    {
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $parties = $user->getAllParties();
-        include ("view/listeParties.php");
+        include("resources/views/listeParties.php");
     }
 }

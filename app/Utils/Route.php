@@ -53,19 +53,5 @@ class Route
             // We will call the controller
             return call_user_func_array([$controller[0], $controller[1]], []);
         }
-
-        /*// We will check if we have placeholders in the path
-        $path = preg_replace('/\{[a-zA-Z0-9]+\}/', '([a-zA-Z0-9]+)', $path);
-
-        // We will check if the path matches the current path
-        if (preg_match('/^' . $path . '$/', $_SERVER['REQUEST_URI'], $matches)) {
-            // We will remove the first element of the array
-            array_shift($matches);
-
-            print_r($matches);
-
-            // We will call the controller
-            //call_user_func_array([$controller[0], $controller[1]], $matches);
-        }*/
     }
 }

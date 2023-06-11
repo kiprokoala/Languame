@@ -9,7 +9,8 @@ class controllerHome
         require_once("resources/views/homeView.html");
     }
 
-    public function nationality(){
+    public function nationality()
+    {
         require_once("resources/views/nationalite/index.php");
     }
 }

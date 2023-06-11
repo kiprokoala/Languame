@@ -1,6 +1,6 @@
 <?php
 require_once "config/connexion.php";
-require_once 'app/tools/Route.php';
+require_once 'app/Utils/Route.php';
 
 Connexion::connect();
 

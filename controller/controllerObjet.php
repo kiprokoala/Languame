@@ -1,7 +1,7 @@
 <?php
 
-require_once("model/utilisateur.php");
-require_once("model/objet.php");
+require_once("Models/utilisateur.php");
+require_once("Models/objet.php");
 
 class controllerObjet
 {
@@ -49,4 +49,5 @@ class controllerObjet
         return $objet;
     }
 }
+
 ?>
