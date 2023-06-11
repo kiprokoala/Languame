@@ -10,6 +10,9 @@ class controllerPartie extends controllerObjet
 
     public static function createGame()
     {
+        $user = Utilisateur::getObjetById($_SESSION['id']);
+        $all_parties = self::getAllFinishedGames();
+
         $index = Equipe::getMaxListIndex()+1;
         if(!isset($_POST['teams'])){
             header('Location: /alignement/home');
@@ -52,7 +55,6 @@ class controllerPartie extends controllerObjet
 
     public static function getQuestionsForPartie(){
         $partie = Partie::getObjetById($_POST['id_partie']);
-        //$partie = Partie::getObjetById($partie);
         $questions = $partie->getQuestions();
         echo "<form action='/alignement/submitAlignement' method='POST'>";
         foreach($questions as $question){
@@ -82,5 +84,22 @@ class controllerPartie extends controllerObjet
                 </fieldset>";
         }
         echo "<input type='submit' value='send it to me'></form>";
+    }
+
+    public static function getAllFinishedGames(){
+        $all_parties = "";
+        $parties = Partie::getAllFinishedGames($_SESSION['id']);
+        foreach($parties as $partie){
+            $winner = Equipe::getObjetById($partie->get('winner'));
+            $equipes = $partie->getAllEquipes();
+            $nom_equipes = "";
+            foreach ($equipes as $equipe){
+                $nom_equipes .= $equipe->get('nomEquipe')." / ";
+            }
+            $nom_equipes = substr($nom_equipes, 0, -2);
+            $all_parties .= $partie->get('titre')." a pour winner ".$winner->get('nomEquipe').". <br>
+                            Les équipes ayant joué sont ".$nom_equipes."<br>";
+        }
+        return $all_parties;
     }
 }

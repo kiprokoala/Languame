@@ -9,6 +9,10 @@ class controllerAlignement extends controllerObjet
     protected static $cle = "id_alignement";
 
     public static function home(){
+        if(!isset($_SESSION['id'])){
+            header('Location: /profil');
+        }
+        $user = Utilisateur::getObjetById($_SESSION['id']);
         $all_themes = Theme::getAllObjets();
         $all_teams = Equipe::getAllObjets();
         $themes = $teams = "";
@@ -23,6 +27,7 @@ class controllerAlignement extends controllerObjet
             $name = $team->get("nomEquipe");
             $teams .= "<option value='$id'>$id - $name</option>";
         }
+        $all_parties = controllerPartie::getAllFinishedGames();
         include("view/modale.php");
     }
 

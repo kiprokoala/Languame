@@ -5,6 +5,7 @@ class Equipe extends Objet
 
     // attributs de classe
     protected static $objet = "Equipe";
+    protected static $cle = "id_equipe";
 
     protected $id_equipe;
     protected $nomEquipe;
