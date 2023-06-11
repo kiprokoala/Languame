@@ -6,8 +6,6 @@ use controller\controllerHome;
 use controller\controllerPartie;
 use controller\controllerUtilisateur;
 
-session_start();
-
 // Partie utilisateurs
 Route::get('/', [controllerHome::class, 'index']);
 

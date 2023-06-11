@@ -2,6 +2,7 @@
 
 use app\Utils\Database;
 
+session_start();
 function includeFilesRecursive($dir)
 {
     $files = glob($dir . '/*');
