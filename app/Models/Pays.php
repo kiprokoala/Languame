@@ -1,5 +1,7 @@
 <?php
 
+namespace app\Models;
+
 use app\Models\Objet;
 use app\Utils\Database as Connexion;
 
