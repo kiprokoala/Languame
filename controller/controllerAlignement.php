@@ -1,7 +1,7 @@
 <?php
 
-require_once("Models/alignement.php");
-require_once("Models/equipe.php");
+require_once("Models/Alignement.php");
+require_once("Models/Equipe.php");
 require_once("controller/controllerObjet.php");
 
 class controllerAlignement extends controllerObjet

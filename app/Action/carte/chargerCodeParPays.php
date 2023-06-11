@@ -1,8 +1,8 @@
 <?php
 # le fichier sur lequelle il est pointer doit etre modoifier et etre merge avec
-# require_once("../../Models/pays.php");
+# require_once("../../Models/Pays.php");
 
-require_once("../../Models/paysTest.php");
+require_once("../../Models/PaysTest.php");
 
 // Vérifie si le paramètre "nom" est présent dans la requête GET
 if (!isset($_GET["nom"])) {

@@ -1,5 +1,5 @@
 <?php
-require_once("../../Models/paysTest.php");
+require_once("../../Models/PaysTest.php");
 $code = $_GET["code"];
 
 // 1. on récupère les tableaux de livres et d'adhérents

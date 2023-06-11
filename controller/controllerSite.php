@@ -1,7 +1,7 @@
 <?php
 
-require_once("Models/objet.php");
-require_once("Models/utilisateur.php");
+require_once("Models/Objet.php");
+require_once("Models/Utilisateur.php");
 
 class controllerSite
 {

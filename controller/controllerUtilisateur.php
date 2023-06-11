@@ -1,7 +1,7 @@
 <?php
 
-require_once("Models/utilisateur.php");
-require_once("Models/session.php");
+require_once("Models/Utilisateur.php");
+require_once("Models/Session.php");
 require_once("controller/controllerObjet.php");
 
 class controllerUtilisateur extends controllerObjet

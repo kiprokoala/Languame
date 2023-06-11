@@ -1,7 +1,7 @@
 <?php
 
 
-require_once("Models/objet.php");
+require_once("Models/Objet.php");
 Connexion::connect();
 
 class Theme extends Objet
