@@ -86,5 +86,20 @@ class Utilisateur extends Objet
             echo $e->getMessage();
         }
     }
+
+    public function getAllParties(){
+        $requete = "SELECT id_partie, titre, winner, p.id_liste_equipe
+                    FROM Partie p
+                    INNER JOIN liste_equipe l ON l.id_liste_equipe = p.id_liste_equipe
+                    INNER JOIN est_dans e ON e.id_equipe = l.id_equipe
+                    WHERE id_utilisateur = ".$this->id_utilisateur;
+        try{
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchMode(PDO::FETCH_CLASS, "Partie");
+            return $resultat->fetchAll();
+        }catch (PDOException $e){
+            $e->getMessage();
+        }
+    }
 }
 ?>

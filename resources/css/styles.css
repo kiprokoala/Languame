@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html, body {
     width: 100%;
@@ -42,8 +42,7 @@ body {
     font-size: 2em;
     text-align: center;
     font-weight: 300;
-< < < < < < < HEAD margin-top: 100 px;
-= = = = = = = >>> >>> > 3709 ac62038bf0beb9b0b4e0d5e12ff678f4a598
+    margin-top: 100px;
 }
 
 .btns {
@@ -56,18 +55,6 @@ body {
     justify-content: center;
     width: 250px;
     align-items: center;
-}
-
-.btns button {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.2em;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: white;
-    width: 230px;
-    cursor: pointer;
-
 }
 
 .iconAccount {
@@ -83,7 +70,7 @@ body {
     font-variation-settings: 'FILL' 0,
     'wght' 400,
     'GRAD' 0,
-    'opsz' 48
+    'opsz' 48;
 }
 
 /* Page accountView */
@@ -466,40 +453,6 @@ body {
     }
 }
 
-button {
-    position: relative;
-    display: inline-block;
-    background-color: #7b38d8;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 10px;
-    padding: 5px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-button span:after {
-    content: "\00bb";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-button:hover {
-    background-color: #f7c2f9;
-}
-
-
 .separation {
     display: flex;
     align-items: center;
@@ -533,7 +486,6 @@ button:hover {
     cursor: pointer;
     display: flex;
     flex-direction: row;
-
 }
 
 #annulerBtn {
@@ -542,6 +494,25 @@ button:hover {
 
 #validerBtn {
     background-color: #2A9D8F;
+}
+
+.afficherModaleBtn {
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 1em;
+    height: 50px;
+    font-weight: bold;
+    align-self: center;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#btnsModale {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Modale créer jeu */
@@ -617,6 +588,10 @@ button:hover {
     width: 250px;
     margin-right: 30px;
     margin-top: 150px;
+}
+
+.displayNone {
+    visibility: hidden;
 }
 
 #formSignUp {

@@ -27,7 +27,6 @@ class Theme extends Objet
             $expression->get("id_pays"),
             $expression->get("id_langue"));
     }
-
 }
 
 
