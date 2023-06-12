@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
     <link href="../../assets/styles/styles.css" rel="stylesheet">
-    <link href="../../assets/styles/nationalite.css" rel="stylesheet">
+    <link href="../../styles/nationalite.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
@@ -21,15 +18,17 @@
     <div class="container">
         <div class="row">
             <div class="col1">
-                <div class="minimap">
 
+                <div class="minimap">
+                    <img id="flag" src="" alt="Drapeau" style="display: none;"/>
                 </div>
                 <div id="divPays" class="pays">
-                    <p>FRANCE</p>
                 </div>
 
-                <div class="menu-deroulant">
+                <div id="expression" class="menu-deroulant">
+                    <ul id="liste-expressions" class="scrolling-list">
 
+                    </ul>
 
                 </div>
 
@@ -53,5 +52,4 @@
         </div>
     </div>
 </body>
-
 </html>

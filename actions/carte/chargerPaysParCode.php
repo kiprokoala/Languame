@@ -1,20 +1,25 @@
 <?php
 
-require_once("../../config/connexion.php");
+require_once("../../conf/connexion.php");
 Connexion::connect();
 require_once("../../model/paysTest.php");
+
+/**
+ * Fichier de récupération des informations d'un pays par son code via une requête AJAX.
+ */
+
+// Récupération du code du pays à partir des paramètres GET
 $code = $_GET["code"];
 
-// 1. on récupère les tableaux de livres et d'adhérents
+// On récupère les informations du pays en fonction de son code
 $pays = Pays::getPaysByCode($code);
 
-// 2. on construit le tableau de données contenant les livres et les adhérents
+// On construit le tableau de données contenant les informations du pays
 $donnees = array();
 
-// 3. on remplit ce tableau avec les deux tableaux issus des requêtes
+// On remplit le tableau avec les informations du pays
 $donnees[] = $pays;
 
-// 4. on affiche le tableau $donnees format JSON pour qu'il soit récupéré proprement
-// par la requête AJAX à l'origine de cette recherche
+// On affiche le tableau $donnees au format JSON pour la requête AJAX
 echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
 ?>

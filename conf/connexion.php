@@ -2,7 +2,7 @@
     class Connexion{
 
         static private $hostname = "localhost";
-        static private $database = "prj-prism-rfrome2";
+        static private $database = "world_db";
         static private $login = "root";
         static private $password = "";
 
@@ -24,7 +24,6 @@
                 echo "Erreur de connexion !";
             }
         }
-
-        
+ 
     }
 ?> 

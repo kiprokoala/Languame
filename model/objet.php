@@ -113,13 +113,15 @@ class Objet
                 $value_key = $value;
             }
         }
-
         $requete = "UPDATE $table SET $mini WHERE $cle = $value_key";
-        $req_prep = Connexion::pdo()->prepare($requete);
+        //$req_prep = Connexion::pdo()->prepare($requete);
+        //var_dump($req_prep);
         try {
-            $req_prep->execute($tab);
+            Connexion::pdo()->query($requete);
+            //$req_prep->execute($tab);
             return true;
         } catch (PDOException $e) {
+            echo $e;
             return false;
         }
     }
