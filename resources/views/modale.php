@@ -84,7 +84,48 @@
 
                     <!-- MODALE Créer équipe -->
                     <div class="displayNone" id="modaleCreerEquipe">
+                        <form action="post">
+                            <!-- sur la meme ligne -->
+                            <label> Nom de l'équipe </label>
+                            <input type="text" id="nomEquipe" placeholder="Nom d'équipe ...">
+                            <!-- -------- -->
+                            <!-- sur la meme ligne -->
+                            <label> Groupe de langue </label>
+                            <select  id="groupeLangue" placeholer="Choisir ..." >
+                                <?php 
 
+
+                                ?>
+                            </select>
+                            <!-- -------- -->
+                            <!-- sur la meme ligne -->
+                            <label> Membres </label>
+                            <select id="membres" placeholder="Choisir ..." multiple>
+                                <?php
+
+                                ?>
+                            </select>
+                             <!-- -------- -->
+                            <!-- sur la meme ligne -->
+                            <label> <?php echo $membre[1] ?> </label>
+                            <label> <?php echo $membre[2] ?> </label>
+                            <label> <?php echo $membre[3] ?> </label>
+                            <label> <?php echo $membre[4] ?> </label>
+                            <!-- -------- -->
+                            <!-- sur la meme ligne -->
+                            <label> Chef d'équipe </label>
+                            <select id="nomChef" placeholder="Choisir ..." >
+                                <?php
+
+                                ?>
+                            </select>
+
+
+
+                        </form>
+
+                            <button class="btnFooterModal" id="annulerBtn">Annuler</button>
+                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
                     </div>
                     <!-- MODALE Historique partie -->
                     <div class="displayNone" id="modaleHistoriquePartie">
