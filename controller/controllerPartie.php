@@ -23,14 +23,8 @@ class controllerPartie extends controllerObjet
         $all_parties = self::getAllFinishedGames();
 
         $index = Equipe::getMaxListIndex() + 1;
-        if (!isset($_POST['teams'])) {
-            header('Location: /alignement/home');
-        }
-        foreach ($_POST["teams"] as $team) {
-            Equipe::addTeamToList($index, $team);
-        }
-        $id_partie = Partie::createGame($_POST["titreJeu"], $index);
 
+        // Récupération des thèmes
         $themes = [];
         foreach ($_POST as $id_theme => $nomTheme) {
             if (strpos($id_theme, "theme") !== false) {
@@ -39,9 +33,34 @@ class controllerPartie extends controllerObjet
                 $themes[] = $this_item;
             }
         }
-        if (count($themes) <> 4) {
+
+        // Redirection immédiate
+        if (!isset($_POST['teams'])) {
             header('Location: /alignement/home');
         }
+
+        // Tests sur les équipes
+        $groupeslangues = [];
+        foreach($_POST['teams'] as $team){
+            $equipe = Equipe::getObjetById($team);
+            if(!array_key_exists($equipe->get('id_groupeLangue'), $groupeslangues)){
+                $groupeslangues[] = $equipe->get('id_groupeLangue');
+            }
+        }
+
+        // Redirection immédiate
+        if (count($groupeslangues) <> 4  || count($themes) <> 4) {
+            header('Location: /alignement/home');
+        }
+
+        // Création de la liste d'équipes
+        foreach ($_POST["teams"] as $team) {
+            Equipe::addTeamToList($index, $team);
+        }
+
+        // Création de la partie et des éléments annexes
+        $id_partie = Partie::createGame($_POST["titreJeu"], $index);
+
         $questions = [];
         for ($i = 1; $i <= 12; $i++) {
             // Création des questions pour la partie

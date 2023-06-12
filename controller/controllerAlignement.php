@@ -36,7 +36,22 @@ class controllerAlignement extends controllerObjet
         foreach ($all_teams as $team) {
             $id = $team->get("id_equipe");
             $name = $team->get("nomEquipe");
-            $teams .= "<option value='$id'>$id - $name</option>";
+            switch ($team->get("id_groupeLangue")){
+                case 1:
+                    $teams .= "<option style='background-color: #5a5ae7;' value='$id'>$id - $name</option>";
+                    break;
+                case 2:
+                    $teams .= "<option style='background-color: #e8e83e;' value='$id'>$id - $name</option>";
+                    break;
+                case 3:
+                    $teams .= "<option style='background-color: #68d968;' value='$id'>$id - $name</option>";
+                    break;
+                case 4:
+                    $teams .= "<option style='background-color: #c55353;' value='$id'>$id - $name</option>";
+                    break;
+                default:
+                    $teams .= "<option value='$id'>$id - $name</option>";
+            }
         }
         $all_parties = controllerPartie::getAllFinishedGames();
         include("resources/views/modale.php");

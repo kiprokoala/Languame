@@ -22,7 +22,7 @@ class GroupeLangue extends Objet
 
     public function getAllMembers()
     {
-        $requete = Connexion::pdo()->prepare("SELECT u.id_utilisateur, login, mdp, prenom, mdp, isChef, isAdmin, email, u.id_langue 
+        $requete = Connexion::pdo()->prepare("SELECT u.id_utilisateur, login, mdp, prenom, mdp, isAdmin, email, u.id_langue 
             FROM utilisateur u 
             INNER JOIN parle_le p ON p.id_langue IN (
                 SELECT l.id_langue FROM langue l Where id_groupeLangue = $this->id_groupeLangue
