@@ -774,6 +774,9 @@ function getPaysByCode(country_code) {
       // Variable qui contiendra les données JSON des pays
       var divPays = document.getElementById("divPays");
       divPays.innerHTML = "<p>" + data[0][0].nomPays + "</p>";
+      Promise.all([getCodeByPays(data[0][0].nomPays)]).then((values) => {
+        getExpressionsByID(values[0][1]);
+      });
     }
   };
   xhr.send();
