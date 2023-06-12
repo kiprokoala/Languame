@@ -6,7 +6,7 @@ class controllerHome
 {
     public function index()
     {
-        require_once("resources/views/homeView.html");
+        require_once("view/homeView.php");
     }
 
     public function nationality()
