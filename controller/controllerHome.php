@@ -14,9 +14,8 @@ class controllerHome {
      * Méthode pour afficher la page de nationalité.
      */
     public function nationality() {
-        include('view/generic/header.php');
+        include('view/nationalite/header.php');
         require_once("view/nationalite/index.php");
         include('view/generic/footer.php');
     }
 }
-?>

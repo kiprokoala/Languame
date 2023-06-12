@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body {
+  background-image: url("/assets/fond.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+.iconAccount {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 70px;
+  cursor: pointer;
+}
 .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav {
+  width: 100%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  border-radius: 10px;
 
 }
 body,html{
@@ -10,25 +38,22 @@ body,html{
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
-  height: 90%;
+  height: 100%;
   gap: 15px;
-  max-height: 600px;
 }
 
 .col1 {
   width: 25%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: 10px;
   align-items: center;
+  border-radius: 10px;
   gap: 10px;
 }
 
@@ -43,13 +68,14 @@ body,html{
 }
 
 .minimap {
-  background-color: #edecec;
   width: 97%;
   height: 45%;
+  margin-top: 10%;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .pays {
@@ -92,8 +118,8 @@ body,html{
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 500px;
 }
+
 
 .choix-sens {
   background-color: #fff;
@@ -101,20 +127,26 @@ body,html{
   height: 7%;
   border-radius: 20px;
   display: flex;
+  
 }
-.choix-sens .sens1{
-  background-color: #2a9d8f;
+.choix-sens div{
   width: 50%;
-  border-radius: 0px 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-.choix-sens .sens2{
-  background-color: #fff;
-  width: 50%;
+.choix-sens div.active{
+ background-color: #2a9d8f;
+  color: #fff;
+  border-radius: 20px;
+
 }
 
 .pays p {
   margin: 0;
   font-size: 2.5em;
+  color: #fff;
 }
 
 .minimap {
@@ -126,13 +158,20 @@ body,html{
 
 #expression{
   width: 97%;
-  height: 45%;
+  height: 40%;
   margin-top: 2%;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #fff;
   overflow-y: scroll;
-  max-width: 300px;
-  max-height: 500px;
+  max-height: 300px;
+}
+#flag {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 50%;
+  border-radius: 10px;
+  background-color: #fff;
+
 }
 #expression::-webkit-scrollbar {
   width: 10px;
