@@ -1,5 +1,5 @@
 <?php
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,6 +12,9 @@
     <link href="../../assets/styles/styles.css" rel="stylesheet">
     <link href="../../assets/styles/nationalite.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -39,6 +42,7 @@
                 </div>
                 <div id="map" class="map">
                     <script src="../../mapdata.js"></script>
+                    <script src="../../assets/js/natio-index.js"></script>
                     <script src="../../worldmap.js"></script>
                 </div>
                 <div class="choix-sens">

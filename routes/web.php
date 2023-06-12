@@ -2,6 +2,7 @@
 
 use app\tools\Route;
 use controller\controllerHome;
+use controller\controllerNationality;
 
 session_start();
 
@@ -17,6 +18,7 @@ Route::get('/subscribing', [controllerUtilisateur::class, 'subscribing']);
 
 // Nationality
 Route::get('/nationality', [controllerHome::class, 'nationality']);
+Route::get('/search', [controllerNationality::class, 'search']);
 
 // Exemple de routes déduites de votre ancien code présent ci-dessous, mais non fonctionnelles car contrôleurs sans méthodes
 /* Route::get('/alignement', [controllerAlignement::class, 'alignement']);
