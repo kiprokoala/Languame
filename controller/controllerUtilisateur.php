@@ -1,7 +1,10 @@
 <?php
 
-require_once("model/utilisateur.php");
-require_once("model/session.php");
+namespace controller;
+use app\Models\Utilisateur;
+use app\Models\Session;
+use app\Models\Langue;
+
 require_once("controller/controllerObjet.php");
 
 class controllerUtilisateur extends controllerObjet
@@ -31,9 +34,9 @@ class controllerUtilisateur extends controllerObjet
                 $available_langs .= "<option value='".$lang->get('id_langue')."'>".$lang->get("nomLangue")."</option>";
             }
 
-            $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
+            // $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
 
-            include("view/accountView.php");
+            include("resources/views/accountView.php");
         }else{
             self::formConnect();
         }
@@ -58,9 +61,9 @@ class controllerUtilisateur extends controllerObjet
     }
 
     public static function formConnect(){
-        include("view/generic/header.php");
-        include("view/generic/formUtilisateur.html");
-        include("view/generic/footer.php");
+        include("resources/views/generic/header.php");
+        include("resources/views/generic/formUtilisateur.html");
+        include("resources/views/generic/footer.php");
     }
 
     public static function disconnect(){
@@ -114,6 +117,6 @@ class controllerUtilisateur extends controllerObjet
     public static function getAllParties(){
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $parties = $user->getAllParties();
-        include ("view/listeParties.php");
+        include ("resources/views/generic/listeParties.php");
     }
 }
