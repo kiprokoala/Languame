@@ -55,7 +55,7 @@
 }
 
 .menu-deroulant {
-  background-color: #edecec;
+  background-color: #575757;
   width: 97%;
 
   height: 45%;
@@ -64,6 +64,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .search-bar {
@@ -120,6 +121,16 @@
   list-style-type: none;
   /* Masquer les puces */
   padding: 20px;
+}
+
+.menu-deroulant .center {
+  justify-content: center;
+  color: black;
+  font-size: 10px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  font-family: "Signika", sans-serif;
 }
 
 .scrolling-list li {

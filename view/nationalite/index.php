@@ -22,19 +22,29 @@
 
                 <div class="minimap">
 
-                    <ul class="scrolling-list">
-                       
                    
-                    </ul>
                 </div>
                 <div id="divPays" class="pays">
                     <p>FRANCE</p>
                 </div>
 
                 <div id="expression" class="menu-deroulant">
-                    <ul id="liste-expressions" class="scrolling-list">
-
-                    </ul>
+                    <p class="center">les expressions</p>
+                    <fieldset style="border-style:none;  font-family: 'Signika', sans-serif";
+">
+                        <div>
+                            <label id="">Expression originale </label>
+                            <input style="background-color:#968C95;" id="expression-originale" type="text" disabled>
+                        </div>
+                        <div>
+                            <label> Traduction littérale</label>
+                            <input id="traduction-litterale" type="text" disabled>
+                        </div>
+                        <div>
+                            <label>Traduction idiomatique</label>
+                            <input id="traduction-idiomatique" type="text"disabled>
+                        </div>
+                    </fieldset>
 
                 </div>
 
