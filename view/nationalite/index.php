@@ -27,10 +27,10 @@
 
                 <div id="expression" class="menu-deroulant">
                     <p class="center">les expressions</p>
-                    <fieldset style="border-style:none;  font-family: 'Signika', sans-serif;">
+                    <fieldset id="expression-unique" style="border-style:none;  font-family: 'Signika', sans-serif;">
                         <div>
-                            <label id="">Expression originale </label>
-                            <input style="background-color:#968C95;" id="expression-originale" type="text" disabled>
+                            <label>Expression originale</label>
+                            <input id="expression-originale" type="text" disabled>
                         </div>
                         <div>
                             <label> Traduction littérale</label>

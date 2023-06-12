@@ -796,6 +796,12 @@ function getExpressionsByID(id) {
 
       var listeExpressions = document.getElementById("liste-expressions");
 
+      var expressionUnique = document.getElementById("expression-unique");
+      let expressionIdio = document.getElementById("traduction-idiomatique");
+      let traductionLit = document.getElementById("traduction-litterale");
+      let expressionOri = document.getElementById("expression");
+
+
       listeExpressions.innerHTML = "";
 
       for (let i = 0; i < data.length; i++) {
