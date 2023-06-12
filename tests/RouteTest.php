@@ -1,5 +1,5 @@
 <?php
-require_once '../app/tools/Route.php';
+require_once '../app/Utils/Route.php';
 require_once 'controller/TestController.php';
 
 use app\tools\Route;
@@ -25,6 +25,16 @@ class RouteTest extends TestCase
         $this->assertEquals(
             'This is the second page!',
             Route::get('/page2', [TestController::class, 'secondPage'])
+        );
+    }
+
+    public function testWithUrlParams()
+    {
+        $_SERVER['REQUEST_URI'] = "/?testParma=test&secondTest=true";
+        // We test if we obtain 'Hello World!'
+        $this->assertEquals(
+            'Hello World!',
+            Route::get('/', [TestController::class, 'index'])
         );
     }
 }
