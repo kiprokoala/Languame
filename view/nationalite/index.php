@@ -1,6 +1,3 @@
-<?php
- ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,17 +15,11 @@
     <div class="container">
         <div class="row">
             <div class="col1">
-                <img id="flag" src="" alt="Drapeau" />
 
                 <div class="minimap">
-
-                    <ul class="scrolling-list">
-                       
-                   
-                    </ul>
+                    <img id="flag" src="" alt="Drapeau" style="display: none;"/>
                 </div>
                 <div id="divPays" class="pays">
-                    <p>FRANCE</p>
                 </div>
 
                 <div id="expression" class="menu-deroulant">
@@ -57,20 +48,4 @@
         </div>
     </div>
 </body>
-
-
-
-<script>
-
-function getCountryFlag(countryCode) {
-  const flagUrl = `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
-
-  const flagElement = document.getElementById('flag');
-  flagElement.src = flagUrl;
-}
-
-getCountryFlag('FR');
-</script>
-
-
 </html>

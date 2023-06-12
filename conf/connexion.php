@@ -2,9 +2,9 @@
     class Connexion{
 
         static private $hostname = "localhost";
-        static private $database = "prism";
-        static private $login = "farid";
-        static private $password = "123";
+        static private $database = "world_db";
+        static private $login = "root";
+        static private $password = "";
 
         static private $tabUTF8 = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 

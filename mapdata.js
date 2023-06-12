@@ -758,7 +758,7 @@ function getPaysByCode(country_code) {
   xhr.open("GET", "actions/carte/chargerPaysParCode.php?code=" + country_code, true);
   xhr.onload = function () {
     if (xhr.status === 200) {
-      let data = JSON.parse(xhr.responseText);
+      data = JSON.parse(xhr.responseText);
       // Variable qui contiendra les données JSON des pays
       var divPays = document.getElementById("divPays");
       divPays.innerHTML = "<p>" + data[0][0].nomPays + "</p>";
@@ -790,10 +790,8 @@ function getCodeByPays(nom) {
 function getExpressionsByID(id) {
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "./actions/carte/chargerExpressionParPays.php?id_pays=" + id, true);
-  console.log(xhr);
   xhr.onload = function () {
     if (xhr.status === 200) {
-      console.log(xhr.responseText);
       let data = JSON.parse(xhr.responseText);
 
       var listeExpressions = document.getElementById("liste-expressions");
@@ -801,7 +799,7 @@ function getExpressionsByID(id) {
       listeExpressions.innerHTML = "";
 
       for (let i = 0; i < data.length; i++) {
-        listeExpressions.innerHTML += "<li> <small class='hidden'>" + data[i].id_expression + "</small>" + data[i].litteralTradExpression + "</li>";
+        listeExpressions.innerHTML += "<li>"+ data[i].texteLangueExpression + "</li>";
       }
 
     }
@@ -851,8 +849,8 @@ window.addEventListener('load', function () {
           this.setAttribute("fill", "black");
         }
       }
-      getPaysByCode(country_code);
       getCountryFlag(country_code);
+      getPaysByCode(country_code);
     });
   }
 });
@@ -860,10 +858,11 @@ window.addEventListener('load', function () {
 
 // Gestion de la barre de recherche de pays
 function getInputValue() {
-  var input = document.getElementById("search");
-  var inputValue = input.value;
+  let input = document.getElementById("search");
+  let inputValue = input.value;
   // Faites quelque chose avec la valeur saisie, par exemple affichez-la dans la console
   Promise.all([getCodeByPays(inputValue)]).then((values) => {
+    getCountryFlag(values[0][0]);
     getExpressionsByID(values[0][1]);
   });
 
@@ -881,6 +880,5 @@ function getCountryFlag(countryCode) {
 
   const flagElement = document.getElementById('flag');
   flagElement.src = flagUrl;
+  flagElement.style.display = "unset";
 }
-
-getCountryFlag('FR');

@@ -111,9 +111,6 @@
   height: 200px;
   /* Hauteur de la div minimap (ajustez selon vos besoins) */
   overflow: auto;
-  /* Affichage de la barre de défilement si nécessaire */
-  padding: 50px;
-
 }
 
 .scrolling-list {
