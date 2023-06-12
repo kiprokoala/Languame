@@ -74,7 +74,8 @@ class controllerUtilisateur extends controllerObjet
 
     public static function subscribing(){
 
-        $login = $_POST['login'];
+        try{
+            $login = $_POST['login'];
         $mdp = $_POST['password'];
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -94,6 +95,9 @@ class controllerUtilisateur extends controllerObjet
         );
 
         self::connect();
+        }catch(Error $e){
+            self::formConnect();
+        }
     }
 
     public static function modifyAccount(){
