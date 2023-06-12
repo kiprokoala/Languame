@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <!-- Bouton déconnexion -->
-                        <a class="deconnectBtn" href="/disconnect"><button>Déconnexion</button></a>
+                        <a class="deconnectBtn" href="/disconnect">Déconnexion</a>
                     </div>
                 </div>
             </div>
@@ -138,18 +138,6 @@
                         </div>
                         <div id="tagsContainer">
                             <?php echo $tag_langs ?>
-                            <!--                         <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
-                            <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>
--->
                         </div>
                     </div>
                     <div id="btnsContainer">

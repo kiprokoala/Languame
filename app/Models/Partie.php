@@ -75,6 +75,36 @@ class Partie extends Objet
             echo $e->getMessage();
         }
     }
+
+    public static function getNumberOfMatesInPartie($user, $partie){
+        $requete = "select count(es.id_equipe)
+                    from est_dans es
+                    inner join liste_equipe l on l.id_equipe = es.id_equipe
+                    inner join partie p on p.id_liste_equipe = l.id_liste_equipe
+                    where es.id_utilisateur = ".$user." and p.id_partie = ".$partie.";";
+        try{
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_NUM);
+            return $resultat->fetch();
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    public static function getNumberOfAnswersInPartie($user, $partie){
+        $requete = "select count(a.id_alignement)
+                    from alignement a
+                    inner join est_donne e on e.id_alignement = a.id_alignement
+                    inner join partie p on p.id_partie = e.id_partie
+                    where a.id_utilisateur = ".$user." and p.id_partie = ".$partie.";";
+        try{
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_NUM);
+            return $resultat->fetch();
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 }
 
 ?>
