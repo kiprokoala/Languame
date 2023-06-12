@@ -81,5 +81,23 @@ class Pays {
             echo $e->getMessage();
         }
     }
+
+     /**
+     * Récupère les expressions des pays.
+     * @return array Tableau contenant les expressions des pays.
+     * @throws PDOException En cas d'erreur lors de la recherche dans la base de données.
+     */
+    public static function getAllExpressions($id_pays){
+        $requete = "SELECT id_expression, texteLangueExpression, litteralTradExpression FROM Expression" ;
+        try {
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_OBJ);
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
 }
 ?>

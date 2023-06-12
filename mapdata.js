@@ -799,13 +799,35 @@ function getExpressionsByID(id) {
       listeExpressions.innerHTML = "";
 
       for (let i = 0; i < data.length; i++) {
-        listeExpressions.innerHTML += "<li>"+ data[i].texteLangueExpression + "</li>";
+        listeExpressions.innerHTML += "<li>" + data[i].texteLangueExpression + "</li>";
       }
 
     }
   }
   xhr.send();
 }
+
+function getAllExpressions() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "./actions/carte/chargerAllExpression.php", true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      let data = JSON.parse(xhr.responseText);
+
+      var listeExpressions = document.getElementById("liste-expressions");
+
+      listeExpressions.innerHTML = "";
+
+      for (let i = 0; i < data.length; i++) {
+        listeExpressions.innerHTML += "<li>" + data[i].texteLangueExpression + "</li>";
+      }
+
+    }
+  }
+  xhr.send();
+}
+
+
 
 window.addEventListener('load', function () {
   var elements = document.getElementsByClassName("sm_state");
@@ -860,14 +882,17 @@ window.addEventListener('load', function () {
 function getInputValue() {
   let input = document.getElementById("search");
   let inputValue = input.value;
-  // Faites quelque chose avec la valeur saisie, par exemple affichez-la dans la console
-  Promise.all([getCodeByPays(inputValue)]).then((values) => {
-    getCountryFlag(values[0][0]);
-    getExpressionsByID(values[0][1]);
-  });
 
-
+  if (inputValue === "") {
+    getAllExpressions();
+  } else {
+    Promise.all([getCodeByPays(inputValue)]).then((values) => {
+      getCountryFlag(values[0][0]);
+      getExpressionsByID(values[0][1]);
+    });
+  }
 }
+
 
 document.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {

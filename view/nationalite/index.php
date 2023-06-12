@@ -20,14 +20,19 @@
             <div class="col1">
 
                 <div class="minimap">
+<<<<<<< HEAD
+
+                   
+=======
                     <img id="flag" src="" alt="Drapeau" style="display: none;"/>
+>>>>>>> f3f410fa80983d18a501910220e8f625a2ab1536
                 </div>
                 <div id="divPays" class="pays">
                 </div>
 
                 <div id="expression" class="menu-deroulant">
                     <p class="center">les expressions</p>
-                    <fieldset style="border-style:none;  font-family: 'Signika', sans-serif;">
+                    <fieldset style="border-style:none;  font-family: 'Signika', sans-serif";>
                         <div>
                             <label id="">Expression originale </label>
                             <input style="background-color:#968C95;" id="expression-originale" type="text" disabled>
