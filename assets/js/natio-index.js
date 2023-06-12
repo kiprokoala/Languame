@@ -2,6 +2,21 @@ $(document).ready(function () {
   console.log("début");
   var search = $("#search");
 
+  var choix_sens;
+  // slider choix sens
+  $('.sens1').on('click', function () {
+    $('.sens1').addClass('active');
+    $('.sens2').removeClass('active');
+    choix_sens = 1;
+
+  
+  });
+  $('.sens2').on('click', function () {
+    $('.sens2').addClass('active');
+    $('.sens1').removeClass('active');
+    choix_sens = 2;
+  });
+
   search.autocomplete({
     source: function (request, response) {
       $.ajax({
@@ -25,6 +40,7 @@ $(document).ready(function () {
     },
     minLength: 1,
     select: function (event, ui) {
+      $("#expression").empty();
       $("#search").val(ui.item.value);
       $("#search-hidden").val(ui.item.id);
       getCodeByPays(ui.item.value);

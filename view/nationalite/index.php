@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
-    <link href="../../assets/styles/styles.css" rel="stylesheet">
     <link href="../../styles/nationalite.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -16,6 +15,13 @@
 
 <body>
     <div class="container">
+        <div class="nav">
+            <a href="/profil">
+                <span class="material-symbols-outlined iconAccount">
+                    account_circle
+                </span>
+            </a>
+        </div>
         <div class="row">
             <div class="col1">
 
@@ -26,22 +32,6 @@
                 </div>
 
                 <div id="expression" class="menu-deroulant">
-                    <p class="center">les expressions</p>
-                    <fieldset id="expression-unique" style="border-style:none;  font-family: 'Signika', sans-serif;">
-                        <div>
-                            <label>Expression originale</label>
-                            <input id="expression-originale" type="text" disabled>
-                        </div>
-                        <div>
-                            <label> Traduction littérale</label>
-                            <input id="traduction-litterale" type="text" disabled>
-                        </div>
-                        <div>
-                            <label>Traduction idiomatique</label>
-                            <input id="traduction-idiomatique" type="text"disabled>
-                        </div>
-                    </fieldset>
-
                 </div>
 
             </div>
@@ -55,14 +45,19 @@
                     <script src="../../mapdata.js"></script>
                     <script src="../../assets/js/natio-index.js"></script>
                     <script src="../../worldmap.js"></script>
+
                 </div>
                 <div class="choix-sens">
-                    <div class="sens1">
-
+                    <div class="sens1 active">
+                        <p>
+                            Expression entrante
+                        </p>
                     </div>
 
                     <div class="sens2">
-
+                        <p>
+                            Expression sortante
+                        </p>
                     </div>
 
                 </div>
