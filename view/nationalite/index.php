@@ -20,7 +20,7 @@
             <div class="col1">
 
                 <div class="minimap">
-                    <img id="flag" src="" alt="Drapeau" style="display: none;"/>
+                    <img id="flag" src="" alt="Drapeau" style="display: none;" />
                 </div>
                 <div id="divPays" class="pays">
                 </div>
@@ -57,6 +57,13 @@
                     <script src="../../worldmap.js"></script>
                 </div>
                 <div class="choix-sens">
+                    <div class="sens1">
+
+                    </div>
+
+                    <div class="sens2">
+
+                    </div>
 
                 </div>
             </div>
@@ -64,4 +71,5 @@
         </div>
     </div>
 </body>
+
 </html>

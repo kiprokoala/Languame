@@ -68,656 +68,656 @@ var simplemaps_worldmap_mapdata = {
     link_text: "View Website",
     state_image_url: "",
     state_image_position: "",
-    location_image_url: ""
+    location_image_url: "",
   },
   state_specific: {
     AF: {
       name: "Afghanistan",
-      state_color: "#ffffff"
+      state_color: "#ffffff",
     },
     AO: {
-      name: "Angola"
+      name: "Angola",
     },
     AL: {
-      name: "Albanie"
+      name: "Albanie",
     },
     AE: {
-      name: "Émirats arabes unis"
+      name: "Émirats arabes unis",
     },
     AR: {
-      name: "Argentine"
+      name: "Argentine",
     },
     AM: {
-      name: "Arménie"
+      name: "Arménie",
     },
     AU: {
-      name: "Australie"
+      name: "Australie",
     },
     AT: {
-      name: "Autriche"
+      name: "Autriche",
     },
     AZ: {
-      name: "Azerbaïdjan"
+      name: "Azerbaïdjan",
     },
     BI: {
-      name: "Burundi"
+      name: "Burundi",
     },
     BE: {
-      name: "Belgique"
+      name: "Belgique",
     },
     BJ: {
-      name: "Bénin"
+      name: "Bénin",
     },
     BF: {
-      name: "Burkina Faso"
+      name: "Burkina Faso",
     },
     BD: {
-      name: "Bangladesh"
+      name: "Bangladesh",
     },
     BG: {
-      name: "Bulgarie"
+      name: "Bulgarie",
     },
     BH: {
-      name: "Bahreïn"
+      name: "Bahreïn",
     },
     BA: {
-      name: "Bosnie-Herzégovine"
+      name: "Bosnie-Herzégovine",
     },
     BY: {
-      name: "Biélorussie"
+      name: "Biélorussie",
     },
     BZ: {
-      name: "Belize"
+      name: "Belize",
     },
     BO: {
-      name: "Bolivie"
+      name: "Bolivie",
     },
     BR: {
-      name: "Brésil"
+      name: "Brésil",
     },
     BN: {
-      name: "Brunéi Darussalam"
+      name: "Brunéi Darussalam",
     },
     BT: {
-      name: "Bhoutan"
+      name: "Bhoutan",
     },
     BW: {
-      name: "Botswana"
+      name: "Botswana",
     },
     CF: {
-      name: "République centrafricaine"
+      name: "République centrafricaine",
     },
     CA: {
-      name: "Canada"
+      name: "Canada",
     },
     CH: {
-      name: "Suisse"
+      name: "Suisse",
     },
     CL: {
-      name: "Chili"
+      name: "Chili",
     },
     CN: {
-      name: "Chine"
+      name: "Chine",
     },
     CI: {
-      name: "Côte d'Ivoire"
+      name: "Côte d'Ivoire",
     },
     CM: {
-      name: "Cameroun"
+      name: "Cameroun",
     },
     CD: {
-      name: "République démocratique du Congo"
+      name: "République démocratique du Congo",
     },
     CG: {
-      name: "Congo"
+      name: "Congo",
     },
     CO: {
-      name: "Colombie"
+      name: "Colombie",
     },
     CR: {
-      name: "Costa Rica"
+      name: "Costa Rica",
     },
     CU: {
-      name: "Cuba"
+      name: "Cuba",
     },
     CZ: {
-      name: "République tchèque"
+      name: "République tchèque",
     },
     DE: {
-      name: "Allemagne"
+      name: "Allemagne",
     },
     DJ: {
-      name: "Djibouti"
+      name: "Djibouti",
     },
     DK: {
-      name: "Danemark"
+      name: "Danemark",
     },
     DO: {
-      name: "République dominicaine"
+      name: "République dominicaine",
     },
     DZ: {
-      name: "Algérie"
+      name: "Algérie",
     },
     EC: {
-      name: "Équateur"
+      name: "Équateur",
     },
     EG: {
-      name: "Égypte"
+      name: "Égypte",
     },
     ER: {
-      name: "Érythrée"
+      name: "Érythrée",
     },
     EE: {
-      name: "Estonie"
+      name: "Estonie",
     },
     ET: {
-      name: "Éthiopie"
+      name: "Éthiopie",
     },
     FI: {
-      name: "Finlande"
+      name: "Finlande",
     },
     FJ: {
-      name: "Fidji"
+      name: "Fidji",
     },
     GA: {
-      name: "Gabon"
+      name: "Gabon",
     },
     GB: {
-      name: "Royaume-Uni"
+      name: "Royaume-Uni",
     },
     GE: {
-      name: "Géorgie"
+      name: "Géorgie",
     },
     GH: {
-      name: "Ghana"
+      name: "Ghana",
     },
     GN: {
-      name: "Guinée"
+      name: "Guinée",
     },
     GM: {
-      name: "Gambie"
+      name: "Gambie",
     },
     GW: {
-      name: "Guinée-Bissau"
+      name: "Guinée-Bissau",
     },
     GQ: {
-      name: "Guinée équatoriale"
+      name: "Guinée équatoriale",
     },
     GR: {
-      name: "Grèce"
+      name: "Grèce",
     },
     GL: {
-      name: "Groenland"
+      name: "Groenland",
     },
     GT: {
-      name: "Guatémala"
+      name: "Guatémala",
     },
     GY: {
-      name: "Guyana"
+      name: "Guyana",
     },
     HN: {
-      name: "Honduras"
+      name: "Honduras",
     },
     HR: {
-      name: "Croatie"
+      name: "Croatie",
     },
     HT: {
-      name: "Haïti"
+      name: "Haïti",
     },
     HU: {
-      name: "Hongrie"
+      name: "Hongrie",
     },
     ID: {
-      name: "Indonésie"
+      name: "Indonésie",
     },
     IN: {
-      name: "Inde"
+      name: "Inde",
     },
     IE: {
-      name: "Irlande"
+      name: "Irlande",
     },
     IR: {
-      name: "Iran"
+      name: "Iran",
     },
     IQ: {
-      name: "Irak"
+      name: "Irak",
     },
     IS: {
-      name: "Islande"
+      name: "Islande",
     },
     IL: {
-      name: "Israël"
+      name: "Israël",
     },
     IT: {
-      name: "Italie"
+      name: "Italie",
     },
     JM: {
-      name: "Jamaïque"
+      name: "Jamaïque",
     },
     JO: {
-      name: "Jordanie"
+      name: "Jordanie",
     },
     JP: {
-      name: "Japon"
+      name: "Japon",
     },
     KZ: {
-      name: "Kazakhstan"
+      name: "Kazakhstan",
     },
     KE: {
-      name: "Kenya"
+      name: "Kenya",
     },
     KG: {
-      name: "Kirghizistan"
+      name: "Kirghizistan",
     },
     KH: {
-      name: "Cambodge"
+      name: "Cambodge",
     },
     KR: {
-      name: "Corée du Sud"
+      name: "Corée du Sud",
     },
     XK: {
-      name: "Kosovo"
+      name: "Kosovo",
     },
     KW: {
-      name: "Koweït"
+      name: "Koweït",
     },
     LA: {
-      name: "République démocratique populaire lao"
+      name: "République démocratique populaire lao",
     },
     LB: {
-      name: "Liban"
+      name: "Liban",
     },
     LR: {
-      name: "Libéria"
+      name: "Libéria",
     },
     LY: {
-      name: "Libye"
+      name: "Libye",
     },
     LK: {
-      name: "Sri Lanka"
+      name: "Sri Lanka",
     },
     LS: {
-      name: "Lesotho"
+      name: "Lesotho",
     },
     LT: {
-      name: "Lituanie"
+      name: "Lituanie",
     },
     LU: {
-      name: "Luxembourg"
+      name: "Luxembourg",
     },
     LV: {
-      name: "Lettonie"
+      name: "Lettonie",
     },
     MA: {
-      name: "Maroc"
+      name: "Maroc",
     },
     MD: {
-      name: "Moldavie"
+      name: "Moldavie",
     },
     MG: {
-      name: "Madagascar"
+      name: "Madagascar",
     },
     MX: {
-      name: "Mexique"
+      name: "Mexique",
     },
     MK: {
-      name: "Macédoine"
+      name: "Macédoine",
     },
     ML: {
-      name: "Mali"
+      name: "Mali",
     },
     MM: {
-      name: "Myanmar"
+      name: "Myanmar",
     },
     ME: {
-      name: "Monténégro"
+      name: "Monténégro",
     },
     MN: {
-      name: "Mongolie"
+      name: "Mongolie",
     },
     MZ: {
-      name: "Mozambique"
+      name: "Mozambique",
     },
     MR: {
-      name: "Mauritanie"
+      name: "Mauritanie",
     },
     MW: {
-      name: "Malawi"
+      name: "Malawi",
     },
     MY: {
-      name: "Malaisie"
+      name: "Malaisie",
     },
     NA: {
-      name: "Namibie"
+      name: "Namibie",
     },
     NE: {
-      name: "Niger"
+      name: "Niger",
     },
     NG: {
-      name: "Nigéria"
+      name: "Nigéria",
     },
     NI: {
-      name: "Nicaragua"
+      name: "Nicaragua",
     },
     NL: {
-      name: "Pays-Bas"
+      name: "Pays-Bas",
     },
     NO: {
-      name: "Norvège"
+      name: "Norvège",
     },
     NP: {
-      name: "Népal"
+      name: "Népal",
     },
     NZ: {
-      name: "Nouvelle-Zélande"
+      name: "Nouvelle-Zélande",
     },
     OM: {
-      name: "Oman"
+      name: "Oman",
     },
     PK: {
-      name: "Pakistan"
+      name: "Pakistan",
     },
     PA: {
-      name: "Panama"
+      name: "Panama",
     },
     PE: {
-      name: "Pérou"
+      name: "Pérou",
     },
     PH: {
-      name: "Philippines"
+      name: "Philippines",
     },
     PG: {
-      name: "Papouasie-Nouvelle-Guinée"
+      name: "Papouasie-Nouvelle-Guinée",
     },
     PL: {
-      name: "Pologne"
+      name: "Pologne",
     },
     KP: {
-      name: "République populaire démocratique de Corée"
+      name: "République populaire démocratique de Corée",
     },
     PT: {
-      name: "Portugal"
+      name: "Portugal",
     },
     PY: {
-      name: "Paraguay"
+      name: "Paraguay",
     },
     PS: {
-      name: "Palestine"
+      name: "Palestine",
     },
     QA: {
-      name: "Qatar"
+      name: "Qatar",
     },
     RO: {
-      name: "Roumanie"
+      name: "Roumanie",
     },
     RU: {
-      name: "Russie"
+      name: "Russie",
     },
     RW: {
-      name: "Rwanda"
+      name: "Rwanda",
     },
     EH: {
-      name: "Sahara occidental"
+      name: "Sahara occidental",
     },
     SA: {
-      name: "Arabie saoudite"
+      name: "Arabie saoudite",
     },
     SD: {
-      name: "Soudan"
+      name: "Soudan",
     },
     SS: {
-      name: "Soudan du Sud"
+      name: "Soudan du Sud",
     },
     SN: {
-      name: "Sénégal"
+      name: "Sénégal",
     },
     SL: {
-      name: "Sierra Leone"
+      name: "Sierra Leone",
     },
     SV: {
-      name: "El Salvador"
+      name: "El Salvador",
     },
     RS: {
-      name: "Serbie"
+      name: "Serbie",
     },
     SR: {
-      name: "Suriname"
+      name: "Suriname",
     },
     SK: {
-      name: "Slovaquie"
+      name: "Slovaquie",
     },
     SI: {
-      name: "Slovénie"
+      name: "Slovénie",
     },
     SE: {
-      name: "Suède"
+      name: "Suède",
     },
     SZ: {
-      name: "Eswatini"
+      name: "Eswatini",
     },
     SY: {
-      name: "Syrie"
+      name: "Syrie",
     },
     TD: {
-      name: "Tchad"
+      name: "Tchad",
     },
     TG: {
-      name: "Togo"
+      name: "Togo",
     },
     TH: {
-      name: "Thaïlande"
+      name: "Thaïlande",
     },
     TJ: {
-      name: "Tadjikistan"
+      name: "Tadjikistan",
     },
     TM: {
-      name: "Turkménistan"
+      name: "Turkménistan",
     },
     TL: {
-      name: "Timor-Leste"
+      name: "Timor-Leste",
     },
     TN: {
-      name: "Tunisie"
+      name: "Tunisie",
     },
     TR: {
-      name: "Turquie"
+      name: "Turquie",
     },
     TW: {
-      name: "Taïwan"
+      name: "Taïwan",
     },
     TZ: {
-      name: "Tanzanie"
+      name: "Tanzanie",
     },
     UG: {
-      name: "Ouganda"
+      name: "Ouganda",
     },
     UA: {
-      name: "Ukraine"
+      name: "Ukraine",
     },
     UY: {
-      name: "Uruguay"
+      name: "Uruguay",
     },
     US: {
-      name: "États-Unis"
+      name: "États-Unis",
     },
     UZ: {
-      name: "Ouzbékistan"
+      name: "Ouzbékistan",
     },
     VE: {
-      name: "Venezuela"
+      name: "Venezuela",
     },
     VN: {
-      name: "Viêt Nam"
+      name: "Viêt Nam",
     },
     VU: {
-      name: "Vanuatu"
+      name: "Vanuatu",
     },
     YE: {
-      name: "Yémen"
+      name: "Yémen",
     },
     ZA: {
-      name: "Afrique du Sud"
+      name: "Afrique du Sud",
     },
     ZM: {
-      name: "Zambie"
+      name: "Zambie",
     },
     ZW: {
-      name: "Zimbabwe"
+      name: "Zimbabwe",
     },
     SO: {
-      name: "Somalie"
+      name: "Somalie",
     },
     GF: {
-      name: "Guyane française"
+      name: "Guyane française",
     },
     FR: {
-      name: "France"
+      name: "France",
     },
     ES: {
-      name: "Espagne"
+      name: "Espagne",
     },
     AW: {
-      name: "Aruba"
+      name: "Aruba",
     },
     AI: {
-      name: "Anguilla"
+      name: "Anguilla",
     },
     AD: {
-      name: "Andorre"
+      name: "Andorre",
     },
     AG: {
-      name: "Antigua-et-Barbuda"
+      name: "Antigua-et-Barbuda",
     },
     BS: {
-      name: "Bahamas"
+      name: "Bahamas",
     },
     BM: {
-      name: "Bermudes"
+      name: "Bermudes",
     },
     BB: {
-      name: "Barbade"
+      name: "Barbade",
     },
     KM: {
-      name: "Comores"
+      name: "Comores",
     },
     CV: {
-      name: "Cap-Vert"
+      name: "Cap-Vert",
     },
     KY: {
-      name: "Îles Caïmans"
+      name: "Îles Caïmans",
     },
     DM: {
-      name: "Dominique"
+      name: "Dominique",
     },
     FK: {
-      name: "Îles Falkland"
+      name: "Îles Falkland",
     },
     FO: {
-      name: "Îles Féroé"
+      name: "Îles Féroé",
     },
     GD: {
-      name: "Grenade"
+      name: "Grenade",
     },
     HK: {
-      name: "Hong Kong"
+      name: "Hong Kong",
     },
     KN: {
-      name: "Saint-Christophe-et-Niévès"
+      name: "Saint-Christophe-et-Niévès",
     },
     LC: {
-      name: "Sainte-Lucie"
+      name: "Sainte-Lucie",
     },
     LI: {
-      name: "Liechtenstein"
+      name: "Liechtenstein",
     },
     MF: {
-      name: "Saint-Martin (français)"
+      name: "Saint-Martin (français)",
     },
     MV: {
-      name: "Maldives"
+      name: "Maldives",
     },
     MT: {
-      name: "Malte"
+      name: "Malte",
     },
     MS: {
-      name: "Montserrat"
+      name: "Montserrat",
     },
     MU: {
-      name: "Maurice"
+      name: "Maurice",
     },
     NC: {
-      name: "Nouvelle-Calédonie"
+      name: "Nouvelle-Calédonie",
     },
     NR: {
-      name: "Nauru"
+      name: "Nauru",
     },
     PN: {
-      name: "Îles Pitcairn"
+      name: "Îles Pitcairn",
     },
     PR: {
-      name: "Porto Rico"
+      name: "Porto Rico",
     },
     PF: {
-      name: "Polynésie française"
+      name: "Polynésie française",
     },
     SG: {
-      name: "Singapour"
+      name: "Singapour",
     },
     SB: {
-      name: "Îles Salomon"
+      name: "Îles Salomon",
     },
     ST: {
-      name: "Sao Tomé-et-Principe"
+      name: "Sao Tomé-et-Principe",
     },
     SX: {
-      name: "Saint-Martin (néerlandais)"
+      name: "Saint-Martin (néerlandais)",
     },
     SC: {
-      name: "Seychelles"
+      name: "Seychelles",
     },
     TC: {
-      name: "Îles Turques-et-Caïques"
+      name: "Îles Turques-et-Caïques",
     },
     TO: {
-      name: "Tonga"
+      name: "Tonga",
     },
     TT: {
-      name: "Trinité-et-Tobago"
+      name: "Trinité-et-Tobago",
     },
     VC: {
-      name: "Saint-Vincent-et-les-Grenadines"
+      name: "Saint-Vincent-et-les-Grenadines",
     },
     VG: {
-      name: "Îles Vierges britanniques"
+      name: "Îles Vierges britanniques",
     },
     VI: {
-      name: "Îles Vierges des États-Unis"
+      name: "Îles Vierges des États-Unis",
     },
     CY: {
-      name: "Chypre"
+      name: "Chypre",
     },
     RE: {
-      name: "Réunion (France)"
+      name: "Réunion (France)",
     },
     YT: {
-      name: "Mayotte (France)"
+      name: "Mayotte (France)",
     },
     MQ: {
-      name: "Martinique (France)"
+      name: "Martinique (France)",
     },
     GP: {
-      name: "Guadeloupe (France)"
+      name: "Guadeloupe (France)",
     },
     CW: {
-      name: "Curaçao (Pays-Bas)"
+      name: "Curaçao (Pays-Bas)",
     },
     IC: {
-      name: "Îles Canaries (Espagne)"
-    }
+      name: "Îles Canaries (Espagne)",
+    },
   },
   labels: {},
   legend: {
-    entries: []
+    entries: [],
   },
   regions: {},
 };
@@ -729,33 +729,45 @@ function chargerDonneesAJAX() {
     if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
       // Variable qui contiendra les données JSON des pays
-      var dataText = '{';
+      var dataText = "{";
       for (var index = 0; index < data[0].length; index++) {
         var nomPays = data[0][index].nomPays;
         var latitude = data[0][index].latitudeCapitalePays;
         var longitude = data[0][index].longitudeCapitalePays;
 
         // Création de la string qui contient toutes les informations d'un pays et ajout cumulatif des pays
-        dataText += '"' + nomPays + '" : {"name" : "' + nomPays + '", "lat" : ' + latitude + ', "lng" : ' + longitude + '}';
+        dataText +=
+          '"' +
+          nomPays +
+          '" : {"name" : "' +
+          nomPays +
+          '", "lat" : ' +
+          latitude +
+          ', "lng" : ' +
+          longitude +
+          "}";
         // Si on atteint le dernier pays, on ne met pas de virgule à la fin de la variable JSON
         if (data[0][index + 1] != null) {
-          dataText += ',';
+          dataText += ",";
         }
       }
-      dataText += '}';
+      dataText += "}";
 
       // Remplissage de la variable d'information de la carte avec la variable JSON créée
       simplemaps_worldmap_mapdata.locations = JSON.parse(dataText);
     }
-  }
+  };
   xhr.send();
 }
 chargerDonneesAJAX();
 
-
 function getPaysByCode(country_code) {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "actions/carte/chargerPaysParCode.php?code=" + country_code, true);
+  xhr.open(
+    "GET",
+    "actions/carte/chargerPaysParCode.php?code=" + country_code,
+    true
+  );
   xhr.onload = function () {
     if (xhr.status === 200) {
       data = JSON.parse(xhr.responseText);
@@ -763,7 +775,7 @@ function getPaysByCode(country_code) {
       var divPays = document.getElementById("divPays");
       divPays.innerHTML = "<p>" + data[0][0].nomPays + "</p>";
     }
-  }
+  };
   xhr.send();
 }
 
@@ -778,23 +790,40 @@ function getCodeByPays(nom) {
         var divPays = document.getElementById("divPays");
         divPays.innerHTML = "<p>" + data.code[0].nomPays + "</p>";
         resolve([data.code[0].raccourciPays, data.code[0].id_pays]);
-      }
-      else {
+      } else {
         reject(xhr);
       }
-    }
+    };
     xhr.send();
   });
 }
 
 function getExpressionsByID(id) {
+  div_expression = document.getElementById("expression");
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "./actions/carte/chargerExpressionParPays.php?id_pays=" + id, true);
+  xhr.open(
+    "GET",
+    "./actions/carte/chargerExpressionParPays.php?id_pays=" + id,
+    true
+  );
   xhr.onload = function () {
     if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
 
-      var listeExpressions = document.getElementById("liste-expressions");
+      for (let i = 0; i < data.length; i++) {
+        var p1 = document.createElement("div");
+        p1.classList.add("P1");
+        var p2 = document.createElement("div");
+        p2.classList.add("P2");
+        var p3 = document.createElement("div");
+        p3.classList.add("P3");
+
+        var labelP1 = document.createElement("label");
+        labelP1.innerHTML = "Expression originale";
+        var labelP2 = document.createElement("label");
+        labelP2.innerHTML = "Traduction litérale";
+        var labelP3 = document.createElement("label");
+        labelP3.innerHTML = "Traduction idiomatique";
 
       var expressionUnique = document.getElementById("expression-unique");
       let expressionIdio = document.getElementById("traduction-idiomatique");
@@ -827,13 +856,34 @@ function getAllExpressions() {
       for (let i = 0; i < data.length; i++) {
         listeExpressions.innerHTML += "<li>" + data[i].texteLangueExpression + "</li>";
       }
+        var inputP1 = document.createElement("input");
+        inputP1.value = data[i].texteLangueExpression;
+        inputP1.attributes["readonly"] = true;
+        var inputP2 = document.createElement("input");
+        inputP2.value = data[i].texteLangueExpression;
+        inputP2.attributes["readonly"] = true;
+        var inputP3 = document.createElement("input");
+        inputP3.value = data[i].texteLangueExpression;
+        inputP3.attributes["readonly"] = true;
 
+        var divItem = document.createElement("div");
+        divItem.classList.add("expressionItem");
+
+        div_expression.appendChild(divItem);
+        divItem.appendChild(p1);
+        divItem.appendChild(p2);
+        divItem.appendChild(p3);
+        p1.appendChild(labelP1);
+        p1.appendChild(inputP1);
+        p2.appendChild(labelP2);
+        p2.appendChild(inputP2);
+        p3.appendChild(labelP3);
+        p3.appendChild(inputP3);
+      }
     }
-  }
+  };
   xhr.send();
 }
-
-
 
 window.addEventListener('load', function () {
   var elements = document.getElementsByClassName("sm_state");
@@ -841,7 +891,7 @@ window.addEventListener('load', function () {
 
   for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("click", function () {
-      let country_code = this.classList.value.replace('sm_state sm_state_', '');
+      let country_code = this.classList.value.replace("sm_state sm_state_", "");
 
       // vérifier si le pays a déjà été cliqué
       if (clickedCountries.includes(country_code)) {
@@ -852,7 +902,7 @@ window.addEventListener('load', function () {
 
         // réinitialiser la couleur de tous les pays cliqués
         elements.forEach(function (element) {
-          let code = element.classList.value.replace('sm_state sm_state_', '');
+          let code = element.classList.value.replace("sm_state sm_state_", "");
           if (clickedCountries.includes(code)) {
             element.setAttribute("fill", "black");
           } else {
@@ -883,7 +933,6 @@ window.addEventListener('load', function () {
   }
 });
 
-
 // Gestion de la barre de recherche de pays
 function getInputValue() {
   let input = document.getElementById("search");
@@ -909,7 +958,7 @@ document.addEventListener("keyup", function (event) {
 function getCountryFlag(countryCode) {
   const flagUrl = `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
 
-  const flagElement = document.getElementById('flag');
+  const flagElement = document.getElementById("flag");
   flagElement.src = flagUrl;
   flagElement.style.display = "unset";
 }
