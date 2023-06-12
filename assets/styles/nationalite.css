@@ -81,7 +81,7 @@
   padding-left: 10px;
 }
 .map {
-  background-color: #75CFF0;
+  background-color: #75CFEF !important;
   width: 100%;
   height: 80%;
   border-radius: 10px;
