@@ -800,6 +800,7 @@ function getCodeByPays(nom) {
 
 function getExpressionsByID(id) {
   div_expression = document.getElementById("expression");
+  div_expression.innerHTML = "";
   let xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
@@ -809,6 +810,7 @@ function getExpressionsByID(id) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
+
 
       for (let i = 0; i < data.length; i++) {
         var p1 = document.createElement("div");
