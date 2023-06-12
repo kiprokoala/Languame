@@ -117,6 +117,8 @@ class controllerUtilisateur extends controllerObjet
     public static function getAllParties(){
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $parties = $user->getAllParties();
-        include ("resources/views/generic/listeParties.php");
+        include("resources/views/generic/header.php");
+        include("resources/views/listeParties.php");
+        include("resources/views/generic/footer.php");
     }
 }

@@ -1,3 +1,4 @@
+<div>
 <?php
     foreach ($parties as $partie){
         echo "Partie n°".$partie->get('id_partie')." / ".$partie->get('titre')." 
@@ -6,4 +7,4 @@
             <input type='submit' value='Jouer'></input>
         </form>";
     }
-?>
+?></div>

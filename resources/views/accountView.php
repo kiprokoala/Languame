@@ -53,16 +53,16 @@
                             <div class="statsSubContainer">
                                 <img src="/resources/images/game-controller.png" alt="Game controller Icon" width="50px"
                                      height="50px"/>
-                                <div class="nbStat" id="games">12</div>
+                                <div class="nbStat" id="games">0</div>
                             </div>
                             <div class="statsSubContainer">
                                 <div class="statsSubSubContainer">
                                     <img src="/resources/images/medal.png" alt="Medal Icon" width="50px" height="50px"/>
-                                    <div class="nbStat" id="wins">8</div>
+                                    <div class="nbStat" id="wins">0</div>
                                 </div>
                                 <div class="statsSubSubContainer">
                                     <img src="/resources/images/skull.png" alt="Skull Icon" width="50px" height="50px"/>
-                                    <div class="nbStat" id="losses">4</div>
+                                    <div class="nbStat" id="losses">0</div>
                                 </div>
                             </div>
                         </div>
