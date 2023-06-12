@@ -28,6 +28,7 @@ $(document).ready(function () {
       $("#search").val(ui.item.value);
       $("#search-hidden").val(ui.item.id);
       getCodeByPays(ui.item.value);
+      getInputValue();
       return false;
     },
   });
