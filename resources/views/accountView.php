@@ -109,18 +109,6 @@
                 </div>
                 <div id="containerBottomItems"  style="padding-top:20px;">
                     <div id="langBlock">
-                        <div style="padding-bottom: 15px;">
-                            <label class="titleChamps" for="langs">Langues</label>
-                            <div class="ajouterLangBtn">
-                                <select id="langs" name="langs">
-                                    <?php echo $available_langs ?>
-                                </select>
-                                <button id="addLangBtn" type="submit" formaction="addingLang">Ajouter</button>
-                                <!--<button id="addLangBtn" onclick="return addLang()" type="submit">Ajouter</button>-->
-                            </div>
-
-                        </div>
-
                         <div>
                             <label class="titleChamps" for="langs">Langue native</label>
                             <?php if ($lang != '') { ?>
@@ -131,15 +119,23 @@
                                 </div>
                             <?php } ?>
                             <div>
-                                <span id="languesListe"><?php if ($langs) {
-                                echo $langs;
-                            } else {
-                                echo "Pas de langue native renseignée.";
-                            } ?></span>
+                                <span id="languesListe"><?php if ($lang) {
+                                        echo $lang;
+                                    } else {
+                                        echo "Pas de langue native renseignée.";
+                                    } ?></span>
                             </div>
-
                         </div>
-
+                        <div style="padding-bottom: 15px;">
+                            <label class="titleChamps" for="langs">Langues</label>
+                            <div class="ajouterLangBtn">
+                                <select id="langs" name="langs">
+                                    <?php echo $available_langs ?>
+                                </select>
+                                <button id="addLangBtn" type="submit" formaction="addingLang">Ajouter</button>
+                                <!--<button id="addLangBtn" onclick="return addLang()" type="submit">Ajouter</button>-->
+                            </div>
+                        </div>
                         <div id="tagsContainer">
                             <?php echo $tag_langs ?>
                             <!--                         <div class="tagLang">Français <img src="/assets/close.png" id="imgClose"/></div>

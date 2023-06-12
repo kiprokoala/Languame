@@ -34,7 +34,7 @@ class controllerUtilisateur extends controllerObjet
                 $available_langs .= "<option value='".$lang->get('id_langue')."'>".$lang->get("nomLangue")."</option>";
             }
 
-            // $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
+            $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
 
             include("resources/views/accountView.php");
         }else{
@@ -105,6 +105,10 @@ class controllerUtilisateur extends controllerObjet
         $_POST["login"] = $user->get("login");
         $_POST["mdp"] = trim($_POST['mdp']) == '' ? $user->get('mdp') : $_POST['mdp'];
 
+        if(trim($_POST['id_langue']) == ""){
+            $_POST['id_langue'] = $user->get('id_langue');
+        }
+
         $tab = $_POST;
         $langs = $tab["langs"];
         unset($tab["langs"]);
@@ -119,6 +123,6 @@ class controllerUtilisateur extends controllerObjet
     public static function getAllParties(){
         $user = Utilisateur::getObjetById($_SESSION['id']);
         $parties = $user->getAllParties();
-        include ("resources/views/generic/listeParties.php");
+        include ("resources/views/listeParties.php");
     }
 }
