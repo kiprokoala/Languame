@@ -32,13 +32,14 @@ use app\Models\Expression;
                 $expression = Expression::getObjetById($question->get("id_expression"));
                 $themes = $question->getThemes();
                 $question_id = $question->get('id_question');
-                ?>
-                    <div class="questionBlock" onclick="load(<?php $expression ?>)">
-                        Expression : <?php echo $expression->get('texteLangueExpression') ?><br>
-                        Traduction littérale : <?php echo $expression->get('litteralTradExpression') ?><br>
-                    </div>
 
-                    <!--A quel thème cette expression correspond ?<br>
+                ?>
+                            <div class="questionBlock" onclick="load(<?php json_encode($questions) ?>)">
+                                Expression : <?php echo $expression->get('texteLangueExpression') ?><br>
+                                Traduction littérale : <?php echo $expression->get('litteralTradExpression') ?><br>
+                            </div>
+
+                            <!--A quel thème cette expression correspond ?<br>
                 <fieldset>
                     <label>
                         <input type='radio' value='<?php echo $themes[0]->get('id_theme') ?>' name='question<?php echo $question->get('id_question') ?>' checked>
@@ -66,17 +67,20 @@ use app\Models\Expression;
         <!-- La fin de mon code de bourrin -->
     </div>
     <div id="gameRightBlock">
-    bloc droite
+        <div id="titleBlockGame">
+            <div id="t1"style="display:flex;">Expression 1: <div id="t2">&nbsp; expression</div></div>
+            <div id="t3">Traduction littérale</div>
+        </div>
+        <div id="choiceTheme">
+            <div style="background-color:#6D8AB5">Sens 1</div>
+            <div style="background-color:#D64D9F">Sens 2</div>
+            <div style="background-color:#EF6E4E">Sens 3</div>
+            <div style="background-color:#50BB95">Sens 4</div>
+        </div>
     </div>
 </div>
 <script>
-    function load(questionId){
-        let expressionTitle = document.createElement("div");
-        let gameRightBlock =document.getElementById("gameRightBlock");
-        const newContent = document.createTextNode(questionId);
-        expressionTitle.appendChild(newContent);
-        gameRightBlock.appendChild(expressionTitle);
-    }
+
 </script>
 </body>
 </html>
