@@ -47,7 +47,7 @@ use app\Models\Expression;
                 </label>
             </fieldset>
         <?php }?>
-            <input type='submit' value='send it to me'>
+            <input type='submit' value='Proposer alignement'>
         </form>
 
         <!-- La fin de mon code de bourrin -->
