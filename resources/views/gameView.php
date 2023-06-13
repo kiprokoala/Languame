@@ -23,7 +23,7 @@ use app\Models\Expression;
 
         <form action='/alignement/submitAlignement' method='POST'>
             <?php var_dump($questions);?>
-            <input type='submit' value='send it to me'>
+            <input type='submit' value='Proposer alignement'>
         </form>
 
         <!-- La fin de mon code de bourrin -->
