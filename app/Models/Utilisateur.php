@@ -21,13 +21,12 @@ class Utilisateur extends Objet
     protected $mdp;
     protected $prenom;
     protected $nom;
-    protected $isChef;
     protected $isAdmin;
     protected $email;
 
     public function afficher()
     {
-        Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isChef est à " . $this->isChef . " et son isAdmin est à " . $this->isAdmin . " et son email " . $this->email;
+        Utilisateur::$objet . " n°" . $this->id_utilisateur . " a pour login " . $this->login . ", pour prénom " . $this->prenom . " et pour nom " . $this->nom . ". Son isAdmin est à " . $this->isAdmin . " et son email " . $this->email;
     }
 
     public static function connexionUtilisateur($login, $mdp)
@@ -116,6 +115,28 @@ class Utilisateur extends Objet
                     AND id_partie not in (
                         SELECT id_partie 
                         	from reponse r 
+                        	inner join question q on q.id_question = r.id_question 
+                        	where id_utilisateur = ".$this->id_utilisateur.") 
+                    AND winner IS NULL";
+        try{
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Partie'));
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
+    public function getAllPartiesChef(){
+        $requete = "SELECT id_partie, titre, winner, p.id_liste_equipe
+                    FROM Partie p
+                    INNER JOIN liste_equipe l ON l.id_liste_equipe = p.id_liste_equipe
+                    INNER JOIN est_dans e ON e.id_equipe = l.id_equipe
+                    INNER JOIN equipe eq ON eq.id_equipe = e.id_equipe
+                    WHERE id_utilisateur = ".$this->id_utilisateur." AND idChefEquipe = ".$this->id_utilisateur."
+                    AND id_partie not in (
+                        SELECT id_partie 
+                        	from reponse_equipe r 
                         	inner join question q on q.id_question = r.id_question 
                         	where id_utilisateur = ".$this->id_utilisateur.") 
                     AND winner IS NULL";
