@@ -38,19 +38,19 @@ class controllerAlignement extends controllerObjet
             $name = $team->get("nomEquipe");
             switch ($team->get("id_groupeLangue")){
                 case 1:
-                    $teams .= "<input style='background-color: #5a5ae7;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #5a5ae7;' value='$id'>$id - $name</option>";
                     break;
                 case 2:
-                    $teams .= "<input style='background-color: #e8e83e;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #e8e83e;' value='$id'>$id - $name</option>";
                     break;
                 case 3:
-                    $teams .= "<input style='background-color: #68d968;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #68d968;' value='$id'>$id - $name</option>";
                     break;
                 case 4:
-                    $teams .= "<input style='background-color: #c55353;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #c55353;' value='$id'>$id - $name</option>";
                     break;
                 default:
-                    $teams .= "<input type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option value='$id'>$id - $name</option>";
             }
         }
         $all_parties = controllerPartie::getAllFinishedGames();
