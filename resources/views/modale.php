@@ -72,7 +72,7 @@
                                     <?php echo $teams; ?>
                                 </select>
                             </div>
-                        
+
 
                             <!-- Footer (btns) -->
                             <div id="footerModalCreerJeu">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <!-- MODALE Créer équipe -->
                 <div id="displayCreeEquipe" class="displayNone">
@@ -130,7 +130,23 @@
                     <div id="modaleHistoriquePartie">
 
                         <div id="componentPartie">
-
+                            <div class="partieLeftDiv">
+                                <div><span class="textModale1"> Nom du jeu </span> <span class="tagGdl">Groupe de langue</span> </div>
+                                <div class="equipesEtThemesListe">
+                                    <span style="font-size: 12px;">Equipes</span>
+                                    <!-- A remplir avec les data equipes -->
+                                    <div></div>
+                                </div>
+                                <div class="equipesEtThemesListe">
+                                    <span style="font-size: 12px;">Thèmes</span>
+                                    <!-- A remplir avec les data thèmes -->
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="partieRightDiv">
+                                <img class="fit-picture" src="/resources/images/medal.png">
+                                <button class="btnEquipe"> Equipe </button>
+                            </div>
                         </div>
 
                         <div id="partieModal">
