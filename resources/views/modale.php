@@ -68,11 +68,9 @@
                             </div>
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
-                                <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
                                 <select class="ligneSubDivRight scroller" id="equipesLanguesSelect" name="teams[]" multiple>
                                     <?php echo $teams; ?>
                                 </select>
-
                             </div>
                         
 
@@ -84,6 +82,8 @@
                         </form>
                     </div>
                 </div>
+
+                
 
                 <!-- MODALE Créer équipe -->
                 <div id="displayCreeEquipe" class="displayNone">
