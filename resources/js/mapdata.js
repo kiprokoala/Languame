@@ -834,10 +834,10 @@ function getExpressionsByID(id) {
         inputP1.value = data[i].texteLangueExpression;
         inputP1.attributes["readonly"] = true;
         var inputP2 = document.createElement("input");
-        inputP2.value = data[i].texteLangueExpression;
+        inputP2.value = data[i].litteralTradExpression;
         inputP2.attributes["readonly"] = true;
         var inputP3 = document.createElement("input");
-        inputP3.value = data[i].texteLangueExpression;
+        inputP3.value = "";
         inputP3.attributes["readonly"] = true;
 
         var divItem = document.createElement("div");

@@ -35,7 +35,7 @@ class Pays extends Objet
      * @throws PDOException En cas d'erreur lors de la recherche dans la base de données.
      */
     public static function getExpressionsByPays($id_pays){
-        $requete = "SELECT id_expression, texteLangueExpression FROM Expression WHERE id_pays ='$id_pays'" ;
+        $requete = "SELECT * FROM Expression WHERE id_pays ='$id_pays'" ;
         try {
             $resultat = Connexion::pdo()->query($requete);
             $resultat->setFetchmode(PDO::FETCH_OBJ);
