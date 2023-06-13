@@ -53,9 +53,9 @@
                 <label class="titleChamps" for="email">E-mail</label>
                 <input type="email" name="email" required />
               </div>
-              <div style="padding-left: 15px">
-                <label class="titleChamps" for="id_langue">Numéro de langue</label>
-                <input type="number" name="id_langue" required />
+              <div style="padding-left: 15px; width: 100%;">
+                <label class="titleChamps" for="id_langue">Langue</label>
+                  <?php echo $langues ?>
               </div>
             </div>
           </div>

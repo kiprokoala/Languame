@@ -103,33 +103,6 @@ class controllerPartie extends controllerObjet
     {
         $partie = Partie::getObjetById($_POST['id_partie']);
         $questions = $partie->getQuestions();
-        echo "<form action='/alignement/submitAlignement' method='POST'>";
-        foreach ($questions as $question) {
-            $expression = Expression::getObjetById($question->get("id_expression"));
-            $themes = $question->getThemes();
-            echo "expression : " . $expression->get('texteLangueExpression') . "<br>";
-            echo "Traduction littérale : " . $expression->get('litteralTradExpression') . "<br>";
-            echo "A quel thème cette expression correspond ?<br>";
-            echo "
-                <fieldset>
-                    <label>
-                        <input type='radio' value='" . $themes[0]->get('id_theme') . "' name='question" . $question->get('id_question') . "' checked>
-                        " . $themes[0]->get('nomTheme') . "
-                    </label>
-                    <label>
-                        <input type='radio' value='" . $themes[1]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
-                        " . $themes[1]->get('nomTheme') . "
-                    </label>                    
-                    <label>
-                        <input type='radio' value='" . $themes[2]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
-                        " . $themes[2]->get('nomTheme') . "
-                    </label>
-                    <label>
-                        <input type='radio' value='" . $themes[3]->get('id_theme') . "' name='question" . $question->get('id_question') . "'>
-                        " . $themes[3]->get('nomTheme') . "
-                    </label>
-                </fieldset>";
-        }
-        echo "<input type='submit' value='send it to me'></form>";
+        include("resources/views/gameView.php");
     }
 }

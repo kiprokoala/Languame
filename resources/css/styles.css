@@ -320,7 +320,7 @@ body {
   flex-direction: column;
 }
 
-.inputContainer input {
+.inputContainer input, select {
   border-radius: 6px;
   border: solid 1px rgba(0, 0, 0, 0.473);
   padding: 10px;
@@ -781,7 +781,7 @@ body {
     flex-direction: column;
 }
 
-.titleChamps + input {
+.titleChamps + input, select {
     border-radius: 6px;
     border: solid 2px rgba(0, 0, 0, 0.379);
     padding: 6px;
@@ -813,28 +813,25 @@ body {
   justify-content: space-evenly;
 }
 
-#divMembresComponent{
+#gameContainerBlock{
   display: flex;
   flex-direction: row;
+  padding: 50px;
+  height:90vh;
+  background-color: #00ad1c;
+  justify-content: space-between;
 }
 
-.membreComponent{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-right: 15px;
-  padding-top: 15px;
+#gameLeftBlock{
+  background-color: #26465379;
+  border-radius: 6px;
+  width: 25%;
+  height: 100%;
 }
 
-.iconImgMember{
-  font-size: 55px
-}
-
-.pseudoMembre{
-  font-size: 11px;
-}
-
-.expressionEtSensSpan{
-  font-size: 11px;
-  font-weight: 600;
+#gameRightBlock{
+  background-color: white;
+  border-radius: 6px;
+  width: 60%;
+  height: 100%;
 }
