@@ -89,7 +89,7 @@
                 <div id="displayCreeEquipe" class="displayNone">
 
                     <div id="modaleCreerEquipe">
-                        <form id="formCreerEquipeDiv" action="" method="POST">
+                        <form id="formCreerEquipeDiv" action="/createEquipe" method="POST">
                             <div class="ligneDiv">
                                 <label class="textModale1 ligneSubDivLeft" for="nomEquipe">Nom de l'équipe</label>
                                 <input class="ligneSubDivRight" type="text" id="nomEquipe" name="nomEquipe" required minlength="1" maxlength="20" placeholder="Nom de l'équipe...">
@@ -97,30 +97,30 @@
 
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Groupe de langues</span>
-                                <select class="ligneSubDivRight" id="" name="" multiple>
-
+                                <select class="ligneSubDivRight" id="id_groupeLangue" name="id_groupeLangue" required>
+                                    <?php echo $groupeLangues ?>
                                 </select>
                             </div>
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Membres</span>
-                                <select class="ligneSubDivRight" id="" name="" multiple>
-
+                                <select class="ligneSubDivRight" id="id_utilisateur" name="id_utilisateur[]" multiple required>
+                                    <?php echo $users ?>
                                 </select>
                             </div>
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Chef d'équipe</span>
-                                <select class="ligneSubDivRight" id="" name="" multiple>
-
+                                <select class="ligneSubDivRight" id="idChefEquipe" name="idChefEquipe" required>
+                                    <?php echo $chiefs ?>
                                 </select>
                             </div>
 
-                        </form>
 
-                        <!-- Footer (btns) -->
-                        <div id="footerModalCreerEquipe">
-                            <button class="btnFooterModal" id="annulerBtn">Annuler</button>
-                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer équipe">
-                        </div>
+                            <!-- Footer (btns) -->
+                            <div id="footerModalCreerEquipe">
+                                <button class="btnFooterModal" id="annulerBtn">Annuler</button>
+                                <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer équipe">
+                            </div>
+                        </form>
                     </div>
                 </div>
 
