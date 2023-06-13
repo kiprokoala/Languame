@@ -32,21 +32,7 @@ class controllerPartie extends controllerObjet
         }
 
         // Redirection immédiate
-        if (!isset($_POST['teams'])) {
-            header('Location: /alignement/home');
-        }
-
-        // Tests sur les équipes
-        $groupeslangues = [];
-        foreach($_POST['teams'] as $team){
-            $equipe = Equipe::getObjetById($team);
-            if(!array_key_exists($equipe->get('id_groupeLangue'), $groupeslangues)){
-                $groupeslangues[] = $equipe->get('id_groupeLangue');
-            }
-        }
-
-        // Redirection immédiate
-        if (count($groupeslangues) <> 4  || count($themes) <> 4) {
+        if (!isset($_POST['teams']) || count($themes) <> 4) {
             header('Location: /alignement/home');
         }
 
@@ -80,25 +66,50 @@ class controllerPartie extends controllerObjet
 
     public static function getAllFinishedGames()
     {
-        $all_parties = "";
+        $all_parties = [];
         $parties = Partie::getAllFinishedGames($_SESSION['id']);
         foreach ($parties as $partie) {
-            $winner = Equipe::getObjetById($partie->get('winner'));
-            $equipes = $partie->getAllEquipes();
-            $nom_equipes = "";
-            foreach ($equipes as $equipe) {
-                $nom_equipes .= $equipe->get('nomEquipe') . " / ";
+            $user = Utilisateur::getObjetById($_SESSION['id']);
+            $id = $partie->get('id_partie');
+            $titre = $partie->get('titre');
+            $winner = $partie->get('winner');
+            $teams = $partie->getAllEquipes();
+            $themes = $partie->getAllThemes();
+            $users = $partie->getAllUsers();
+            $answers = $user->getAllAnswers($id);
+
+            $all_answers = [];
+            foreach ($users as $user) {
+                $all_answers[] = $user->getAllAnswers($id);
             }
-            $nom_equipes = substr($nom_equipes, 0, -2);
-            $all_parties .= $partie->get('titre') . " a pour winner " . $winner->get('nomEquipe') . ". <br>
-                            Les équipes ayant joué sont " . $nom_equipes . "<br>";
+            $score = 0;
+            foreach ($answers as $answer){
+                echo "coucoucoucouccoucco";
+                if($answer->checkReponseTheme()){
+                    $score++;
+                }
+                // commenter/ décommenter si ça ne fonctionne pas
+                //$score += $answer->checkReponseTheme();
+            }
+
+            $all_parties[] = array(
+                array("id" => $id),
+                array("titre" => $titre),
+                array("winner" => $winner),
+                array("teams" => $teams),
+                array("themes" => $themes),
+                array("users" => $users),
+                array("score" => $score),
+                array("all_answers" => $all_answers),
+            );
         }
-        return $all_parties;
+        return json_encode($all_parties);
     }
 
     public static function getQuestionsForPartie()
     {
         $partie = Partie::getObjetById($_POST['id_partie']);
+        $_SESSION['id_partie'] = $_POST['id_partie'];
         $questions = $partie->getQuestions();
         include("resources/views/gameView.php");
     }

@@ -262,9 +262,6 @@
                                 </div>
                             </div>
                         </div>
-                        <?php
-                        echo $all_parties;
-                        ?>
                     </div>
                 </div>
 

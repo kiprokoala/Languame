@@ -36,6 +36,37 @@ class Partie extends Objet
         }
     }
 
+    public function getAllThemes()
+    {
+        $requete = "SELECT DISTINCT t.id_theme, nomTheme FROM Theme t 
+            inner join Contient c on c.id_theme = t.id_theme
+            inner join question q on q.id_question = c.id_question
+            WHERE id_partie = $this->id_partie;";
+        try {
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Theme'));
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function getAllUsers()
+    {
+        $requete = "SELECT u.id_utilisateur, u.login, u.mdp, u.prenom, u.nom, u.isAdmin, u.email, u.id_langue FROM Utilisateur u 
+                        inner join est_dans e on e.id_utilisateur = u.id_utilisateur
+                        inner join liste_equipe l on l.id_equipe = e.id_equipe
+                        inner join partie p on p.id_liste_equipe = l.id_liste_equipe
+                        WHERE id_partie = $this->id_partie;";
+        try {
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config("aliases.Utilisateur"));
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public static function createGame($titre, $index)
     {
         $req_prep = Connexion::pdo()->prepare("INSERT INTO 
