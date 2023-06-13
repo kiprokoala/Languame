@@ -2,7 +2,7 @@
 return [
     'database' => [
         'host' => 'languame.local',
-        'name' => 'world_db',
+        'name' => 'prj-prism-rfrome2',
         'login' => 'root',
         'password' => ''
     ],

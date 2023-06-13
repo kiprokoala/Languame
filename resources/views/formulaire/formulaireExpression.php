@@ -8,10 +8,7 @@ use app\Models\Theme;
 $pays = Pays::getAllPays();
 $langue = Langue::getAllLangues();
 $theme = Theme::getAllTheme();
-
-
 ?>
-
 
 <style>
     html,
@@ -24,7 +21,7 @@ $theme = Theme::getAllTheme();
     }
 
     body {
-        background-image: url("assets/fond.png");
+        background-image: url("/resources/images/fond.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -34,6 +31,7 @@ $theme = Theme::getAllTheme();
 
 <body>
     <div class="container d-flex justify-content-center" style="width: max-width; height: max-height; margin-top: 100px;">
+        
 
         <div id="form1" class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px;">
             <div class="card-body">
@@ -58,6 +56,7 @@ $theme = Theme::getAllTheme();
             </div>
         </div>
 
+
         <div id="form2" class="card text-dark bg-light mb-3 mt-5 shadow" style="width: 400px; border-radius: 15px; display:none;">
             <div class="card-body">
                 <button id="btnRetour2" class="btn text-light mb-3" style="background-color:  #9374a1;">Retour</button>
@@ -72,6 +71,8 @@ $theme = Theme::getAllTheme();
                 </div>
             </div>
         </div>
+
+
 
         <div id="form3" class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px; display:none;">
             <div class="card-body">
@@ -96,6 +97,7 @@ $theme = Theme::getAllTheme();
             </div>
         </div>
 
+       
         <div id="form4" class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px; display:none;">
             <div class="card-body">
                 <button id="btnRetour4" class="btn text-light mb-3" style="background-color:  #9374a1;">Retour</button>
@@ -127,6 +129,7 @@ $theme = Theme::getAllTheme();
                 <button id="btnSuivant4" class="btn form-control text-light" style="background-color:  #5a6d9a;">Valider</button>
             </div>
         </div>
+
 
         <div id="form5" class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px; display:none">
             <div class="card-body">
@@ -209,16 +212,19 @@ $theme = Theme::getAllTheme();
     for (var i = 0; i < btnSuivant2.length; i++) {
         if (i == 0) {
             btnSuivant2[i].addEventListener('click', function() {
+                typeExpression = "difficilementTraduisible";
                 form2.style.display = 'none';
                 form3.style.display = 'block';
             });
         } else if (i == 1) {
             btnSuivant2[i].addEventListener('click', function() {
+                typeExpression = "paysVise";
                 form2.style.display = 'none';
                 form4.style.display = 'block';
             });
         } else {
             btnSuivant2[i].addEventListener('click', function() {
+                typeExpression = "sensDonnee";
                 form2.style.display = 'none';
                 form5.style.display = 'block';
             });
@@ -231,7 +237,7 @@ $theme = Theme::getAllTheme();
         significationLitterale = document.getElementById('litteraleId3').value;
         significationIdiomatique = document.getElementById('idiomatiqueId3').value;
         if (expression != "" && significationLitterale != "" && significationIdiomatique != "") {
-            alert('Merci pour votre participation !');
+            
             var data = {
                 'expression' : expression,
                 'translitteration' : transliteration,
@@ -245,15 +251,15 @@ $theme = Theme::getAllTheme();
             };
             $.ajax({
                 type: "POST",
-                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
+                url: "/Traitement",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
                     console.log(donnees);
+                    alert('Merci pour votre participation !');
                 }
             });
-            window.location.href = "/";
-        
+            
         } else {
             alert('Veuillez remplir les champs obligatoires !');
         }
@@ -274,13 +280,13 @@ $theme = Theme::getAllTheme();
                 'significationIdiomatique' : significationIdiomatique,
                 'pays' : pays,
                 'langue' : langue,
-                'typeExpression' : null,
+                'typeExpression' : typeExpression,
                 'paysVise' : paysVise,
                 
             };
             $.ajax({
                 type: "POST",
-                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
+                url: "/Traitement",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
@@ -308,13 +314,13 @@ $theme = Theme::getAllTheme();
                 'significationIdiomatique' : significationIdiomatique,
                 'pays' : pays,
                 'langue' : langue,
-                'typeExpression' : null,
+                'typeExpression' : typeExpression,
                 'paysVise' : null,
                 'theme' : theme
             };
             $.ajax({
                 type: "POST",
-                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
+                url: "/Traitement",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);

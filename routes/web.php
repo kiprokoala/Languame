@@ -24,6 +24,8 @@ Route::get('/removingLang', [controllerUtilisateur::class, 'removingLang']);
 // Nationality
 Route::get('/nationality', [controllerNationality::class, 'home']);
 Route::get('/search', [controllerNationality::class, 'search']);
+Route::get('/Expression', [controllerExpression::class, 'expression']);
+Route::get('/Traitement', [controllerExpression::class, 'Traitement']);
 
 // Alignement
 Route::get('/alignement/home', [controllerAlignement::class, 'home']);

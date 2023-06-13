@@ -4,9 +4,8 @@ namespace app\Models;
 
 use app\Models\Objet;
 use app\Utils\Database as Connexion;
-
-
-
+use PDO;
+use PDOException;
 
 class Theme extends Objet
 {
