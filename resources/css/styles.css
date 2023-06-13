@@ -520,12 +520,29 @@ body {
 }
 
 #annulerBtn {
-  background-color: #2a9d8f;
+  background-color: #B5446E;
 }
 
 #validerBtn {
   background-color: #2a9d8f;
 }
+
+.winSubDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.winIcon{
+  color: green;
+  font-weight: 900;
+}
+
+.looseIcon{
+  color: red;
+  font-weight: 900;
+}
+
 
 .afficherModaleBtn {
     background-color: white;
@@ -596,6 +613,65 @@ body {
 
 .textModale1 {
   font-weight: bold;
+
+}
+
+#subDivAligmenents{
+  display: flex;
+  flex-direction: row;
+}
+
+.alignementHistorique{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f2ebf2;
+  box-shadow: 2px 2px 2px grey;
+}
+
+
+.membreAlignementHistorique{
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+  padding: 5px; 
+  padding-left: 20px;
+  border-bottom: solid 1px rgba(56, 56, 56, 0.473);
+}
+
+#contentAlignementHistorique{
+  display: flex;
+  flex-direction: row;
+}
+
+#sensDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+#expressionDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.expressionsListe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+.sensListe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
 }
 
 .displayNone {
@@ -709,7 +785,7 @@ body {
 #divStatsBox{
   display: flex;
   flex-direction: row;
-
+  padding-top: 15px;
 }
 
 #resultatsSubDiv{
@@ -717,4 +793,30 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+#divMembresComponent{
+  display: flex;
+  flex-direction: row;
+}
+
+.membreComponent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.iconImgMember{
+  font-size: 55px
+}
+
+.pseudoMembre{
+  font-size: 11px;
+}
+
+.expressionEtSensSpan{
+  font-size: 11px;
+  font-weight: 600;
 }

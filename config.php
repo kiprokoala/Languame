@@ -1,8 +1,8 @@
 <?php
 return [
     'database' => [
-        'host' => 'languame.local',
-        'name' => 'world_db',
+        'host' => 'localhost',
+        'name' => 'prj-prism-rfrome2',
         'login' => 'root',
         'password' => ''
     ],
