@@ -22,7 +22,31 @@ use app\Models\Expression;
         <!-- Mon code de bourrin -->
 
         <form action='/alignement/submitAlignement' method='POST'>
-            <?php var_dump($questions);?>
+            <?php foreach ($questions as $question) {
+                $expression = Expression::getObjetById($question->get("id_expression"));
+                $themes = $question->getThemes(); ?>
+                expression : <?php echo $expression->get('texteLangueExpression') ?><br>
+                Traduction littérale : <?php echo $expression->get('litteralTradExpression') ?><br>
+                A quel thème cette expression correspond ?<br>
+                <fieldset>
+                    <label>
+                        <input type='radio' value='<?php echo $themes[0]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
+                        <?php echo $themes[0]->get('nomTheme')?>
+                    </label>
+                    <label>
+                        <input type='radio' value='<?php echo $themes[1]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
+                        <?php echo $themes[1]->get('nomTheme')?>
+                    </label>
+                    <label>
+                        <input type='radio' value='<?php echo $themes[2]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
+                        <?php echo $themes[2]->get('nomTheme')?>
+                    </label>
+                    <label>
+                        <input type='radio' value='<?php echo $themes[3]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
+                        <?php echo $themes[3]->get('nomTheme')?>
+                    </label>
+                </fieldset>
+            <?php }?>
             <input type='submit' value='Proposer alignement'>
         </form>
 
