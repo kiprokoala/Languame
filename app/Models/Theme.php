@@ -1,6 +1,11 @@
-<?php
+<?php 
 
 namespace app\Models;
+
+use app\Models\Objet;
+use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
 
 class Theme extends Objet
 {
@@ -25,6 +30,22 @@ class Theme extends Objet
             $this->id_theme,
             $expression->get("id_pays"),
             $expression->get("id_langue"));
+    }
+
+    public static function getAllTheme() {
+        try {
+            // préparation de la requête
+            $sql = "SELECT * FROM theme ORDER BY nomTheme ASC";
+            $req_prep = Connexion::pdo()->prepare($sql);
+            $req_prep->execute();
+            $req_prep->setFetchMode(PDO::FETCH_OBJ);
+            $tabResults = $req_prep->fetchAll();
+            // renvoi du tableau de résultats
+            return $tabResults;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            die("Erreur lors de la recherche dans la base de données.");
+        }
     }
 }
 
