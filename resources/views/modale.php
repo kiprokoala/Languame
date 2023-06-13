@@ -133,6 +133,12 @@
 
                         <div id="partieModal">
                             <div>
+                                <div id="titlePartieDiv">
+                                    <span>Titre de la partie</span>
+                                    <span class="material-symbols-outlined">
+                                        close
+                                    </span>
+                                </div>
                                 <span class="textModale1">Membres</span>
                                 <!-- A remplir avec des composants membres-->
                                 <div id="divMembresComponent">
