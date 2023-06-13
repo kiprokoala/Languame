@@ -1,7 +1,11 @@
 <?php
 
-require_once("model/utilisateur.php");
-require_once("model/session.php");
+namespace controller;
+use app\Models\Utilisateur;
+use app\Models\Session;
+use app\Models\Langue;
+use app\Models\Partie;
+
 require_once("controller/controllerObjet.php");
 
 class controllerUtilisateur extends controllerObjet
@@ -13,14 +17,14 @@ class controllerUtilisateur extends controllerObjet
         if(isset($_SESSION["id"])){
             $user = Utilisateur::getObjetById(Session::getIdUserConnected());
             $langs = $user->parle();
-            $all_langs = "";
-            $tag_langs = "";
+            $all_langs = $tag_langs = $lang = "";
+
             foreach($langs as $lang){
                 $all_langs .= "<span>".$lang->get("nomLangue")."</span>";
                 $tag_langs .= "
                     <div class='tagLang'>".$lang->get("nomLangue")."
                         <button type='submit' formaction='removingLang' name='id' value='".$lang->get('id_langue')."' style='background-color: transparent; border: none;'>
-                            <img src='/assets/close.png' id='imgClose'>
+                            <img src='/resources/images/close.png' id='imgClose'>
                         </button>
                     </div>";
             }
@@ -30,7 +34,10 @@ class controllerUtilisateur extends controllerObjet
             foreach ($nonSpokenLang as $lang){
                 $available_langs .= "<option value='".$lang->get('id_langue')."'>".$lang->get("nomLangue")."</option>";
             }
-            include("view/accountView.php");
+
+            $lang = Langue::getObjetById($user->get('id_langue'))->get('nomLangue');
+
+            include("resources/views/accountView.php");
         }else{
             self::formConnect();
         }
@@ -55,9 +62,9 @@ class controllerUtilisateur extends controllerObjet
     }
 
     public static function formConnect(){
-        include("view/generic/header.php");
-        include("view/generic/formUtilisateur.html");
-        include("view/generic/footer.php");
+        include("resources/views/generic/header.php");
+        include("resources/views/generic/formUtilisateur.html");
+        include("resources/views/generic/footer.php");
     }
 
     public static function disconnect(){
@@ -67,11 +74,13 @@ class controllerUtilisateur extends controllerObjet
 
     public static function subscribing(){
 
-        $login = $_POST['login'];
+        try{
+            $login = $_POST['login'];
         $mdp = $_POST['password'];
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
         $email = $_POST['email'];
+        $id_langue = $_POST['id_langue'];
 
         $user = Utilisateur::addObjet(
             array(
@@ -81,20 +90,27 @@ class controllerUtilisateur extends controllerObjet
                 "prenom" => $prenom,
                 "email" => $email,
                 "isAdmin" => 0,
-                "isChef" => 0
+                "id_langue" => $id_langue
             )
         );
 
         self::connect();
+        }catch(Error $e){
+            self::formConnect();
+        }
     }
 
     public static function modifyAccount(){
         $_POST["id_utilisateur"] = $_SESSION["id"];
         $user = Utilisateur::getObjetById($_SESSION["id"]);
 
-        $_POST["isChef"] = $user->get("isChef");
         $_POST["isAdmin"] = $user->get("isAdmin");
         $_POST["login"] = $user->get("login");
+        $_POST["mdp"] = trim($_POST['mdp']) == '' ? $user->get('mdp') : $_POST['mdp'];
+
+        if(trim($_POST['id_langue']) == ""){
+            $_POST['id_langue'] = $user->get('id_langue');
+        }
 
         $tab = $_POST;
         $langs = $tab["langs"];
@@ -104,5 +120,24 @@ class controllerUtilisateur extends controllerObjet
 
         Utilisateur::updateObjet($tab);
         header("Location: /profil");
+    }
+
+
+    public static function getAllParties(){
+        $user = Utilisateur::getObjetById($_SESSION['id']);
+        $parties = $user->getAllParties();
+        $parties_chef = [];
+        foreach($user->getAllPartiesChef() as $partie){
+            if(controllerUtilisateur::checkValidatedPartie($user->get('id_utilisateur'), $partie->get('id_partie'))){
+                $parties_chef[] = $partie;
+            }
+        }
+		include("resources/views/generic/header.php");
+        include ("resources/views/listeParties.php");
+		include("resources/views/generic/footer.php");
+	}
+
+    public static function checkValidatedPartie($user, $partie){
+        return Partie::getNumberOfMatesInPartie($user, $partie) == Partie::getNumberOfAnswersInPartie($user, $partie);
     }
 }
