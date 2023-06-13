@@ -11,6 +11,7 @@ class GroupeLangue extends Objet
 
     // attributs de classe
     protected static $objet = "GroupeLangue";
+    protected static $cle = "id_groupeLangue";
 
     protected $id_groupeLangue;
     protected $nomGroupeLangue;

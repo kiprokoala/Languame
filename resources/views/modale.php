@@ -91,41 +91,36 @@
                             <!-- -------- -->
                             <!-- sur la meme ligne -->
                             <label> Groupe de langue </label>
-                            <select  id="groupeLangue" placeholer="Choisir ..." >
+                            <!-- select -->
+                            <div>
                                 <?php 
-
-
+                                   var_dump($groupeLangues);
                                 ?>
-                            </select>
+                            </div>
                             <!-- -------- -->
                             <!-- sur la meme ligne -->
                             <label> Membres </label>
-                            <select id="membres" placeholder="Choisir ..." multiple>
+                            
+                            <div>
+                            
                                 <?php
-
+                                  var_dump($all_utilisateurs);
                                 ?>
-                            </select>
+                            </div>
                              <!-- -------- -->
                             <!-- sur la meme ligne -->
-                            <label> <?php echo $membre[1] ?> </label>
-                            <label> <?php echo $membre[2] ?> </label>
-                            <label> <?php echo $membre[3] ?> </label>
-                            <label> <?php echo $membre[4] ?> </label>
+                           
                             <!-- -------- -->
                             <!-- sur la meme ligne -->
                             <label> Chef d'équipe </label>
-                            <select id="nomChef" placeholder="Choisir ..." >
-                                <?php
-
-                                ?>
-                            </select>
+                            
 
 
 
                         </form>
 
                             <button class="btnFooterModal" id="annulerBtn">Annuler</button>
-                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
+                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer équipe">
                     </div>
                     <!-- MODALE Historique partie -->
                     <div class="displayNone" id="modaleHistoriquePartie">

@@ -9,6 +9,7 @@ use app\Models\Question;
 use app\Models\Reponse;
 use app\Models\Theme;
 use app\Models\Utilisateur;
+use app\Models\GroupeLangue;
 
 
 require_once("controller/controllerObjet.php");
@@ -38,6 +39,11 @@ class controllerAlignement extends controllerObjet
             $name = $team->get("nomEquipe");
             $teams .= "<option value='$id'>$id - $name</option>";
         }
+
+        $groupeLangues = GroupeLangue::getAllObjets();
+       
+        $all_utilisateurs = Utilisateur::getAllObjets();
+
         $all_parties = controllerPartie::getAllFinishedGames();
         include("resources/views/modale.php");
     }
