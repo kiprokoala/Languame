@@ -3,6 +3,7 @@
 use app\Utils\Route;
 use controller\controllerAlignement;
 use controller\controllerHome;
+use controller\controllerNationality;
 use controller\controllerPartie;
 use controller\controllerUtilisateur;
 
@@ -21,7 +22,8 @@ Route::get('/addingLang', [controllerUtilisateur::class, 'addingLang']);
 Route::get('/removingLang', [controllerUtilisateur::class, 'removingLang']);
 
 // Nationality
-Route::get('/nationality', [controllerHome::class, 'nationality']);
+Route::get('/nationality', [controllerNationality::class, 'home']);
+Route::get('/search', [controllerNationality::class, 'search']);
 
 // Alignement
 Route::get('/alignement/home', [controllerAlignement::class, 'home']);
