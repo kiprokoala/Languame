@@ -63,6 +63,12 @@ class controllerUtilisateur extends controllerObjet
 
     public static function formConnect(){
         include("resources/views/generic/header.php");
+        $all_langues = Langue::getAllObjets();
+        $langues = "<select id='id_langue' name='id_langue' required>";
+        foreach ($all_langues as $langue){
+            $langues .= "<option value='".$langue->get('id_langue')."'>".$langue->get("nomLangue")."</option>";
+        }
+        $langues .= "</select>";
         include("resources/views/generic/formUtilisateur.php");
         include("resources/views/generic/footer.php");
     }

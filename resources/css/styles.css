@@ -320,7 +320,7 @@ body {
   flex-direction: column;
 }
 
-.inputContainer input {
+.inputContainer input, select {
   border-radius: 6px;
   border: solid 1px rgba(0, 0, 0, 0.473);
   padding: 10px;
@@ -773,7 +773,7 @@ body {
     flex-direction: column;
 }
 
-.titleChamps + input {
+.titleChamps + input, select {
     border-radius: 6px;
     border: solid 2px rgba(0, 0, 0, 0.379);
     padding: 6px;
