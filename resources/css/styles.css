@@ -817,15 +817,15 @@ body {
   flex-direction: row;
   padding: 50px;
   height:90vh;
-  background-color: #00ad1c;
   justify-content: space-between;
 }
 
 #gameLeftBlock{
   background-color: #26465379;
   border-radius: 6px;
-  width: 25%;
-  height: 100%;
+  width: 30%;
+  height: 85vh;
+  padding: 20px;
 }
 
 #gameRightBlock{
@@ -879,7 +879,29 @@ body {
 }
 
 .questionBlock{
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px 10px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#titlePartie{
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-bottom: 20px;
+  color:white;
+}
+
+#submitAlignement{
+  font-family: 'Inter', sans-serif;
+  padding: 15px;
+  border:none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: white;
+  margin: auto;
+  background-color: #2a9d8f;
 }

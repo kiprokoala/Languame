@@ -2,6 +2,7 @@
 <html lang="fr">
 <?php
 use app\Models\Expression;
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -18,41 +19,48 @@ use app\Models\Expression;
 
 <div id="gameContainerBlock">
     <div id="gameLeftBlock">
-    bloc gauche
+        <div id="titlePartie">
+            <?php
+            echo $partie->get('titre');
+            ?>
+        </div>
+    
         <!-- Mon code de bourrin -->
 
-        <form action='/alignement/submitAlignement' method='POST'>
+        <form style="overflow-y: scroll; height: 92%; padding-right: 20px;" action='/alignement/submitAlignement' method='POST'>
             <?php foreach ($questions as $question) {
                 $expression = Expression::getObjetById($question->get("id_expression"));
                 $themes = $question->getThemes();
                 $question_id = $question->get('id_question');
                 ?>
-                <div class="questionBlock" onclick="load(<?php echo $question_id; ?>)">
-                    expression : <?php echo $expression->get('texteLangueExpression') ?><br>
-                    Traduction littérale : <?php echo $expression->get('litteralTradExpression')?><br>
-                </div>
+                    <div class="questionBlock" onclick="load(<?php $expression ?>)">
+                        Expression : <?php echo $expression->get('texteLangueExpression') ?><br>
+                        Traduction littérale : <?php echo $expression->get('litteralTradExpression') ?><br>
+                    </div>
 
-                <!--A quel thème cette expression correspond ?<br>
+                    <!--A quel thème cette expression correspond ?<br>
                 <fieldset>
                     <label>
-                        <input type='radio' value='<?php echo $themes[0]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
-                        <?php echo $themes[0]->get('nomTheme')?>
+                        <input type='radio' value='<?php echo $themes[0]->get('id_theme') ?>' name='question<?php echo $question->get('id_question') ?>' checked>
+                        <?php echo $themes[0]->get('nomTheme') ?>
                     </label>
                     <label>
-                        <input type='radio' value='<?php echo $themes[1]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
-                        <?php echo $themes[1]->get('nomTheme')?>
+                        <input type='radio' value='<?php echo $themes[1]->get('id_theme') ?>' name='question<?php echo $question->get('id_question') ?>' checked>
+                        <?php echo $themes[1]->get('nomTheme') ?>
                     </label>
                     <label>
-                        <input type='radio' value='<?php echo $themes[2]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
-                        <?php echo $themes[2]->get('nomTheme')?>
+                        <input type='radio' value='<?php echo $themes[2]->get('id_theme') ?>' name='question<?php echo $question->get('id_question') ?>' checked>
+                        <?php echo $themes[2]->get('nomTheme') ?>
                     </label>
                     <label>
-                        <input type='radio' value='<?php echo $themes[3]->get('id_theme')?>' name='question<?php echo $question->get('id_question')?>' checked>
-                        <?php echo $themes[3]->get('nomTheme')?>
+                        <input type='radio' value='<?php echo $themes[3]->get('id_theme') ?>' name='question<?php echo $question->get('id_question') ?>' checked>
+                        <?php echo $themes[3]->get('nomTheme') ?>
                     </label>
                 </fieldset>-->
-            <?php }?>
-            <input type='submit' value='Proposer alignement'>
+            <?php } ?>
+            <div style="text-align: center;">
+                <input type='submit' id="submitAlignement" value='Proposer alignement'>
+            </div>
         </form>
 
         <!-- La fin de mon code de bourrin -->
@@ -62,8 +70,12 @@ use app\Models\Expression;
     </div>
 </div>
 <script>
-    function load(coucou){
-        console.log(coucou);
+    function load(questionId){
+        let expressionTitle = document.createElement("div");
+        let gameRightBlock =document.getElementById("gameRightBlock");
+        const newContent = document.createTextNode(questionId);
+        expressionTitle.appendChild(newContent);
+        gameRightBlock.appendChild(expressionTitle);
     }
 </script>
 </body>
