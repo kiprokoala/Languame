@@ -110,7 +110,19 @@ class controllerPartie extends controllerObjet
     {
         $partie = Partie::getObjetById($_POST['id_partie']);
         $_SESSION['id_partie'] = $_POST['id_partie'];
+
+        $themes = $partie->getAllThemes();
+
         $questions = $partie->getQuestions();
+        $all_questions = [];
+
+        foreach ($questions as $question){
+            $expression = Expression::getObjetById($question->get('id_expression'));
+            $all_questions["questions"][] = $question;
+            $all_questions["expressions"][] = $expression;
+        }
+        $all_questions["themes"] = $themes;
+        $all_questions = json_encode($all_questions);
         include("resources/views/gameView.php");
     }
 }
