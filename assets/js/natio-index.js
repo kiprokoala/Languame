@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log("début");
   var search = $("#search");
 
   var choix_sens;

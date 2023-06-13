@@ -18,7 +18,7 @@ var simplemaps_worldmap_mapdata = {
     all_states_zoomable: "no",
 
     //Location defaults
-    location_description: "Location description",
+    location_description: "Position de la capitale du pays",
     location_color: "#FF0067",
     location_opacity: 0.9,
     location_hover_opacity: 1,
@@ -875,7 +875,7 @@ window.addEventListener("load", function () {
         });
 
         // réinitialiser la couleur de tous les pays cliqués
-        elements.forEach(function (element) {
+        Array.from(elements).forEach(function (element) {
           let code = element.classList.value.replace("sm_state sm_state_", "");
           if (clickedCountries.includes(code)) {
             element.setAttribute("fill", "black");
@@ -892,8 +892,8 @@ window.addEventListener("load", function () {
           this.setAttribute("fill", "red");
         } else {
           // réinitialiser la couleur de tous les pays cliqués
-          elements.forEach(function (element) {
-            element.setAttribute("fill", "");
+          Array.from(elements).forEach(function (element) {
+            element.setAttribute("fill", "#E2ECBD");
           });
 
           // ajouter le pays actuel au tableau des pays cliqués
