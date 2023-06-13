@@ -126,145 +126,132 @@
 
                 <!-- MODALE Historique partie -->
                 <div id="displayHistoriquePartie" class="displayNone">
-
                     <div id="modaleHistoriquePartie">
 
-                        <div id="componentPartie">
-                            <div class="partieLeftDiv">
-                                <div><span class="textModale1"> Nom du jeu </span> <span class="tagGdl">Groupe de langue</span> </div>
-                                <div class="equipesEtThemesListe">
-                                    <span style="font-size: 12px;">Equipes</span>
-                                    <!-- A remplir avec les data equipes -->
-                                    <div></div>
-                                </div>
-                                <div class="equipesEtThemesListe">
-                                    <span style="font-size: 12px;">Thèmes</span>
-                                    <!-- A remplir avec les data thèmes -->
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div class="partieRightDiv">
-                                <img class="fit-picture" src="/resources/images/medal.png">
-                                <button class="btnEquipe"> Equipe </button>
+                        <!-- HISTORIQUE PARTIE -->
+                        <div id="displayHistoricDiv" class="displayBlock">
+
+                            <div id="toFillWithCompos">
+                                <!-- A remplir avec des composants parties -->
                             </div>
                         </div>
-
-                        <div id="partieModal">
-                            <div>
-                                <div id="titlePartieDiv">
-                                    <span>Titre de la partie</span>
-                                    <span class="material-symbols-outlined">
-                                        close
-                                    </span>
-                                </div>
-                                <span class="textModale1">Membres</span>
-                                <!-- A remplir avec des composants membres-->
-                                <div id="divMembresComponent">
-                                    <div class="membreComponent">
-                                        <span class="material-symbols-outlined iconImgMember">
-                                            account_circle
+                        <!-- PARTIE DETAIL -->
+                        <div id="displayPartieDiv" class="displayNone">
+                            <div id="partieModal">
+                                <div>
+                                    <div id="titlePartieDiv">
+                                        <span>Titre de la partie</span>
+                                        <span class="material-symbols-outlined clickable" onclick="toggleHistoric()">
+                                            close
                                         </span>
-                                        <span class="pseudoMembre">pseudo</span>
                                     </div>
-                                    <div class="membreComponent">
-                                        <span class="material-symbols-outlined iconImgMember">
-                                            account_circle
-                                        </span>
-                                        <span class="pseudoMembre">pseudo</span>
-                                    </div>
-                                    <div class="membreComponent">
-                                        <span class="material-symbols-outlined iconImgMember">
-                                            account_circle
-                                        </span>
-                                        <span class="pseudoMembre">pseudo</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div style="padding-top:25px">
-                                <span class="textModale1">Stats</span>
-                                <div id="divStatsBox">
-                                    <div class="statsBox">
-                                        <span class="textModale1">Resultats</span>
-                                        <div id="resultatsSubDiv">
-                                            <div class="winSubDiv">
-                                                <span>5</span>
-                                                <span class="material-symbols-outlined winIcon">
-                                                    done
-                                                </span>
-                                            </div>
-                                            <div class="winSubDiv"> <span>3</span>
-                                                <span class="material-symbols-outlined looseIcon">
-                                                    close
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="statsBox">
-                                        <span class="textModale1">Score final</span>
-                                        <div>3e</div>
-                                        <div>75pts</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="padding-top:25px">
-                                <span class="textModale1">Alignements</span>
-                                <!-- A remplir avec des composants alignements-->
-                                <div id="subDivAligmenents">
-                                    <div class="alignementHistorique">
-                                        <div class="membreAlignementHistorique">
-                                            <span class="material-symbols-outlined">
+                                    <span class="textModale1">Membres</span>
+                                    <!-- A remplir avec des composants membres-->
+                                    <div id="divMembresComponent">
+                                        <div class="membreComponent">
+                                            <span class="material-symbols-outlined iconImgMember">
                                                 account_circle
                                             </span>
                                             <span class="pseudoMembre">pseudo</span>
                                         </div>
-                                        <div id="contentAlignementHistorique">
-                                            <div id="expressionDiv">
-                                                <span class="expressionEtSensSpan">
-                                                    Expression
-                                                </span>
-                                                <div class="expressionsListe">
-                                                    <span>1</span>
-                                                    <span>2</span>
-                                                    <span>3</span>
-                                                    <span>4</span>
-                                                    <span>5</span>
-                                                    <span>6</span>
-                                                    <span>7</span>
-                                                    <span>8</span>
-                                                    <span>9</span>
-                                                    <span>10</span>
-                                                    <span>11</span>
-                                                    <span>12</span>
+                                        <div class="membreComponent">
+                                            <span class="material-symbols-outlined iconImgMember">
+                                                account_circle
+                                            </span>
+                                            <span class="pseudoMembre">pseudo</span>
+                                        </div>
+                                        <div class="membreComponent">
+                                            <span class="material-symbols-outlined iconImgMember">
+                                                account_circle
+                                            </span>
+                                            <span class="pseudoMembre">pseudo</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div style="padding-top:25px">
+                                    <span class="textModale1">Stats</span>
+                                    <div id="divStatsBox">
+                                        <div class="statsBox">
+                                            <span class="textModale1">Resultats</span>
+                                            <div id="resultatsSubDiv">
+                                                <div class="winSubDiv">
+                                                    <span id="resultWin">5</span>
+                                                    <span class="material-symbols-outlined winIcon">
+                                                        done
+                                                    </span>
+                                                </div>
+                                                <div class="winSubDiv"> <span id="resultLoose">3</span>
+                                                    <span class="material-symbols-outlined looseIcon">
+                                                        close
+                                                    </span>
                                                 </div>
                                             </div>
-                                            <div id="sensDiv">
-                                                <span class="expressionEtSensSpan">
-                                                    Sens
+                                        </div>
+                                        <div class="statsBox">
+                                            <span class="textModale1">Score final (ud)</span>
+                                            <div>3e </div>
+                                            <div>75pts</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="padding-top:25px">
+                                    <span class="textModale1">Alignements</span>
+                                    <!-- A remplir avec des composants alignements-->
+                                    <div id="subDivAligmenents">
+                                        <div class="alignementHistorique">
+                                            <div class="membreAlignementHistorique">
+                                                <span class="material-symbols-outlined">
+                                                    account_circle
                                                 </span>
-                                                <div class="sensListe">
-                                                    <span>a</span>
-                                                    <span>b</span>
-                                                    <span>b</span>
-                                                    <span>b</span>
-                                                    <span>c</span>
-                                                    <span>d</span>
-                                                    <span>b</span>
-                                                    <span>a</span>
-                                                    <span>d</span>
-                                                    <span>a</span>
-                                                    <span>d</span>
-                                                    <span>d</span>
+                                                <span class="pseudoMembre">pseudo</span>
+                                            </div>
+                                            <div id="contentAlignementHistorique">
+                                                <div id="expressionDiv">
+                                                    <span class="expressionEtSensSpan">
+                                                        Expression
+                                                    </span>
+                                                    <div class="expressionsListe">
+                                                        <span>1</span>
+                                                        <span>2</span>
+                                                        <span>3</span>
+                                                        <span>4</span>
+                                                        <span>5</span>
+                                                        <span>6</span>
+                                                        <span>7</span>
+                                                        <span>8</span>
+                                                        <span>9</span>
+                                                        <span>10</span>
+                                                        <span>11</span>
+                                                        <span>12</span>
+                                                    </div>
+                                                </div>
+                                                <div id="sensDiv">
+                                                    <span class="expressionEtSensSpan">
+                                                        Sens
+                                                    </span>
+                                                    <div class="sensListe">
+                                                        <span>a</span>
+                                                        <span>b</span>
+                                                        <span>b</span>
+                                                        <span>b</span>
+                                                        <span>c</span>
+                                                        <span>d</span>
+                                                        <span>b</span>
+                                                        <span>a</span>
+                                                        <span>d</span>
+                                                        <span>a</span>
+                                                        <span>d</span>
+                                                        <span>d</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                        <?php
-                        echo $all_parties;
-                        ?>
                     </div>
                 </div>
 
@@ -329,6 +316,91 @@
     }
 
 
+
+    // PARTIE HISTORIQUE
+    //Recuperer chaque modale de display
+    var displayHistoricDiv = document.getElementById("displayHistoricDiv");
+    var displayPartieDiv = document.getElementById("displayPartieDiv");
+    // div pour remplir les parties
+    var toFillWithCompos = document.getElementById("toFillWithCompos");
+
+
+    var resultWin = document.getElementById("resultWin");
+    var resultLoose = document.getElementById("resultLoose");
+
+    function togglePartie(idPartieToShow) {
+        // remplir detail partie
+        resultWin.innerHTML = "1"
+        resultLoose.innerHTML = "1"
+        // afficher div détail partie, et cacher div historique
+        displayHistoricDiv.classList.remove("displayBlock");
+        displayHistoricDiv.classList.add("displayNone");
+        displayPartieDiv.classList.remove("displayNone");
+        displayPartieDiv.classList.add("displayBlock");
+    }
+
+    function toggleHistoric(){
+        // afficher div historique et cacher div partie
+        displayHistoricDiv.classList.remove("displayNone");
+        displayHistoricDiv.classList.add("displayBlock");
+        displayPartieDiv.classList.remove("displayBlock");
+        displayPartieDiv.classList.add("displayNone");
+    }
+
+    // Remplir l'historique de parties
+    const imgMedal = document.createElement('img');
+    imgMedal.className="fit-picture";
+    imgMedal.src="/resources/images/medal.png";
+
+    // aaas.forEach((aaa) => {
+    //     let componentPartie = document.createElement("div");
+    //     componentPartie.id = "componentPartie";
+    //     componentPartie.className="clickable";
+    //     componentPartie.addEventListener("click", togglePartie());
+
+    //     let partieLeftDiv = document.createElement("div");
+    //     partieLeftDiv.id = "partieLeftDiv";
+
+    //     let partieRightDiv = document.createElement("div");
+    //     partieRightDiv.id = "partieRightDiv";
+
+    //     let spanNomDuJeu = document.createElement("span");
+    //     componentPartie.className="textModale1";
+    //     spanNomDuJeu.textContent = "Nom du jeu"
+
+    //     let divequipeEtThemesListe1 = document.createElement("div");
+    //     componentPartie.className="equipesEtThemesListe";
+
+    //     let spanEquipes = document.createElement("span");
+    //     spanNomDuJeu.textContent = "Equipes"
+    //     spanNomDuJeu.className="spanEquipesEtThemes";
+
+    //     let spanThemes = document.createElement("span");
+    //     spanThemes.textContent = "Themes"
+    //     spanThemes.className="spanEquipesEtThemes";
+
+    //     let divequipeEtThemesListe2 = document.createElement("div");
+    //     componentPartie.className="equipesEtThemesListe";
+
+    //     let btnEquipeWin = document.createElement("button");
+    //     spanThemes.textContent = "equipe"
+
+    //     divequipeEtThemesListe1.appendChild(spanEquipes);
+    //     //ici , ajouter dans divequipeEtThemesListe1 chaque equipes   
+        
+    //     divequipeEtThemesListe2.appendChild(spanThemes);
+    //     //ici , ajouter dans divequipeEtThemesListe1 chaque themes  
+
+    //     partieLeftDiv.appendChild(spanNomDuJeu);
+    //     partieLeftDiv.appendChild(divequipeEtThemesListe1);
+
+    //     partieRightDiv.appendChild(imgMedal);
+    //     partieRightDiv.appendChild(btnEquipe);
+        
+    //     componentPartie.appendChild(partieLeftDiv);
+    //     componentPartie.appendChild(partieRightDiv);
+    //     toFillWithCompos.appendChild(componentPartie);
+    // });
 
     // MODALE CREER JEU
     //---------------------------------------------------------------------------------------------------------------------ADD DATA HERE
