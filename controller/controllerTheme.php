@@ -1,6 +1,6 @@
 <?php
 
-require_once("model/theme.php");
+namespace controller;
 require_once("controller/controllerObjet.php");
 
 class controllerTheme extends controllerObjet
