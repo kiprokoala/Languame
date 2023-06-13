@@ -23,7 +23,7 @@
             </div>
             <p>A vous d'organiser le jeu.</p>
             <h4>Gestion d'une partie</h4>
-            <hr style=width:100%>
+            <hr style="width:100%">
             <div id="btnsModale">
                 <button onclick="toggleClass(1)" class="afficherModaleBtn">
                     <span class="material-symbols-outlined">
@@ -39,13 +39,12 @@
                     </span>Historique des parties</button>
             </div>
         </div>
-        <form action="/createGame" method="POST">
             <div class="content">
-                <h1>Titre Modale</h1>
-                <div class="content-modal">
+                <h1>Modale</h1>
+                <div class="content-modal" >
                     <!-- MODALE CREER JEU -->
-                    <div id="modaleCreerJeuDiv">
-                        <form id="formCreerJeuDiv" action="" method="get">
+                    <div id="modaleCreerJeuDiv" >
+                        <form id="formCreerJeuDiv"  action="/createGame" method="POST">
                             <div class="ligneDiv">
                                 <label class="textModale1 ligneSubDivLeft" for="titreJeu">Titre du jeu</label>
                                 <input class="ligneSubDivRight" type="text" id="titreJeu" name="titreJeu" required
@@ -69,8 +68,9 @@
                             </div>
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
+                                <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
                                 <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
-                                    <?php echo $teams ?>
+                                <?php echo $teams; ?>
                                 </select>
                             </div>
                         </form>
@@ -84,7 +84,7 @@
 
                     <!-- MODALE Créer équipe -->
                     <div class="displayNone" id="modaleCreerEquipe">
-
+                        
                     </div>
                     <!-- MODALE Historique partie -->
                     <div class="displayNone" id="modaleHistoriquePartie">
@@ -94,7 +94,6 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </body>
 
@@ -139,43 +138,46 @@
 
 
     // MODALE CREER JEU
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
+    //---------------------------------------------------------------------------------------------------------------------ADD DATA HERE
     // -----REMPLIR LES BOUTONS "Thèmes"-----
-    // Tableau
-    /*var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
-
+    // Remplacer ce Tableau
+    // var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
+    
     // Récupérer l'élement conteneur des checkboxes
-    var listeCheckboxThemes = document.getElementById("listeCheckboxThemes");
+    // var listeCheckboxThemes = document.getElementById("listeCheckboxThemes");
 
-    themes.forEach((theme) => {
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.id = theme;
-        checkbox.className = "checkbox-button";
+    // themes.forEach((theme) => {
+    //     const checkbox = document.createElement("input");
+    //     checkbox.type = "checkbox";
+    //     checkbox.id = theme;
+    //     checkbox.className = "checkbox-button";
 
-        const label = document.createElement("label");
-        label.htmlFor = theme;
-        label.textContent = theme;
+    //     const label = document.createElement("label");
+    //     label.htmlFor = theme;
+    //     label.textContent = theme;
 
-        listeCheckboxThemes.appendChild(checkbox);
-        listeCheckboxThemes.appendChild(label);
-    });
+    //     listeCheckboxThemes.appendChild(checkbox);
+    //     listeCheckboxThemes.appendChild(label);
+    // });
 
 
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------ADD DATA HERE
+    //---------------------------------------------------------------------------------------------------------------------ADD DATA HERE
     // -----REMPLIR LE SELECT 'Equipes'-----
-    // Tableau
-    /*var exemples = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
+    // Remplacer ce Tableau
+    // var exemples = ["", "Option 1", "Option 2", "Option 3", "Option 4"];
 
-    // Récupérer l'élément select
-    var selectElement = document.getElementById("equipesLanguesSelect");
+    // // Récupérer l'élément select
+    // var selectElement = document.getElementById("equipesLanguesSelect");
+    // var recupTeams = document.getElementById("recupTeams");
 
-    // Boucle pour ajouter les options au select
-    for (var i = 0; i < exemples.length; i++) {
-        var option = document.createElement("option");
-        option.value = exemples[i];
-        option.text = exemples[i];
-        selectElement.appendChild(option);
-    }*/
+    // var teams = recupTeams.innerHTML;
+
+    // // Boucle pour ajouter les options au select
+    // for (var i = 0; i < exemples.length; i++) {
+    //     var option = document.createElement("option");
+    //     option.value = exemples[i];
+    //     option.text = exemples[i];
+    //     selectElement.appendChild(option);
+    // }
 </script>
 </html>
