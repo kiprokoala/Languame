@@ -9,6 +9,7 @@ use app\Models\Question;
 use app\Models\Reponse;
 use app\Models\Theme;
 use app\Models\Utilisateur;
+use Couchbase\AnalyticsLink;
 
 
 require_once("controller/controllerObjet.php");
@@ -60,6 +61,8 @@ class controllerAlignement extends controllerObjet
     public static function submitAlignement()
     {
         $alignement_id = Alignement::createAlignement($_SESSION['id']);
+        $alignement = Alignement::getObjetById($alignement_id);
+        $alignement->createAlignement($_POST['id_partie']);
         echo "<h2>Liste des réponses</h2>";
         foreach ($_POST as $question => $reponse) {
             $question_id = explode("question", $question)[1];

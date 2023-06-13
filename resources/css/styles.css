@@ -320,7 +320,7 @@ body {
   flex-direction: column;
 }
 
-.inputContainer input {
+.inputContainer input, select {
   border-radius: 6px;
   border: solid 1px rgba(0, 0, 0, 0.473);
   padding: 10px;
@@ -520,12 +520,29 @@ body {
 }
 
 #annulerBtn {
-  background-color: #2a9d8f;
+  background-color: #B5446E;
 }
 
 #validerBtn {
   background-color: #2a9d8f;
 }
+
+.winSubDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.winIcon{
+  color: green;
+  font-weight: 900;
+}
+
+.looseIcon{
+  color: red;
+  font-weight: 900;
+}
+
 
 .afficherModaleBtn {
     background-color: white;
@@ -567,7 +584,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 45px;
-  padding-bottom: 45px;
+  padding-bottom: 75px;
 }
 
 .ligneSubDivLeft {
@@ -591,11 +608,88 @@ body {
 }
 
 #equipesLanguesSelect {
-  width: 25%;
+  width: 100%;
 }
 
 .textModale1 {
   font-weight: bold;
+
+}
+
+#subDivAligmenents{
+  display: flex;
+  flex-direction: row;
+}
+
+.alignementHistorique{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f2ebf2;
+  box-shadow: 2px 2px 2px grey;
+}
+
+
+.membreAlignementHistorique{
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+  padding: 5px; 
+  padding-left: 20px;
+  border-bottom: solid 1px rgba(56, 56, 56, 0.473);
+}
+
+#contentAlignementHistorique{
+  display: flex;
+  flex-direction: row;
+}
+
+#titlePartieDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 900;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.473);
+  margin-bottom: 15px;
+}
+
+#sensDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.scroller{
+  width: 300px;
+  height: 100px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+
+#expressionDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.expressionsListe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+.sensListe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
 }
 
 .displayNone {
@@ -687,7 +781,7 @@ body {
     flex-direction: column;
 }
 
-.titleChamps + input {
+.titleChamps + input, select {
     border-radius: 6px;
     border: solid 2px rgba(0, 0, 0, 0.379);
     padding: 6px;
@@ -709,7 +803,7 @@ body {
 #divStatsBox{
   display: flex;
   flex-direction: row;
-
+  padding-top: 15px;
 }
 
 #resultatsSubDiv{
@@ -717,4 +811,27 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+#gameContainerBlock{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  height:90vh;
+  background-color: #00ad1c;
+  justify-content: space-between;
+}
+
+#gameLeftBlock{
+  background-color: #26465379;
+  border-radius: 6px;
+  width: 25%;
+  height: 100%;
+}
+
+#gameRightBlock{
+  background-color: white;
+  border-radius: 6px;
+  width: 60%;
+  height: 100%;
 }

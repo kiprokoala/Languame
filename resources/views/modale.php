@@ -68,20 +68,22 @@
                             </div>
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
-                                <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
-                                <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
+                                <select class="ligneSubDivRight scroller" id="equipesLanguesSelect" name="teams[]" multiple>
                                     <?php echo $teams; ?>
                                 </select>
                             </div>
-                        </form>
+                        
 
                         <!-- Footer (btns) -->
                         <div id="footerModalCreerJeu">
                             <button class="btnFooterModal" id="annulerBtn">Annuler</button>
                             <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
                         </div>
+                        </form>
                     </div>
                 </div>
+
+                
 
                 <!-- MODALE Créer équipe -->
                 <div id="displayCreeEquipe" class="displayNone">
@@ -133,27 +135,53 @@
 
                         <div id="partieModal">
                             <div>
+                                <div id="titlePartieDiv">
+                                    <span>Titre de la partie</span>
+                                    <span class="material-symbols-outlined">
+                                        close
+                                    </span>
+                                </div>
                                 <span class="textModale1">Membres</span>
                                 <!-- A remplir avec des composants membres-->
-                                <div>
-
+                                <div id="divMembresComponent">
+                                    <div class="membreComponent">
+                                        <span class="material-symbols-outlined iconImgMember">
+                                            account_circle
+                                        </span>
+                                        <span class="pseudoMembre">pseudo</span>
+                                    </div>
+                                    <div class="membreComponent">
+                                        <span class="material-symbols-outlined iconImgMember">
+                                            account_circle
+                                        </span>
+                                        <span class="pseudoMembre">pseudo</span>
+                                    </div>
+                                    <div class="membreComponent">
+                                        <span class="material-symbols-outlined iconImgMember">
+                                            account_circle
+                                        </span>
+                                        <span class="pseudoMembre">pseudo</span>
+                                    </div>
                                 </div>
 
                             </div>
-                            <div>
+                            <div style="padding-top:25px">
                                 <span class="textModale1">Stats</span>
                                 <div id="divStatsBox">
                                     <div class="statsBox">
                                         <span class="textModale1">Resultats</span>
                                         <div id="resultatsSubDiv">
-                                            <div>5
-                                                <span class="material-symbols-outlined">
+                                            <div class="winSubDiv">
+                                                <span>5</span>
+                                                <span class="material-symbols-outlined winIcon">
                                                     done
                                                 </span>
                                             </div>
-                                            <div>3<span class="material-symbols-outlined">
+                                            <div class="winSubDiv"> <span>3</span>
+                                                <span class="material-symbols-outlined looseIcon">
                                                     close
-                                                </span></div>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="statsBox">
@@ -163,11 +191,58 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <span>Alignements</span>
+                            <div style="padding-top:25px">
+                                <span class="textModale1">Alignements</span>
                                 <!-- A remplir avec des composants alignements-->
-                                <div>
-
+                                <div id="subDivAligmenents">
+                                    <div class="alignementHistorique">
+                                        <div class="membreAlignementHistorique">
+                                            <span class="material-symbols-outlined">
+                                                account_circle
+                                            </span>
+                                            <span class="pseudoMembre">pseudo</span>
+                                        </div>
+                                        <div id="contentAlignementHistorique">
+                                            <div id="expressionDiv">
+                                                <span class="expressionEtSensSpan">
+                                                    Expression
+                                                </span>
+                                                <div class="expressionsListe">
+                                                    <span>1</span>
+                                                    <span>2</span>
+                                                    <span>3</span>
+                                                    <span>4</span>
+                                                    <span>5</span>
+                                                    <span>6</span>
+                                                    <span>7</span>
+                                                    <span>8</span>
+                                                    <span>9</span>
+                                                    <span>10</span>
+                                                    <span>11</span>
+                                                    <span>12</span>
+                                                </div>
+                                            </div>
+                                            <div id="sensDiv">
+                                                <span class="expressionEtSensSpan">
+                                                    Sens
+                                                </span>
+                                                <div class="sensListe">
+                                                    <span>a</span>
+                                                    <span>b</span>
+                                                    <span>b</span>
+                                                    <span>b</span>
+                                                    <span>c</span>
+                                                    <span>d</span>
+                                                    <span>b</span>
+                                                    <span>a</span>
+                                                    <span>d</span>
+                                                    <span>a</span>
+                                                    <span>d</span>
+                                                    <span>d</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
