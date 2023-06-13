@@ -69,17 +69,19 @@
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
                                 <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
-                                <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
+                                <select class="ligneSubDivRight scroller" id="equipesLanguesSelect" name="teams[]" multiple>
                                     <?php echo $teams; ?>
                                 </select>
+
                             </div>
-                        </form>
+                        
 
                         <!-- Footer (btns) -->
                         <div id="footerModalCreerJeu">
                             <button class="btnFooterModal" id="annulerBtn">Annuler</button>
                             <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
                         </div>
+                        </form>
                     </div>
                 </div>
 
