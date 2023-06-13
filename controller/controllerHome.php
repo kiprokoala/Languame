@@ -2,15 +2,11 @@
 
 namespace controller;
 
-class controllerHome
-{
-    public function index()
-    {
-        require_once("view/homeView.php");
-    }
-
-    public function nationality()
-    {
-        require_once("resources/views/nationalite/index.php");
+class controllerHome {
+    /**
+     * Méthode pour afficher la page d'accueil.
+     */
+    public function index() {
+        require_once("resources/views/homeView.php");
     }
 }

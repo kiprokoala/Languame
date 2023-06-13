@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Languizz</title>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="/resources/css/styles.css" rel="stylesheet">
 </head>
 
@@ -15,10 +15,10 @@
         <div class="warning">
             <div class="separation">
                 <h2>Bonjour <?php echo $user->get('login') ?> !</h2>
-                <?php if($user->get('isAdmin')){ ?><button>
-                    <span>Admin
-                    </span>
-                </button>
+                <?php if ($user->get('isAdmin')) { ?><button>
+                        <span>Admin
+                        </span>
+                    </button>
                 <?php } ?>
             </div>
             <p>A vous d'organiser le jeu.</p>
@@ -39,16 +39,16 @@
                     </span>Historique des parties</button>
             </div>
         </div>
-            <div class="content">
-                <h1>Modale</h1>
-                <div class="content-modal" >
-                    <!-- MODALE CREER JEU -->
-                    <div id="modaleCreerJeuDiv" >
-                        <form id="formCreerJeuDiv"  action="/createGame" method="POST">
+        <div class="content">
+            <h1>Modale</h1>
+            <div id="divForModals" class="content-modal">
+                <!-- MODALE CREER JEU -->
+                <div id="displayCreeJeu" class="display">
+                    <div id="modaleCreerJeuDiv">
+                        <form id="formCreerJeuDiv" action="/createGame" method="POST">
                             <div class="ligneDiv">
                                 <label class="textModale1 ligneSubDivLeft" for="titreJeu">Titre du jeu</label>
-                                <input class="ligneSubDivRight" type="text" id="titreJeu" name="titreJeu" required
-                                    minlength="1" maxlength="20" placeholder="Titre du jeu...">
+                                <input class="ligneSubDivRight" type="text" id="titreJeu" name="titreJeu" required minlength="1" maxlength="20" placeholder="Titre du jeu...">
                             </div>
                             <div class="ligneDiv">
                                 <div class="ligneSubDivLeft">
@@ -70,7 +70,7 @@
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
                                 <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
                                 <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
-                                <?php echo $teams; ?>
+                                    <?php echo $teams; ?>
                                 </select>
                             </div>
                         </form>
@@ -81,19 +81,104 @@
                             <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer jeu">
                         </div>
                     </div>
+                </div>
 
-                    <!-- MODALE Créer équipe -->
-                    <div class="displayNone" id="modaleCreerEquipe">
-                        
+                <!-- MODALE Créer équipe -->
+                <div id="displayCreeEquipe" class="displayNone">
+
+                    <div id="modaleCreerEquipe">
+                        <form id="formCreerEquipeDiv" action="" method="POST">
+                            <div class="ligneDiv">
+                                <label class="textModale1 ligneSubDivLeft" for="nomEquipe">Nom de l'équipe</label>
+                                <input class="ligneSubDivRight" type="text" id="nomEquipe" name="nomEquipe" required minlength="1" maxlength="20" placeholder="Nom de l'équipe...">
+                            </div>
+
+                            <div class="ligneDiv">
+                                <span class="textModale1 ligneSubDivLeft">Groupe de langues</span>
+                                <select class="ligneSubDivRight" id="" name="" multiple>
+
+                                </select>
+                            </div>
+                            <div class="ligneDiv">
+                                <span class="textModale1 ligneSubDivLeft">Membres</span>
+                                <select class="ligneSubDivRight" id="" name="" multiple>
+
+                                </select>
+                            </div>
+                            <div class="ligneDiv">
+                                <span class="textModale1 ligneSubDivLeft">Chef d'équipe</span>
+                                <select class="ligneSubDivRight" id="" name="" multiple>
+
+                                </select>
+                            </div>
+
+                        </form>
+
+                        <!-- Footer (btns) -->
+                        <div id="footerModalCreerEquipe">
+                            <button class="btnFooterModal" id="annulerBtn">Annuler</button>
+                            <input class="btnFooterModal" id="validerBtn" type="submit" value="Créer équipe">
+                        </div>
                     </div>
-                    <!-- MODALE Historique partie -->
-                    <div class="displayNone" id="modaleHistoriquePartie">
+                </div>
+
+                <!-- MODALE Historique partie -->
+                <div id="displayHistoriquePartie" class="displayNone">
+
+                    <div id="modaleHistoriquePartie">
+
+                        <div id="componentPartie">
+
+                        </div>
+
+                        <div id="partieModal">
+                            <div>
+                                <span class="textModale1">Membres</span>
+                                <!-- A remplir avec des composants membres-->
+                                <div>
+
+                                </div>
+
+                            </div>
+                            <div>
+                                <span class="textModale1">Stats</span>
+                                <div id="divStatsBox">
+                                    <div class="statsBox">
+                                        <span class="textModale1">Resultats</span>
+                                        <div id="resultatsSubDiv">
+                                            <div>5
+                                                <span class="material-symbols-outlined">
+                                                    done
+                                                </span>
+                                            </div>
+                                            <div>3<span class="material-symbols-outlined">
+                                                    close
+                                                </span></div>
+                                        </div>
+                                    </div>
+                                    <div class="statsBox">
+                                        <span class="textModale1">Score final</span>
+                                        <div>3e</div>
+                                        <div>75pts</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Alignements</span>
+                                <!-- A remplir avec des composants alignements-->
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
                         <?php
                         echo $all_parties;
                         ?>
                     </div>
                 </div>
+
             </div>
+        </div>
     </div>
 </body>
 
@@ -101,30 +186,47 @@
 
 <script>
     //Recuperer chaque modale
-    var modaleCreerJeuDiv = document.getElementById("modaleCreerJeuDiv");
-    var modaleCreerEquipe = document.getElementById("modaleCreerEquipe");
-    var modaleHistoriquePartie = document.getElementById("modaleHistoriquePartie");
+    var displayCreeJeu = document.getElementById("displayCreeJeu");
+    var displayCreeEquipe = document.getElementById("displayCreeEquipe");
+    var displayHistoriquePartie = document.getElementById("displayHistoriquePartie");
+    var divForModals = document.getElementById("divForModals");
 
     function toggleClass(modaleToDisplay) {
         switch (modaleToDisplay) {
             case 1:
-                modaleCreerJeuDiv.classList.remove("displayNone");
-                modaleCreerEquipe.classList.add("displayNone");
-                modaleHistoriquePartie.classList.add("displayNone");
+                displayCreeJeu.classList.remove("displayNone");
+                displayCreeJeu.classList.add("displayBlock")
+
+                displayCreeEquipe.classList.remove("displayBlock");
+                displayCreeEquipe.classList.add("displayNone");
+                displayHistoriquePartie.classList.remove("displayBlock");
+                displayHistoriquePartie.classList.add("displayNone");
+
+
                 console.log("Afficher la modale 1");
                 break;
 
             case 2:
-                modaleCreerEquipe.classList.remove("displayNone");
-                modaleCreerJeuDiv.classList.add("displayNone");
-                modaleHistoriquePartie.classList.add("displayNone");
+                displayCreeEquipe.classList.remove("displayNone");
+                displayCreeEquipe.classList.add("displayBlock");
+
+                displayCreeJeu.classList.remove("displayBlock");
+                displayCreeJeu.classList.add("displayNone");
+                displayHistoriquePartie.classList.remove("displayBlock");
+                displayHistoriquePartie.classList.add("displayNone");
+
                 console.log("Afficher la modale 2");
                 break;
 
             case 3:
-                modaleHistoriquePartie.classList.remove("displayNone");
-                modaleCreerJeuDiv.classList.add("displayNone");
-                modaleCreerEquipe.classList.add("displayNone");
+                displayHistoriquePartie.classList.remove("displayNone");
+                displayHistoriquePartie.classList.remove("displayBlock");
+
+                displayCreeJeu.classList.remove("displayBlock");
+                displayCreeJeu.classList.add("displayNone");
+                displayCreeEquipe.classList.remove("displayBlock");
+                displayCreeEquipe.classList.add("displayNone");
+
                 console.log("Afficher la modale 3");
                 break;
 
@@ -142,7 +244,7 @@
     // -----REMPLIR LES BOUTONS "Thèmes"-----
     // Remplacer ce Tableau
     // var themes = ["Theme 1", "Theme 2", "Theme 3", "Theme 4"];
-    
+
     // Récupérer l'élement conteneur des checkboxes
     // var listeCheckboxThemes = document.getElementById("listeCheckboxThemes");
 
@@ -180,4 +282,5 @@
     //     selectElement.appendChild(option);
     // }
 </script>
+
 </html>
