@@ -25,7 +25,7 @@
                 <a href="/alignement/home"><button>Alignements</button></a>
                 <a href="/nationality"><button>Carte</button></a>
                 <a href="/seeParties"><button>Jouer</button></a>
-                <a href=""><button>Ajouter une expression</button></a>
+                <a href="/resources/views/formulaire/formulaireExpression.php"><button>Ajouter une expression</button></a>
             </div>
         </div>
     </div>

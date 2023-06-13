@@ -8,8 +8,6 @@ use app\Models\Theme;
 $pays = Pays::getAllPays();
 $langue = Langue::getAllLangues();
 $theme = Theme::getAllTheme();
-
-
 ?>
 
 
