@@ -25,6 +25,8 @@ class controllerEquipe extends controllerObjet
 
         $index = Equipe::createEquipe($_POST['nomEquipe'], $_POST['idChefEquipe'], $_POST['id_groupeLangue']);
         $equipe = Equipe::getObjetById($index);
+        $equipe->addPlayerToTeam($_POST['idChefEquipe']);
+
         // Création de la liste d'équipes
         foreach ($_POST["id_utilisateur"] as $user) {
             $equipe->addPlayerToTeam($user);

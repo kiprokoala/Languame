@@ -1,7 +1,7 @@
 <?php
 return [
     'database' => [
-        'host' => 'localhost'
+        'host' => 'localhost',
         'name' => 'prj-prism-rfrome2',
         'login' => 'root',
         'password' => ''
