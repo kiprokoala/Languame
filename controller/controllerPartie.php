@@ -19,6 +19,9 @@ class controllerPartie extends controllerObjet
 
     public static function createGame()
     {
+        $user = Utilisateur::getObjetById($_SESSION['id']);
+        $all_parties = self::getAllFinishedGames();
+
         $index = Equipe::getMaxListIndex() + 1;
 
         // Récupération des thèmes
@@ -80,15 +83,26 @@ class controllerPartie extends controllerObjet
 
     public static function getAllFinishedGames()
     {
+        $all_parties = "";
         $parties = Partie::getAllFinishedGames($_SESSION['id']);
-        return json_encode($parties);
+        foreach ($parties as $partie) {
+            $winner = Equipe::getObjetById($partie->get('winner'));
+            $equipes = $partie->getAllEquipes();
+            $nom_equipes = "";
+            foreach ($equipes as $equipe) {
+                $nom_equipes .= $equipe->get('nomEquipe') . " / ";
+            }
+            $nom_equipes = substr($nom_equipes, 0, -2);
+            $all_parties .= $partie->get('titre') . " a pour winner " . $winner->get('nomEquipe') . ". <br>
+                            Les équipes ayant joué sont " . $nom_equipes . "<br>";
+        }
+        return $all_parties;
     }
 
     public static function getQuestionsForPartie()
     {
         $partie = Partie::getObjetById($_POST['id_partie']);
-        $_SESSION['id_partie'] = $_POST['id_partie'];
-        $questions = json_encode($partie->getQuestions());
+        $questions = $partie->getQuestions();
         include("resources/views/gameView.php");
     }
 }

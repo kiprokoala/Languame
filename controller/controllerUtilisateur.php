@@ -138,7 +138,6 @@ class controllerUtilisateur extends controllerObjet
                 $parties_chef[] = $partie;
             }
         }
-        $parties_chef = json_encode($parties_chef);
 		include("resources/views/generic/header.php");
         include ("resources/views/listeParties.php");
 		include("resources/views/generic/footer.php");

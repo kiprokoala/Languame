@@ -61,7 +61,7 @@
                                 <div class="ligneSubDivRight">
                                     <fieldset>
                                         <div id="listeCheckboxThemes">
-                                            <?php var_dump($themes); ?>
+                                            <?php echo $themes ?>
                                         </div>
                                     </fieldset>
                                 </div>
@@ -70,7 +70,7 @@
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
                                 <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
                                 <select class="ligneSubDivRight scroller" id="equipesLanguesSelect" name="teams[]" multiple>
-                                    <?php var_dump($teams); ?>
+                                    <?php echo $teams; ?>
                                 </select>
 
                             </div>
@@ -251,6 +251,7 @@
                         ?>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
