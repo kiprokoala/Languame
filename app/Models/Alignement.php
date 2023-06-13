@@ -9,6 +9,7 @@ class Alignement extends Objet
 {
     // attributs de classe
     protected static $objet = "Alignement";
+    protected static $cle = "id_alignement";
 
     protected $id_alignement;
     protected $id_utilisateur;
@@ -33,6 +34,10 @@ class Alignement extends Objet
         }catch(PDOException $e){
             $e->getMessage();
         }
+    }
+
+    public function getNumberOfAnswers(){
+
     }
 
     public function afficher()

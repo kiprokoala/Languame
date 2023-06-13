@@ -84,7 +84,7 @@ class controllerAlignement extends controllerObjet
     {
         $alignement_id = Alignement::createAlignement($_SESSION['id']);
         $alignement = Alignement::getObjetById($alignement_id);
-        $alignement->createAlignement($_POST['id_partie']);
+        $alignement->linkAlignementPartie($_SESSION['id_partie']);
         echo "<h2>Liste des réponses</h2>";
         foreach ($_POST as $question => $reponse) {
             $question_id = explode("question", $question)[1];

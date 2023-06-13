@@ -887,22 +887,23 @@ body {
   flex-direction: row;
   padding: 50px;
   height:90vh;
-  background-color: #00ad1c;
   justify-content: space-between;
 }
 
 #gameLeftBlock{
   background-color: #26465379;
   border-radius: 6px;
-  width: 25%;
-  height: 100%;
+  width: 30%;
+  height: 85vh;
+  padding: 20px;
 }
 
 #gameRightBlock{
   background-color: white;
+  padding: 20px;
   border-radius: 6px;
   width: 60%;
-  height: 100%;
+  height: 85vh;
 }
 
 #listGamesContainerMain {
@@ -949,9 +950,88 @@ body {
 }
 
 .questionBlock{
+  background-color: white;
   border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px 10px;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+#titlePartie{
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-bottom: 20px;
+  color:white;
+}
+
+#submitAlignement{
+  font-family: 'Inter', sans-serif;
+  padding: 15px;
+  border:none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: white;
+  margin: auto;
+  background-color: #2a9d8f;
+}
+
+#titleBlockGame {
+  border: solid 2px rgba(0, 0, 0, 0.379);
+  padding: 20px;
+  margin: auto;
+  border-radius: 6px;
+  width: 50%;
+}
+
+#t1{
+  font-size: 2em;
+}
+
+#t2{
+  font-size: 1em;
+  font-weight: 600;
+}
+
+#t3{
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+#choiceTheme {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 60%;
+  margin: auto;
+  width: 80%;
+}
+
+#choiceTheme div {
+  width: 180px;
+  height: 180px;
+  margin: 20px;
+  padding: 10px;
+  color:white;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.spanEquipesEtThemes{
+  font-size: 12px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.spanEquipesEtThemes{
+  font-size: 12px;
 }
 
 .clickable{

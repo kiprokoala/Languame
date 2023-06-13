@@ -148,4 +148,17 @@ class Utilisateur extends Objet
             $e->getMessage();
         }
     }
+
+    public function getAllAnswers($partie){
+        $requete = "SELECT r.id_reponse, r.id_alignement, r.id_utilisateur, r.id_question, r.id_theme FROM reponse r
+                    INNER JOIN est_donne e on e.id_alignement = r.id_alignement
+                    WHERE id_partie = ".$partie." AND r.id_utilisateur = ".$this->id_utilisateur;
+        try{
+            $resultat = Connexion::pdo()->query($requete);
+            $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.Reponse'));
+            return $resultat->fetchAll();
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
 }
