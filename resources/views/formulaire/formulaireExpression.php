@@ -1,6 +1,5 @@
 <?php
-require_once('view/header.html');
-require_once('view/footer.html');
+require_once('template/header.html');
 
 use app\Models\Langue;
 use app\Models\Pays;
@@ -246,7 +245,7 @@ $theme = Theme::getAllTheme();
             };
             $.ajax({
                 type: "POST",
-                url: "formulaire/traitement/traitementFormuaire.php",
+                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
@@ -281,7 +280,7 @@ $theme = Theme::getAllTheme();
             };
             $.ajax({
                 type: "POST",
-                url: "formulaire/traitement/traitementFormuaire.php",
+                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
@@ -315,7 +314,7 @@ $theme = Theme::getAllTheme();
             };
             $.ajax({
                 type: "POST",
-                url: "formulaire/traitement/traitementFormuaire.php",
+                url: "resources/views/formulaire/traitement/traitementFormulaire.php",
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
@@ -351,5 +350,5 @@ $theme = Theme::getAllTheme();
 </script>
 
 <?php
-require_once('view/footer.html');
+require_once('template/footer.html');
 ?>
