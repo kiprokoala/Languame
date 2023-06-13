@@ -25,6 +25,16 @@ class Alignement extends Objet
         }
     }
 
+    public function linkAlignementPartie($partie){
+        $req_prep = Connexion::pdo()->prepare("INSERT INTO est_donne (id_alignement, id_partie) VALUES (:tag_alignement, :tag_partie)");
+        try{
+            $req_prep->execute(array("tag_alignement" => $this->id_alignement, "tag_partie" => $partie));
+            return true;
+        }catch(PDOException $e){
+            $e->getMessage();
+        }
+    }
+
     public function afficher()
     {
         echo Alignement::$objet . " n°" . $this->id_alignement . " est lié à l'utilisateur n°" . $this->id_utilisateur;

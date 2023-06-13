@@ -69,9 +69,9 @@
                             <div class="ligneDiv">
                                 <span class="textModale1 ligneSubDivLeft">Equipes</span>
                                 <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
-                                <fieldset class="ligneSubDivRight scroller" id="equipesLanguesSelect">
-                                        <?php echo $teams; ?>
-                                </fieldset>
+                                <select class="ligneSubDivRight scroller" id="equipesLanguesSelect" name="teams[]" multiple>
+                                    <?php echo $teams; ?>
+                                </select>
 
                             </div>
                         

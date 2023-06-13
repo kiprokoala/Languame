@@ -9,6 +9,7 @@ use app\Models\Question;
 use app\Models\Reponse;
 use app\Models\Theme;
 use app\Models\Utilisateur;
+use Couchbase\AnalyticsLink;
 
 
 require_once("controller/controllerObjet.php");
@@ -38,19 +39,19 @@ class controllerAlignement extends controllerObjet
             $name = $team->get("nomEquipe");
             switch ($team->get("id_groupeLangue")){
                 case 1:
-                    $teams .= "<input style='background-color: #5a5ae7;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #5a5ae7;' value='$id'>$id - $name</option>";
                     break;
                 case 2:
-                    $teams .= "<input style='background-color: #e8e83e;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #e8e83e;' value='$id'>$id - $name</option>";
                     break;
                 case 3:
-                    $teams .= "<input style='background-color: #68d968;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #68d968;' value='$id'>$id - $name</option>";
                     break;
                 case 4:
-                    $teams .= "<input style='background-color: #c55353;' type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option style='background-color: #c55353;' value='$id'>$id - $name</option>";
                     break;
                 default:
-                    $teams .= "<input type='checkbox' id='team" . $id . "' class='checkbox-button' name='teams[]" . $id . "'><label for='teams[]" . $id . "'>" . $name . "</label>";
+                    $teams .= "<option value='$id'>$id - $name</option>";
             }
         }
         $all_parties = controllerPartie::getAllFinishedGames();
@@ -60,6 +61,8 @@ class controllerAlignement extends controllerObjet
     public static function submitAlignement()
     {
         $alignement_id = Alignement::createAlignement($_SESSION['id']);
+        $alignement = Alignement::getObjetById($alignement_id);
+        $alignement->createAlignement($_POST['id_partie']);
         echo "<h2>Liste des réponses</h2>";
         foreach ($_POST as $question => $reponse) {
             $question_id = explode("question", $question)[1];
