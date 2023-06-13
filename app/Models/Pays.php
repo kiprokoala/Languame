@@ -4,6 +4,8 @@ namespace app\Models;
 
 use app\Models\Objet;
 use app\Utils\Database as Connexion;
+use PDO;
+use PDOException;
 
 class Pays extends Objet
 {
@@ -25,20 +27,21 @@ class Pays extends Objet
 		". Il a pour latitude " . $this->latitudeCapitalePays . " et pour longitude " . $this->longitudeCapitalePays;
     }
 
+
     /**
-     * Méthode pour récupérer les expressions liées à ce pays.
-     *
-     * @return array|false Tableau contenant les expressions liées à ce pays ou false en cas d'erreur.
+     * Récupère les expressions d'un pays en fonction de son identifiant.
+     * @param int $id_pays Identifiant du pays.
+     * @return array Tableau contenant les expressions du pays.
+     * @throws PDOException En cas d'erreur lors de la recherche dans la base de données.
      */
-    public function getExpressionsByPays(){
-        $requete = "SELECT * FROM Expression WHERE id_pays = ".$this->get("id_pays").";";
+    public static function getExpressionsByPays($id_pays){
+        $requete = "SELECT id_expression, texteLangueExpression FROM Expression WHERE id_pays ='$id_pays'" ;
         try {
             $resultat = Connexion::pdo()->query($requete);
-            $resultat->setFetchmode(PDO::FETCH_CLASS, $objet);
+            $resultat->setFetchmode(PDO::FETCH_OBJ);
             return $resultat->fetchAll();
         } catch (PDOException $e) {
             echo $e->getMessage();
-            return false;
         }
     }
 

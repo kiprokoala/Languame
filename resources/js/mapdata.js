@@ -724,7 +724,7 @@ var simplemaps_worldmap_mapdata = {
 
 function chargerDonneesAJAX() {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "actions/carte/chargerDonneesMySQL.php", true);
+  xhr.open("GET", "nationalite/charger-donnees-mysql", true);
   xhr.onload = function () {
     if (xhr.status === 200) {
       let data = JSON.parse(xhr.responseText);
@@ -765,7 +765,7 @@ function getPaysByCode(country_code) {
   let xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "actions/carte/chargerPaysParCode.php?code=" + country_code,
+    "/nationalite/charger-pays-par-code?code=" + country_code,
     true
   );
   xhr.onload = function () {
@@ -785,7 +785,7 @@ function getPaysByCode(country_code) {
 function getCodeByPays(nom) {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "./actions/carte/chargerCodeParPays.php?nom=" + nom, true);
+    xhr.open("GET", "/nationalite/charger-code-par-pays?nom=" + nom, true);
     xhr.onload = function () {
       if (xhr.status === 200) {
         let data = JSON.parse(xhr.responseText);
@@ -807,7 +807,7 @@ function getExpressionsByID(id) {
   let xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "./actions/carte/chargerExpressionParPays.php?id_pays=" + id,
+    "/nationalite/charger-expression-par-pays?id_pays=" + id,
     true
   );
   xhr.onload = function () {

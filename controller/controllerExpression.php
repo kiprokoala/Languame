@@ -1,6 +1,8 @@
 <?php
 
-require_once("model/expression.php");
+use controller\controllerObjet;
+
+require_once("app/Models/Expression.php");
 require_once("controller/controllerObjet.php");
 
 class controllerExpression extends controllerObjet {

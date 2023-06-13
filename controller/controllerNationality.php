@@ -32,7 +32,7 @@ class controllerNationality
         }
     }
 
-    public function chargetCodeParPays()
+    public function chargerCodeParPays()
     {
         // Vérifie si le paramètre "nom" est présent dans la requête GET
         if (!isset($_GET["nom"])) {
@@ -61,6 +61,61 @@ class controllerNationality
         ];
 
         // Affiche le tableau $donnees au format JSON
+        echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function chargerDonneesMySQL()
+    {
+
+        // 1. on récupère les tableaux de livres et d'adhérents à partir du modèle Pays
+        $pays = Pays::getAllPays();
+
+        // 2. on construit le tableau de données contenant les pays
+        $donnees = array();
+
+        // 3. on ajoute le tableau des pays au tableau de données
+        $donnees[] = $pays;
+
+        // 4. on affiche le tableau $donnees au format JSON pour qu'il puisse être récupéré proprement
+        // par la requête AJAX à l'origine de cette recherche
+        echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function chargerExpressionParPays()
+    {
+        /**
+         * Fichier de récupération des expressions d'un pays via une requête AJAX.
+         */
+
+        // Récupération de l'ID du pays à partir des paramètres GET
+        $id_pays = $_GET["id_pays"];
+
+        // On récupère les expressions du pays
+        $expressions = Pays::getExpressionsByPays($id_pays);
+
+        // On affiche le tableau des expressions au format JSON pour la requête AJAX
+        echo json_encode($expressions, JSON_UNESCAPED_UNICODE);
+    }
+
+    public function chargerPaysParCode()
+    {
+        /**
+         * Fichier de récupération des informations d'un pays par son code via une requête AJAX.
+         */
+
+        // Récupération du code du pays à partir des paramètres GET
+        $code = $_GET["code"];
+
+        // On récupère les informations du pays en fonction de son code
+        $pays = Pays::getPaysByCode($code);
+
+        // On construit le tableau de données contenant les informations du pays
+        $donnees = array();
+
+        // On remplit le tableau avec les informations du pays
+        $donnees[] = $pays;
+
+        // On affiche le tableau $donnees au format JSON pour la requête AJAX
         echo json_encode($donnees, JSON_UNESCAPED_UNICODE);
     }
 }

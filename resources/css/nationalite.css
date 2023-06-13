@@ -51,17 +51,6 @@
   align-items: center;
   text-transform: uppercase;
 }
-.menu-deroulant {
-  background-color: #edecec;
-  width: 97%;
-
-  height: 45%;
-  margin-top: 2%;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .search-bar {
   background-color: #fff;
   width: 100%;
@@ -92,11 +81,92 @@
   display: none !important;
 }
 .choix-sens {
-  background-color: #eee;
+  background-color: #fff;
   width: 100%;
   height: 7%;
+  border-radius: 20px;
+  display: flex;
+
+}
+.choix-sens div{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.choix-sens div.active{
+  background-color: #2a9d8f;
+  color: #fff;
+  border-radius: 20px;
 }
 .pays p {
   margin: 0;
   font-size: 2.5em;
+}
+
+#expression{
+  width: 97%;
+  height: 40%;
+  margin-top: 2%;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+#flag {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 50%;
+  border-radius: 10px;
+  background-color: #fff;
+
+}
+
+#expression::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+#expression::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #2a9d8f;
+}
+#expression::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.expressionItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #edecec;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+
+}
+.expressionItem div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.expressionItem div label{
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+.expressionItem div input{
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
 }
