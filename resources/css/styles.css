@@ -496,6 +496,13 @@ body {
   align-items: center;
 }
 
+#footerModalCreerEquipe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .btnFooterModal {
   color: white;
   padding-top: 15px;
@@ -560,7 +567,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 45px;
-  padding-top: 45px;
+  padding-bottom: 45px;
 }
 
 .ligneSubDivLeft {
