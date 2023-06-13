@@ -56,6 +56,26 @@ class Equipe extends Objet
             echo $e;
         }
     }
+
+    public static function createEquipe($nom, $id_chef, $id_groupeLangue){
+        $req_prep = Connexion::pdo()->prepare("INSERT INTO 
+                    equipe (nomEquipe, idChefEquipe, id_groupeLangue) VALUES (:tag_nom, :tag_chef, :tag_groupe);");
+        try {
+            $req_prep->execute(array("tag_nom" => $nom, "tag_chef" => $id_chef, "tag_groupe" => $id_groupeLangue));
+            return Connexion::pdo()->LastInsertId();;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function addPlayerToTeam($user){
+        $requete = "INSERT INTO est_dans VALUES($this->id_equipe, $user)";
+        try {
+            Connexion::pdo()->query($requete);
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
 }
 
 

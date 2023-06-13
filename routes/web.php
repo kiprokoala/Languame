@@ -6,6 +6,7 @@ use controller\controllerHome;
 use controller\controllerNationality;
 use controller\controllerPartie;
 use controller\controllerUtilisateur;
+use controller\controllerEquipe;
 
 // Partie utilisateurs
 Route::get('/', [controllerHome::class, 'index']);
@@ -33,3 +34,6 @@ Route::get('/alignement/submitAlignement', [controllerAlignement::class, 'submit
 Route::get('/createGame', [controllerPartie::class, 'createGame']);
 Route::get('/play', [controllerPartie::class, 'getQuestionsForPartie']);
 Route::get('/seeParties', [controllerUtilisateur::class, 'getAllParties']);
+
+// Equipe
+Route::get('/createEquipe', [controllerEquipe::class, 'createEquipe']);

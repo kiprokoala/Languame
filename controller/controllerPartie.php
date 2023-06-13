@@ -19,9 +19,6 @@ class controllerPartie extends controllerObjet
 
     public static function createGame()
     {
-        $user = Utilisateur::getObjetById($_SESSION['id']);
-        $all_parties = self::getAllFinishedGames();
-
         $index = Equipe::getMaxListIndex() + 1;
 
         // Récupération des thèmes

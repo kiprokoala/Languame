@@ -9,7 +9,7 @@ use app\Models\Question;
 use app\Models\Reponse;
 use app\Models\Theme;
 use app\Models\Utilisateur;
-use Couchbase\AnalyticsLink;
+use app\Models\GroupeLangue;
 
 
 require_once("controller/controllerObjet.php");
@@ -21,6 +21,7 @@ class controllerAlignement extends controllerObjet
 
     public static function home()
     {
+        //Création d'un jeu
         if (!isset($_SESSION['id'])) {
             header('Location: /profil');
         }
@@ -54,6 +55,27 @@ class controllerAlignement extends controllerObjet
                     $teams .= "<option value='$id'>$id - $name</option>";
             }
         }
+
+        //Création d'une équipe
+        $all_users = Utilisateur::getAllObjets();
+        $users = "";
+        foreach ($all_users as $the_user){
+            $users .= "<option value='".$the_user->get('id_utilisateur')."'>".$the_user->get("prenom")." ".$the_user->get('nom')."</option>";
+        }
+
+        $all_groupeLangues = GroupeLangue::getAllObjets();
+        $groupeLangues = "";
+        foreach ($all_groupeLangues as $groupeLangue){
+            $groupeLangues .= "<option value='".$groupeLangue->get('id_groupeLangue')."'>".$groupeLangue->get("nomGroupeLangue")."</option>";
+        }
+
+        $all_chiefs = Utilisateur::getAllObjets();
+        $chiefs = "";
+        foreach ($all_chiefs as $chief){
+            $chiefs .= "<option value='".$chief->get('id_utilisateur')."'>".$chief->get("prenom")." ".$chief->get('nom')."</option>";
+        }
+
+        //Historique des parties
         $all_parties = controllerPartie::getAllFinishedGames();
         include("resources/views/modale.php");
     }

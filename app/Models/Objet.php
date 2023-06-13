@@ -39,7 +39,7 @@ class Objet
         // envoi de la requête et stockage de la réponse
         $resultat = Connexion::pdo()->query($requete);
         // traitement de la réponse
-        $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.'.ucfirst($table)));
+        $resultat->setFetchmode(PDO::FETCH_CLASS, config('aliases.'.static::$objet));
         $tableau = $resultat->fetchAll();
         return $tableau;
     }
