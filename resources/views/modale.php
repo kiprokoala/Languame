@@ -126,6 +126,51 @@
                 <div id="displayHistoriquePartie" class="displayNone">
 
                     <div id="modaleHistoriquePartie">
+
+                        <div id="componentPartie">
+
+                        </div>
+
+                        <div id="partieModal">
+                            <div>
+                                <span class="textModale1">Membres</span>
+                                <!-- A remplir avec des composants membres-->
+                                <div>
+
+                                </div>
+
+                            </div>
+                            <div>
+                                <span class="textModale1">Stats</span>
+                                <div id="divStatsBox">
+                                    <div class="statsBox">
+                                        <span class="textModale1">Resultats</span>
+                                        <div id="resultatsSubDiv">
+                                            <div>5
+                                                <span class="material-symbols-outlined">
+                                                    done
+                                                </span>
+                                            </div>
+                                            <div>3<span class="material-symbols-outlined">
+                                                    close
+                                                </span></div>
+                                        </div>
+                                    </div>
+                                    <div class="statsBox">
+                                        <span class="textModale1">Score final</span>
+                                        <div>3e</div>
+                                        <div>75pts</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span>Alignements</span>
+                                <!-- A remplir avec des composants alignements-->
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
                         <?php
                         echo $all_parties;
                         ?>
