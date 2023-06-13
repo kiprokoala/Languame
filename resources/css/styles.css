@@ -718,3 +718,26 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+#gameContainerBlock{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  height:90vh;
+  background-color: #00ad1c;
+  justify-content: space-between;
+}
+
+#gameLeftBlock{
+  background-color: #26465379;
+  border-radius: 6px;
+  width: 25%;
+  height: 100%;
+}
+
+#gameRightBlock{
+  background-color: white;
+  border-radius: 6px;
+  width: 60%;
+  height: 100%;
+}
