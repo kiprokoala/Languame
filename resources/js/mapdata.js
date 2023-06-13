@@ -880,7 +880,7 @@ window.addEventListener("load", function () {
           if (clickedCountries.includes(code)) {
             element.setAttribute("fill", "black");
           } else {
-            element.setAttribute("fill", "");
+            element.setAttribute("fill", "#E2ECBD");
           }
         });
       } else {
