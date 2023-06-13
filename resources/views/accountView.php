@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <!-- Bouton déconnexion -->
-                        <a class="deconnectBtn" href="/disconnect">Déconnexion</a>
+                        <a class="deconnectBtn" href="/disconnect"><button>Déconnexion</button></a>
                     </div>
                 </div>
             </div>
