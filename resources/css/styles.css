@@ -666,7 +666,6 @@ body {
   width: 300px;
   height: 100px;
   overflow-y: scroll;
-  scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
 }
 
@@ -834,4 +833,47 @@ body {
   border-radius: 6px;
   width: 60%;
   height: 100%;
+}
+
+#listGamesContainerMain {
+  display: flex;
+  height:100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#listGamesContainer{
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  width: 90vw;
+  border-radius: 6px;
+  margin: auto;
+  background-color: #26465379;
+  padding: 30px;
+}
+
+.blockGames {
+  padding: 10px;
+}
+
+.gameItem {
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+#btnPlay {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  align-self: center;
+  border: none;
+  cursor: pointer;
 }
