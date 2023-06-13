@@ -24,7 +24,7 @@ $theme = Theme::getAllTheme();
     }
 
     body {
-        background-image: url("assets/fond.png");
+        background-image: url("../../images/fond.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -37,20 +37,20 @@ $theme = Theme::getAllTheme();
 
         <div id="form1" class="card text-dark bg-light mt-5 shadow" style="width: 400px; border-radius: 15px;">
             <div class="card-body">
-            <a href="/"><button class="btn text-light mb-3" style="background-color:  #9374a1;">Retour à la page d'accueil</button></a>
+                <a href="/"><button class="btn text-light mb-3" style="background-color:  #9374a1;">Retour à la page d'accueil</button></a>
                 <div class="mb-3">
                     <label for="paysId" class="form-label">Pays :</label>
                     <select class="form-select" name="pays" id="paysId">
-                        <?php foreach($pays as $pays1) { ?>
+                        <?php foreach ($pays as $pays1) { ?>
                             <option value="<?php echo $pays1->id_pays; ?>"><?php echo $pays1->nomPays; ?></option>
-                            <?php } ?>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="langueId" class="form-label">Langue :</label>
                     <select class="form-select" name="langue" id="langueId">
-                    <?php foreach($langue as $langue) { ?>
-                        <option value="<?php echo $langue->id_langue; ?>"><?php echo $langue->nomLangue; ?></option>
+                        <?php foreach ($langue as $langue) { ?>
+                            <option value="<?php echo $langue->id_langue; ?>"><?php echo $langue->nomLangue; ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -118,12 +118,12 @@ $theme = Theme::getAllTheme();
                 <div class="mb-3">
                     <label for="paysViseId4" class="form-label">Pays visée :</label>
                     <select class="form-select" name="paysVise" id="paysViseId4">
-                        <?php foreach($pays as $paysVise) { ?>
+                        <?php foreach ($pays as $paysVise) { ?>
                             <option value="<?php echo $paysVise->id_pays; ?>"><?php echo $paysVise->nomPays; ?></option>
                         <?php } ?>
                     </select>
                 </div>
-               
+
                 <button id="btnSuivant4" class="btn form-control text-light" style="background-color:  #5a6d9a;">Valider</button>
             </div>
         </div>
@@ -134,9 +134,9 @@ $theme = Theme::getAllTheme();
                 <div class="mb-3">
                     <label for="themeId5" class="form-label text-center">Selectionner un thème :</label>
                     <select class="form-select" name="theme" id="themeId5">
-                        <?php foreach($theme as $theme3) { ?>
+                        <?php foreach ($theme as $theme3) { ?>
                             <option value="<?php echo $theme3->id_theme; ?>"><?php echo $theme3->nomTheme; ?></option>
-                            <?php } ?>
+                        <?php } ?>
                     </select>
                 </div>
                 <div class="mb-3">
@@ -169,7 +169,7 @@ $theme = Theme::getAllTheme();
     var btnSuivant3 = document.getElementById('btnSuivant3');
     var btnSuivant4 = document.getElementById('btnSuivant4');
     var btnSuivant5 = document.getElementById('btnSuivant5');
-    
+
     var btnRetour2 = document.getElementById('btnRetour2');
     var btnRetour3 = document.getElementById('btnRetour3');
     var btnRetour4 = document.getElementById('btnRetour4');
@@ -231,17 +231,16 @@ $theme = Theme::getAllTheme();
         significationLitterale = document.getElementById('litteraleId3').value;
         significationIdiomatique = document.getElementById('idiomatiqueId3').value;
         if (expression != "" && significationLitterale != "" && significationIdiomatique != "") {
-            alert('Merci pour votre participation !');
             var data = {
-                'expression' : expression,
-                'translitteration' : transliteration,
-                'significationLitterale' : significationLitterale,
-                'significationIdiomatique' : significationIdiomatique,
-                'pays' : pays,
-                'langue' : langue,
-                'typeExpression' : typeExpression,
-                'paysVise' : null,
-                
+                'expression': expression,
+                'translitteration': transliteration,
+                'significationLitterale': significationLitterale,
+                'significationIdiomatique': significationIdiomatique,
+                'pays': pays,
+                'langue': langue,
+                'typeExpression': typeExpression,
+                'paysVise': null,
+
             };
             $.ajax({
                 type: "POST",
@@ -249,11 +248,11 @@ $theme = Theme::getAllTheme();
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
-                    console.log(donnees);
+                    alert('Merci pour votre participation !');
                 }
             });
             window.location.href = "/";
-        
+
         } else {
             alert('Veuillez remplir les champs obligatoires !');
         }
@@ -266,17 +265,16 @@ $theme = Theme::getAllTheme();
         significationIdiomatique = document.getElementById('idiomatiqueId4').value;
         paysVise = document.getElementById('paysViseId4').value;
         if (expression != "" && significationLitterale != "" && significationIdiomatique != "") {
-            alert('Merci pour votre participation !');
             var data = {
-                'expression' : expression,
-                'translitteration' : transliteration,
-                'significationLitterale' : significationLitterale,
-                'significationIdiomatique' : significationIdiomatique,
-                'pays' : pays,
-                'langue' : langue,
-                'typeExpression' : null,
-                'paysVise' : paysVise,
-                
+                'expression': expression,
+                'translitteration': transliteration,
+                'significationLitterale': significationLitterale,
+                'significationIdiomatique': significationIdiomatique,
+                'pays': pays,
+                'langue': langue,
+                'typeExpression': null,
+                'paysVise': paysVise,
+
             };
             $.ajax({
                 type: "POST",
@@ -284,7 +282,7 @@ $theme = Theme::getAllTheme();
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
-                    console.log(donnees);
+                    alert('Merci pour votre participation !');
                 }
             });
             window.location.href = "/";
@@ -300,17 +298,16 @@ $theme = Theme::getAllTheme();
         significationLitterale = document.getElementById('litteraleId5').value;
         significationIdiomatique = document.getElementById('idiomatiqueId5').value;
         if (expression != "" && significationLitterale != "" && significationIdiomatique != "") {
-            alert('Merci pour votre participation !');
             var data = {
-                'expression' : expression,
-                'translitteration' : transliteration,
-                'significationLitterale' : significationLitterale,
-                'significationIdiomatique' : significationIdiomatique,
-                'pays' : pays,
-                'langue' : langue,
-                'typeExpression' : null,
-                'paysVise' : null,
-                'theme' : theme
+                'expression': expression,
+                'translitteration': transliteration,
+                'significationLitterale': significationLitterale,
+                'significationIdiomatique': significationIdiomatique,
+                'pays': pays,
+                'langue': langue,
+                'typeExpression': null,
+                'paysVise': null,
+                'theme': theme
             };
             $.ajax({
                 type: "POST",
@@ -318,7 +315,7 @@ $theme = Theme::getAllTheme();
                 data: data,
                 success: function(data) {
                     let donnees = JSON.parse(data);
-                    console.log(donnees);
+                    alert('Merci pour votre participation !');
                 }
             });
             window.location.href = "/";
