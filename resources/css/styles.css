@@ -553,13 +553,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 70%;
-    padding: 10% 5% 20%;
+    padding: 5px 20px;
 }
 
 .ligneDiv {
   display: flex;
   flex-direction: row;
   height: 45px;
+  padding-top: 45px;
 }
 
 .ligneSubDivLeft {

@@ -43,8 +43,8 @@
             <h1>Modale</h1>
             <div id="divForModals" class="content-modal">
                 <!-- MODALE CREER JEU -->
-                <div id="displayCreeJeu">
-                    <div class="display" id="modaleCreerJeuDiv">
+                <div id="displayCreeJeu" class="display">
+                    <div id="modaleCreerJeuDiv">
                         <form id="formCreerJeuDiv" action="/createGame" method="POST">
                             <div class="ligneDiv">
                                 <label class="textModale1 ligneSubDivLeft" for="titreJeu">Titre du jeu</label>
@@ -86,35 +86,10 @@
                 <!-- MODALE Créer équipe -->
                 <div id="displayCreeEquipe" class="displayNone">
 
-                    <div  id="modaleCreerEquipe">
+                    <div id="modaleCreerEquipe">
                         <form id="formCreerEquipeDiv" action="" method="POST">
-                            <div class="ligneDiv">
-                                <label class="textModale1 ligneSubDivLeft" for="titreJeu">Nom de l'équipe</label>
-                                <input class="ligneSubDivRight" type="text" id="nomEquipe" name="nomEquipe" required minlength="1" maxlength="20" placeholder="Nom de l'équipe...">
-                            </div>
-                            <div class="ligneDiv">
-                                <div class="ligneSubDivLeft">
-                                    <div id="themeTextDiv">
-                                        <span class="textModale1" for="themes-select">Thèmes</span>
-                                        <span class="textModale3">(choisir 4 parmi la liste)</span>
-                                    </div>
-                                </div>
+                            
 
-                                <div class="ligneSubDivRight">
-                                    <fieldset>
-                                        <div id="listeCheckboxThemes">
-                                            <?php echo $themes ?>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="ligneDiv">
-                                <span class="textModale1 ligneSubDivLeft">Equipes</span>
-                                <div id="recupTeams" style="visibility: hidden;"><?php echo $teams ?></div>
-                                <select class="ligneSubDivRight" id="equipesLanguesSelect" name="teams[]" multiple>
-                                    <?php echo $teams; ?>
-                                </select>
-                            </div>
                         </form>
                     </div>
                 </div>
