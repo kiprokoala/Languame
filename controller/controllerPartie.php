@@ -84,7 +84,6 @@ class controllerPartie extends controllerObjet
             }
             $score = 0;
             foreach ($answers as $answer){
-                echo "coucoucoucouccoucco";
                 if($answer->checkReponseTheme()){
                     $score++;
                 }
