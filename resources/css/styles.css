@@ -951,7 +951,7 @@ body {
 
 .questionBlock{
   background-color: white;
-  border-radius: 6px;
+  border: 1px solid black;
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
@@ -1016,4 +1016,28 @@ body {
   color:white;
   text-align: center;
   border-radius: 6px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.spanEquipesEtThemes{
+  font-size: 12px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.spanEquipesEtThemes{
+  font-size: 12px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.spanEquipesEtThemes{
+  font-size: 12px;
 }
