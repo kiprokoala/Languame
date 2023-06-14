@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<input type=hidden id="inputAllParties" value="<?php echo($all_parties); ?>" />
     <div class="xrapper">
         <div class="warning">
             <div class="separation">
@@ -133,6 +134,25 @@
 
                             <div id="toFillWithCompos">
                                 <!-- A remplir avec des composants parties -->
+                                <div id="componentPartie" class="" onclick="togglePartie()">
+                                    <div class="partieLeftDiv">
+                                        <div><span class="textModale1"> Nom du jeu </span> <span class="tagGdl">Groupe de langue</span> </div>
+                                        <div class="equipesEtThemesListe">
+                                            <span style="font-size: 12px;">Equipes</span>
+                                            <!-- A remplir avec les data equipes -->
+                                            <div></div>
+                                        </div>
+                                        <div class="equipesEtThemesListe">
+                                            <span style="font-size: 12px;">Thèmes</span>
+                                            <!-- A remplir avec les data thèmes -->
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="partieRightDiv">
+                                        <img class="fit-picture" src="/resources/images/medal.png">
+                                        <button class="btnEquipe"> Equipe </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- PARTIE DETAIL -->
@@ -339,7 +359,7 @@
         displayPartieDiv.classList.add("displayBlock");
     }
 
-    function toggleHistoric(){
+    function toggleHistoric() {
         // afficher div historique et cacher div partie
         displayHistoricDiv.classList.remove("displayNone");
         displayHistoricDiv.classList.add("displayBlock");
@@ -349,8 +369,16 @@
 
     // Remplir l'historique de parties
     const imgMedal = document.createElement('img');
-    imgMedal.className="fit-picture";
-    imgMedal.src="/resources/images/medal.png";
+    imgMedal.className = "fit-picture";
+    imgMedal.src = "/resources/images/medal.png";
+
+
+    function remplirHist() {
+        var inputAllParties = document.getElementById('inputAllParties');
+        var allParties = inputAllParties.value;
+        console.log(typeof(inputAllParties));
+    }
+
 
     // aaas.forEach((aaa) => {
     //     let componentPartie = document.createElement("div");
@@ -387,7 +415,7 @@
 
     //     divequipeEtThemesListe1.appendChild(spanEquipes);
     //     //ici , ajouter dans divequipeEtThemesListe1 chaque equipes   
-        
+
     //     divequipeEtThemesListe2.appendChild(spanThemes);
     //     //ici , ajouter dans divequipeEtThemesListe1 chaque themes  
 
@@ -396,7 +424,7 @@
 
     //     partieRightDiv.appendChild(imgMedal);
     //     partieRightDiv.appendChild(btnEquipe);
-        
+
     //     componentPartie.appendChild(partieLeftDiv);
     //     componentPartie.appendChild(partieRightDiv);
     //     toFillWithCompos.appendChild(componentPartie);
