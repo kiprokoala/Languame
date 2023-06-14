@@ -1,19 +1,32 @@
 <?php
-foreach(glob("controller/*.{php}", GLOB_BRACE) AS $file) {
-    require_once($file);
-}
 
-if(!empty($_GET["cible"]) AND !empty($_GET["action"])){
-    $cible = $_GET["cible"];
-    if (in_array($_GET["action"],get_class_methods("controller$cible"))){
-        $action = $_GET["action"];
-        ("controller$cible")::$action();
-    }else{
-        controllerSite::error404();
+use app\Utils\Database;
+
+session_start();
+function includeFilesRecursive($dir)
+{
+    $files = glob($dir . '/*');
+
+    foreach ($files as $file) {
+        if (is_file($file) && pathinfo($file, PATHINFO_EXTENSION) === 'php') {
+            require_once($file);
+        } elseif (is_dir($file)) {
+            includeFilesRecursive($file);
+        }
     }
-}else{
-    controllerSite::homePage();
 }
 
+// On inclut les helpers puis les classes utilitaires
+includeFilesRecursive('app/Helpers');
+includeFilesRecursive('app/Utils');
 
-?>
+// Et enfin le reste. On inclut objet en premier car les autres modèles en dépendent
+require_once "app/Models/Objet.php";
+includeFilesRecursive('app');
+
+Database::connect();
+
+includeFilesRecursive('controller');
+
+include 'routes/web.php';
+include 'routes/api.php';
